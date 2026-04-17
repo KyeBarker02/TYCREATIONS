@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TY Creations</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- TOGGLE BAR -->
+  <div class="toggle-bar">
+    <div class="toggle-wrap">
+      <span class="toggle-label active" id="lbl-baking">🌿 TY Creations</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="brandToggle" onchange="switchBrand(this)"/>
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label" id="lbl-catering">🌸 TY Catering</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo" id="navLogo">TY Creations</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#menu">Menu</a>
+      <a href="#enquire">Enquire</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="brand-baking">
+      <p class="hero-tag">Handcrafted with love</p>
+      <h1>Beautiful <em>Cakes</em><br>for Every Moment</h1>
+      <p>From intimate celebrations to grand occasions, TY Creations crafts bespoke cakes that are as memorable as the moments they mark.</p>
+      <a href="#gallery" class="btn">Explore the Gallery</a>
+    </div>
+    <div class="brand-catering">
+      <p class="hero-tag">Elegance on every table</p>
+      <h1>Catering <em>Crafted</em><br>to Perfection</h1>
+      <p>TY Catering brings exceptional food and effortless elegance to your event, from intimate dinners to large-scale celebrations.</p>
+      <a href="#gallery" class="btn">Explore Our Menu</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="alt-bg">
+    <div class="about-grid">
+      <div class="about-img" id="aboutImg">🎂</div>
+      <div class="about-text">
+        <div class="brand-baking">
+          <p class="section-tag">Our Story</p>
+          <h2 class="section-title">Passion Baked<br>into Every Layer</h2>
+          <div class="divider"></div>
+          <p>TY Creations was born from a lifelong love of baking and a belief that every celebration deserves a truly exceptional cake. Each creation is made entirely by hand using the finest ingredients.</p>
+          <p>Whether you're dreaming of a towering tiered wedding cake or a delicate celebration bake, we work closely with you to bring your vision to life — beautifully and deliciously.</p>
+        </div>
+        <div class="brand-catering">
+          <p class="section-tag">Our Story</p>
+          <h2 class="section-title">Food that Brings<br>People Together</h2>
+          <div class="divider"></div>
+          <p>TY Catering was founded on the belief that great food is at the heart of every memorable event. We curate menus that are seasonal, locally sourced, and lovingly prepared.</p>
+          <p>From canapé receptions to full seated dinners, our team ensures every dish arrives with care, elegance, and flavour that leaves a lasting impression on your guests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p class="section-tag">Gallery</p>
+      <div class="brand-baking">
+        <h2 class="section-title">A Taste of Our Work</h2>
+        <p class="section-sub">Every cake is a one-of-a-kind creation. Browse a selection of our past bakes for inspiration.</p>
+      </div>
+      <div class="brand-catering">
+        <h2 class="section-title">Events We've Catered</h2>
+        <p class="section-sub">A glimpse into the events we've brought to life — from elegant dinners to vibrant celebrations.</p>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="font-size:4rem;">
+          <span class="brand-baking">🎂</span>
+          <span class="brand-catering">🍽️</span>
+          <div class="gallery-label brand-baking">Wedding Cakes</div>
+          <div class="gallery-label brand-catering">Fine Dining</div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="brand-baking">Wedding Collection</span>
+          <span class="brand-catering">Seated Dinners</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <span class="brand-baking">🌸</span>
+          <span class="brand-catering">🥂</span>
+          <div class="gallery-label brand-baking">Celebration</div>
+          <div class="gallery-label brand-catering">Receptions</div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="brand-baking">Celebration Cakes</span>
+          <span class="brand-catering">Champagne Receptions</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <span class="brand-baking">✨</span>
+          <span class="brand-catering">🍴</span>
+          <div class="gallery-label brand-baking">Custom Designs</div>
+          <div class="gallery-label brand-catering">Canapés</div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="brand-baking">Custom Creations</span>
+          <span class="brand-catering">Canapé Spreads</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <span class="brand-baking">🍰</span>
+          <span class="brand-catering">🌿</span>
+          <div class="gallery-label brand-baking">Birthday</div>
+          <div class="gallery-label brand-catering">Garden Parties</div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="brand-baking">Birthday Bakes</span>
+          <span class="brand-catering">Garden Parties</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <span class="brand-baking">💍</span>
+          <span class="brand-catering">🎉</span>
+          <div class="gallery-label brand-baking">Engagement</div>
+          <div class="gallery-label brand-catering">Corporate</div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="brand-baking">Engagement Cakes</span>
+          <span class="brand-catering">Corporate Events</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="alt-bg">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p class="section-tag">What We Offer</p>
+      <div class="brand-baking">
+        <h2 class="section-title">Our Cake Collections</h2>
+        <p class="section-sub">Each cake is tailored to your taste, occasion, and vision — no two are ever quite the same.</p>
+      </div>
+      <div class="brand-catering">
+        <h2 class="section-title">Catering Packages</h2>
+        <p class="section-sub">From intimate gatherings to large events, we have a package to suit every occasion and budget.</p>
+      </div>
+    </div>
+
+    <!-- BAKING CARDS -->
+    <div class="cards-grid brand-baking">
+      <div class="card">
+        <div class="card-icon">💍</div>
+        <div class="card-title">Wedding Cakes</div>
+        <div class="card-desc">Multi-tiered showstoppers designed in close collaboration with you, from classic elegance to contemporary sculpture.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎂</div>
+        <div class="card-title">Celebration Cakes</div>
+        <div class="card-desc">Birthdays, anniversaries, baby showers — a bespoke cake crafted to make your milestone truly unforgettable.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌸</div>
+        <div class="card-title">Floral & Botanical</div>
+        <div class="card-desc">Hand-sculpted sugar flowers and botanical motifs for those who love the beauty of nature captured in cake.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">✨</div>
+        <div class="card-title">Luxury & Custom</div>
+        <div class="card-desc">Fully bespoke designs with premium finishes — gold leaf, hand-painted details, and sculptural elements.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🍰</div>
+        <div class="card-title">Cupcake & Mini Bakes</div>
+        <div class="card-desc">Elegant bite-sized treats, perfect for wedding favours, events, or gifting — beautifully boxed and finished.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎁</div>
+        <div class="card-title">Gift & Occasion</div>
+        <div class="card-desc">Thoughtful bespoke bakes for gifting — from decorated shortbreads to personalised layered sponges.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+    </div>
+
+    <!-- CATERING CARDS -->
+    <div class="cards-grid brand-catering">
+      <div class="card">
+        <div class="card-icon">🥂</div>
+        <div class="card-title">Drinks Receptions</div>
+        <div class="card-desc">Elegant canapés and grazing platters paired with a curated drinks selection to welcome your guests in style.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🍽️</div>
+        <div class="card-title">Seated Dinners</div>
+        <div class="card-desc">Multi-course menus crafted with seasonal produce, beautifully plated and served at your table with care.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌿</div>
+        <div class="card-title">Garden Parties</div>
+        <div class="card-desc">Relaxed, elegant outdoor catering with sharing boards, seasonal salads, and light bites for al fresco occasions.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎉</div>
+        <div class="card-title">Corporate Events</div>
+        <div class="card-desc">Professional catering for conferences, launches, and team events — from breakfast spreads to working lunches.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">💐</div>
+        <div class="card-title">Wedding Catering</div>
+        <div class="card-desc">Full-day wedding packages including canapé receptions, wedding breakfasts, and evening buffets — all handled beautifully.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🫙</div>
+        <div class="card-title">Grazing & Platters</div>
+        <div class="card-desc">Stunning grazing tables and artisan platters, perfect for celebrations, private dining, or intimate gatherings.</div>
+        <div class="card-price">From enquiry</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRE -->
+  <section id="enquire">
+    <div style="max-width:640px;margin:0 auto;text-align:center;">
+      <p class="section-tag">Get in Touch</p>
+      <div class="brand-baking">
+        <h2 class="section-title">Enquire About Your Cake</h2>
+        <p class="section-sub" style="margin:0 auto;">Tell us about your occasion and we'll be in touch to discuss your perfect cake.</p>
+      </div>
+      <div class="brand-catering">
+        <h2 class="section-title">Enquire About Catering</h2>
+        <p class="section-sub" style="margin:0 auto;">Share your event details and we'll get back to you with a tailored catering proposal.</p>
+      </div>
+    </div>
+    <div class="enquiry-wrap">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Your first name"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Your last name"/></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Event Date</label>
+          <input type="date"/>
+        </div>
+        <div class="form-group brand-baking">
+          <label>Cake Type</label>
+          <select>
+            <option value="">Select a type</option>
+            <option>Wedding Cake</option>
+            <option>Celebration Cake</option>
+            <option>Floral & Botanical</option>
+            <option>Luxury & Custom</option>
+            <option>Cupcakes & Mini Bakes</option>
+            <option>Gift & Occasion</option>
+          </select>
+        </div>
+        <div class="form-group brand-catering">
+          <label>Event Type</label>
+          <select>
+            <option value="">Select a type</option>
+            <option>Drinks Reception</option>
+            <option>Seated Dinner</option>
+            <option>Garden Party</option>
+            <option>Corporate Event</option>
+            <option>Wedding Catering</option>
+            <option>Grazing & Platters</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group brand-baking"><label>Number of Guests / Servings</label><input type="text" placeholder="e.g. 60 guests"/></div>
+      <div class="form-group brand-catering"><label>Number of Guests</label><input type="text" placeholder="e.g. 80 guests"/></div>
+      <div class="form-group"><label>Tell Us More</label><textarea placeholder="Share any details about your vision, dietary requirements, or questions..."></textarea></div>
+      <div class="form-submit"><button class="btn btn-filled">Send Enquiry</button></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo" id="footerLogo">TY Creations</div>
+    <p id="footerTagline">Handcrafted cakes for life's most beautiful moments.</p>
+    <div class="footer-divider"></div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#menu">Menu</a>
+      <a href="#enquire">Enquire</a>
+    </div>
+    <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2025 TY Creations. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function switchBrand(toggle) {
+      const isCatering = toggle.checked;
+      document.body.classList.toggle('catering', isCatering);
+      document.getElementById('lbl-baking').classList.toggle('active', !isCatering);
+      document.getElementById('lbl-catering').classList.toggle('active', isCatering);
+      document.getElementById('navLogo').textContent = isCatering ? 'TY Catering' : 'TY Creations';
+      document.getElementById('footerLogo').textContent = isCatering ? 'TY Catering' : 'TY Creations';
+      document.getElementById('footerTagline').textContent = isCatering
+        ? "Exceptional food for life's most memorable events."
+        : "Handcrafted cakes for life's most beautiful moments.";
+      document.getElementById('aboutImg').textContent = isCatering ? '🍽️' : '🎂';
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
