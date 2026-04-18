@@ -1,5 +1,4 @@
 
-
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -8,6 +7,58 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         if (t) t.scrollIntoView({ behavior: 'smooth' });
     });
 });
+
+// ── ENQUIRY FORM — Formspree AJAX submission ──
+const form = document.getElementById('enquiryForm');
+const successMsg = document.getElementById('formSuccess');
+const errorMsg = document.getElementById('formError');
+const submitBtn = document.getElementById('submitBtn');
+
+if (form) {
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Basic validation
+        const email = document.getElementById('email').value.trim();
+        const firstName = document.getElementById('firstName').value.trim();
+        if (!firstName || !email) {
+            errorMsg.textContent = 'Please fill in your name and email address.';
+            errorMsg.style.display = 'block';
+            return;
+        }
+
+        // Loading state
+        submitBtn.textContent = 'Sending…';
+        submitBtn.disabled = true;
+        errorMsg.style.display = 'none';
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                const data = await response.json();
+                const msg = data?.errors?.map(e => e.message).join(', ') || 'Something went wrong.';
+                errorMsg.textContent = msg;
+                errorMsg.style.display = 'block';
+                submitBtn.textContent = 'Send Enquiry';
+                submitBtn.disabled = false;
+            }
+        } catch (err) {
+            errorMsg.textContent = 'Network error — please check your connection and try again.';
+            errorMsg.style.display = 'block';
+            submitBtn.textContent = 'Send Enquiry';
+            submitBtn.disabled = false;
+        }
+    });
+}
 
 // ── DELIVERY POSTCODE CHECKER ──
 const BASE_POSTCODE = 'BN227LQ';

@@ -137,7 +137,6 @@
     </section>
 
 
-
     <!-- ENQUIRE -->
     <section id="enquire">
         <div style="max-width:640px;margin:0 auto;text-align:center;">
@@ -147,20 +146,42 @@
                 <p class="section-sub" style="margin:0 auto;">Tell us about your occasion and we'll be in touch to discuss your perfect cake.</p>
             </div>
         </div>
-        <div class="enquiry-wrap">
-            <div class="form-row">
-                <div class="form-group"><label>First Name</label><input type="text" placeholder="Your first name" /></div>
-                <div class="form-group"><label>Last Name</label><input type="text" placeholder="Your last name" /></div>
-            </div>
-            <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com" /></div>
+
+        <!-- SUCCESS MESSAGE (hidden until form submitted) -->
+        <div id="formSuccess" class="form-success" style="display:none;">
+            <div class="success-icon">✉️</div>
+            <h3>Thank you for your enquiry!</h3>
+            <p>We'll be in touch soon to discuss your perfect cake.</p>
+        </div>
+
+        <form id="enquiryForm" class="enquiry-wrap" action="https://formspree.io/f/mwvablqj" method="POST" novalidate>
+
+            <!-- Hidden fields for Formspree -->
+            <input type="hidden" name="_subject" value="New Cake Enquiry — TY Creations" />
+            <input type="hidden" name="_language" value="en" />
+
             <div class="form-row">
                 <div class="form-group">
-                    <label>Event Date</label>
-                    <input type="date" />
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="first_name" placeholder="Your first name" required />
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="last_name" placeholder="Your last name" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="eventDate">Event Date</label>
+                    <input type="date" id="eventDate" name="event_date" />
                 </div>
                 <div class="form-group brand-baking">
-                    <label>Cake Type</label>
-                    <select>
+                    <label for="cakeType">Cake Type</label>
+                    <select id="cakeType" name="cake_type">
                         <option value="">Select a type</option>
                         <option>Wedding Cake</option>
                         <option>Celebration Cake</option>
@@ -171,7 +192,11 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group brand-baking"><label>Number of Guests / Servings</label><input type="text" placeholder="e.g. 60 guests" /></div>
+            <div class="form-group brand-baking">
+                <label for="guests">Number of Guests / Servings</label>
+                <input type="text" id="guests" name="guests_servings" placeholder="e.g. 60 guests" />
+            </div>
+
             <div class="delivery-section-wrap">
                 <p class="delivery-section-title">🚗 Delivery Cost Estimator</p>
                 <p class="delivery-section-sub">Enter your postcode below to instantly see your delivery charge.</p>
@@ -181,19 +206,38 @@
                     <span class="delivery-tier-badge">15–30 mi · £20</span>
                     <span class="delivery-tier-badge">30+ mi · POA</span>
                 </div>
-
                 <div class="form-group" style="margin-bottom:0;">
                     <label>Your Postcode</label>
                     <div class="postcode-check-row">
-                        <input type="text" id="deliveryPostcode" placeholder="e.g. BN23 6AJ" maxlength="8" oninput="this.value = this.value.toUpperCase()" />
+                        <input type="text" id="deliveryPostcode" name="delivery_postcode" placeholder="e.g. BN23 6AJ" maxlength="8" oninput="this.value = this.value.toUpperCase()" />
                         <button type="button" class="btn btn-filled postcode-btn" onclick="checkDelivery()">Check</button>
                     </div>
                     <div id="deliveryResult" class="delivery-result"></div>
                 </div>
             </div>
-            <div class="form-group"><label>Tell Us More</label><textarea placeholder="Share any details about your vision, dietary requirements, or questions..."></textarea></div>
-            <div class="form-submit"><button class="btn btn-filled">Send Enquiry</button></div>
-        </div>
+
+            <div class="form-group">
+                <label for="message">Tell Us More</label>
+                <textarea id="message" name="message" placeholder="Share any details about your vision, dietary requirements, or questions..."></textarea>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════
+                 HCAPTCHA — add once domain is registered
+                 1. Paste your hCaptcha site key where it says YOUR-SITE-KEY
+                 2. Uncomment the script tag in the <head> section above
+                 3. Uncomment the div below
+            ════════════════════════════════════════════════════════════
+            <div class="h-captcha" data-sitekey="YOUR-SITE-KEY" style="margin-bottom:20px;"></div>
+            -->
+
+            <div id="formError" class="form-error" style="display:none;">
+                Something went wrong. Please try again or email us directly.
+            </div>
+
+            <div class="form-submit">
+                <button type="submit" class="btn btn-filled" id="submitBtn">Send Enquiry</button>
+            </div>
+        </form>
     </section>
 
     <!-- FOOTER -->
@@ -207,7 +251,7 @@
             <a href="#menu">Menu</a>
             <a href="#enquire">Enquire</a>
         </div>
-        <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2025 TY Creations. All rights reserved.></p>
+        <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2025 TY Creations. All rights reserved.</p>
     </footer>
 
     <!-- LIGHTBOX -->
@@ -224,6 +268,7 @@
     <script src="default_script.js"></script>
     <script src="gallery_data.js"></script>
     <script src="gallery_script.js"></script>
+    <script src="bee_script.js"></script>
 
 
 </body>
