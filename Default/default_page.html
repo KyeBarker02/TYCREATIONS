@@ -48,6 +48,46 @@
         </div>
     </section>
 
+    <!-- MENU -->
+    <section id="menu" class="alt-bg">
+        <div style="max-width:1100px;margin:0 auto;">
+            <p class="section-tag">What We Offer</p>
+            <div class="brand-baking">
+                <h2 class="section-title">Our Cake Collections</h2>
+                <p class="section-sub">Each cake is tailored to your taste, occasion, and vision — no two are ever quite the same.</p>
+            </div>
+        </div>
+
+        <!-- BAKING CARDS — 4 categories linking to menu sub-pages -->
+        <div class="cards-grid brand-baking" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+            <a href="menu_honey_cake.html" class="card card-link">
+                <div class="card-icon">🍯</div>
+                <div class="card-title">The Honey Cake</div>
+                <div class="card-desc">Our signature bake — a golden honey sponge available in a range of sizes, flavour combinations, and beautiful finishes.</div>
+                <div class="card-price card-cta">View Sizes, Flavours &amp; Prices →</div>
+            </a>
+            <a href="menu_all_cakes.html" class="card card-link">
+                <div class="card-icon">🎂</div>
+                <div class="card-title">All Other Cakes</div>
+                <div class="card-desc">Single-tier to towering multi-tiered showpieces. Fully bespoke, made with the finest ingredients, crafted entirely around your vision.</div>
+                <div class="card-price card-cta">View Sizes, Flavours &amp; Prices →</div>
+            </a>
+            <a href="menu_small_bakes.html" class="card card-link">
+                <div class="card-icon">🧁</div>
+                <div class="card-title">Small Bakes</div>
+                <div class="card-desc">Cupcakes, shortbread, cake pops, brownie boxes, and gift sets — bite-sized and beautiful, perfect for favours and gifting.</div>
+                <div class="card-price card-cta">View Sizes, Flavours &amp; Prices →</div>
+            </a>
+            <a href="menu_occasion_cakes.html" class="card card-link">
+                <div class="card-icon">🎉</div>
+                <div class="card-title">Occasion Cakes</div>
+                <div class="card-desc">Birthdays, anniversaries, baby showers, graduations — every milestone deserves a cake made as unique as the moment itself.</div>
+                <div class="card-price card-cta">View Sizes, Flavours &amp; Prices →</div>
+            </a>
+        </div>
+    </section>
+
+
     <!-- GALLERY -->
     <section id="gallery">
         <div style="max-width:1100px;margin:0 auto;">
@@ -96,56 +136,7 @@
         </div>
     </section>
 
-    <!-- MENU -->
-    <section id="menu" class="alt-bg">
-        <div style="max-width:1100px;margin:0 auto;">
-            <p class="section-tag">What We Offer</p>
-            <div class="brand-baking">
-                <h2 class="section-title">Our Cake Collections</h2>
-                <p class="section-sub">Each cake is tailored to your taste, occasion, and vision — no two are ever quite the same.</p>
-            </div>
-        </div>
 
-        <!-- BAKING CARDS -->
-        <div class="cards-grid brand-baking">
-            <div class="card">
-                <div class="card-icon">💍</div>
-                <div class="card-title">Wedding Cakes</div>
-                <div class="card-desc">Multi-tiered showstoppers designed in close collaboration with you, from classic elegance to contemporary sculpture.</div>
-                <div class="card-price">From enquiry</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎂</div>
-                <div class="card-title">Celebration Cakes</div>
-                <div class="card-desc">Birthdays, anniversaries, baby showers — a bespoke cake crafted to make your milestone truly unforgettable.</div>
-                <div class="card-price">From enquiry</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🌸</div>
-                <div class="card-title">Floral & Botanical</div>
-                <div class="card-desc">Hand-sculpted sugar flowers and botanical motifs for those who love the beauty of nature captured in cake.</div>
-                <div class="card-price">From enquiry</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">✨</div>
-                <div class="card-title">Luxury & Custom</div>
-                <div class="card-desc">Fully bespoke designs with premium finishes — gold leaf, hand-painted details, and sculptural elements.</div>
-                <div class="card-price">From enquiry</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🍰</div>
-                <div class="card-title">Cupcake & Mini Bakes</div>
-                <div class="card-desc">Elegant bite-sized treats, perfect for wedding favours, events, or gifting — beautifully boxed and finished.</div>
-                <div class="card-price">From enquiry</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎁</div>
-                <div class="card-title">Gift & Occasion</div>
-                <div class="card-desc">Thoughtful bespoke bakes for gifting — from decorated shortbreads to personalised layered sponges.</div>
-                <div class="card-price">From enquiry</div>
-            </div>
-        </div>
-    </section>
 
     <!-- ENQUIRE -->
     <section id="enquire">
@@ -181,6 +172,25 @@
                 </div>
             </div>
             <div class="form-group brand-baking"><label>Number of Guests / Servings</label><input type="text" placeholder="e.g. 60 guests" /></div>
+            <div class="delivery-section-wrap">
+                <p class="delivery-section-title">🚗 Delivery Cost Estimator</p>
+                <p class="delivery-section-sub">Enter your postcode below to instantly see your delivery charge.</p>
+                <div class="delivery-tiers">
+                    <span class="delivery-tier-badge">0–5 mi · Free</span>
+                    <span class="delivery-tier-badge">5–15 mi · £10</span>
+                    <span class="delivery-tier-badge">15–30 mi · £20</span>
+                    <span class="delivery-tier-badge">30+ mi · POA</span>
+                </div>
+
+                <div class="form-group" style="margin-bottom:0;">
+                    <label>Your Postcode</label>
+                    <div class="postcode-check-row">
+                        <input type="text" id="deliveryPostcode" placeholder="e.g. BN23 6AJ" maxlength="8" oninput="this.value = this.value.toUpperCase()" />
+                        <button type="button" class="btn btn-filled postcode-btn" onclick="checkDelivery()">Check</button>
+                    </div>
+                    <div id="deliveryResult" class="delivery-result"></div>
+                </div>
+            </div>
             <div class="form-group"><label>Tell Us More</label><textarea placeholder="Share any details about your vision, dietary requirements, or questions..."></textarea></div>
             <div class="form-submit"><button class="btn btn-filled">Send Enquiry</button></div>
         </div>
@@ -214,6 +224,7 @@
     <script src="default_script.js"></script>
     <script src="gallery_data.js"></script>
     <script src="gallery_script.js"></script>
+
 
 </body>
 </html>
