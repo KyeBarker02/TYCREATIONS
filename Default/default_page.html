@@ -35,7 +35,7 @@
     <!-- ABOUT -->
     <section id="about" class="alt-bg">
         <div class="about-grid">
-            <div class="about-img" id="aboutImg">🎂</div>
+            <img class="about-img" id="aboutImg" src="images/HoneyCakes/HoneyCake1.jpeg" alt="TY Creations cake" />
             <div class="about-text">
                 <div class="brand-baking">
                     <p class="section-tag">Our Story</p>
@@ -98,40 +98,29 @@
             </div>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item" data-folder="wedding">
-                <div class="gallery-placeholder" style="font-size:4rem;">
-                    <span class="brand-baking">🎂</span>
-                    <div class="gallery-label brand-baking">Wedding Cakes</div>
-                </div>
-                <div class="gallery-overlay"><span class="brand-baking">Wedding Collection</span></div>
+            <!-- LEFT: Occasion Cakes (tall) -->
+            <div class="gallery-item gallery-item--left" data-folder="OccasionCakes">
+                <div class="gallery-placeholder" style="background-image: url('images/OccasionCakes/OccasionCake1.jpeg');"></div>
+                <div class="gallery-label-static">Occasion Cakes</div>
+                <div class="gallery-overlay"></div>
             </div>
-            <div class="gallery-item" data-folder="celebration">
-                <div class="gallery-placeholder">
-                    <span class="brand-baking">🌸</span>
-                    <div class="gallery-label brand-baking">Celebration</div>
-                </div>
-                <div class="gallery-overlay"><span class="brand-baking">Celebration Cakes</span></div>
+            <!-- MIDDLE TOP: Other Cakes -->
+            <div class="gallery-item gallery-item--mid-top" data-folder="OtherCakes">
+                <div class="gallery-placeholder" style="background-image: url('images/OtherCakes/OtherCake1.jpeg');"></div>
+                <div class="gallery-label-static">Other Cakes</div>
+                <div class="gallery-overlay"></div>
             </div>
-            <div class="gallery-item" data-folder="custom_designs">
-                <div class="gallery-placeholder">
-                    <span class="brand-baking">✨</span>
-                    <div class="gallery-label brand-baking">Custom Designs</div>
-                </div>
-                <div class="gallery-overlay"><span class="brand-baking">Custom Creations</span></div>
+            <!-- MIDDLE BOTTOM: Small Bakes -->
+            <div class="gallery-item gallery-item--mid-bottom" data-folder="SmallBakes">
+                <div class="gallery-placeholder" style="background-image: url('images/SmallBakes/SmallBake1.jpeg');"></div>
+                <div class="gallery-label-static">Small Bakes</div>
+                <div class="gallery-overlay"></div>
             </div>
-            <div class="gallery-item" data-folder="birthday">
-                <div class="gallery-placeholder">
-                    <span class="brand-baking">🍰</span>
-                    <div class="gallery-label brand-baking">Birthday</div>
-                </div>
-                <div class="gallery-overlay"><span class="brand-baking">Birthday Bakes</span></div>
-            </div>
-            <div class="gallery-item" data-folder="engagement">
-                <div class="gallery-placeholder">
-                    <span class="brand-baking">💍</span>
-                    <div class="gallery-label brand-baking">Engagement</div>
-                </div>
-                <div class="gallery-overlay"><span class="brand-baking">Engagement Cakes</span></div>
+            <!-- RIGHT: Honey Cakes (tall) -->
+            <div class="gallery-item gallery-item--right" data-folder="HoneyCakes">
+                <div class="gallery-placeholder" style="background-image: url('images/HoneyCakes/HoneyCake1.jpeg');"></div>
+                <div class="gallery-label-static">Honey Cakes</div>
+                <div class="gallery-overlay"></div>
             </div>
         </div>
     </section>
@@ -221,14 +210,8 @@
                 <textarea id="message" name="message" placeholder="Share any details about your vision, dietary requirements, or questions..."></textarea>
             </div>
 
-            <!-- ═══════════════════════════════════════════════════════
-                 HCAPTCHA — add once domain is registered
-                 1. Paste your hCaptcha site key where it says YOUR-SITE-KEY
-                 2. Uncomment the script tag in the <head> section above
-                 3. Uncomment the div below
-            ════════════════════════════════════════════════════════════
-            <div class="h-captcha" data-sitekey="YOUR-SITE-KEY" style="margin-bottom:20px;"></div>
-            -->
+
+            <div class="h-captcha" data-sitekey="1130e7c6-aece-44e4-b444-bba098944dbe" style="margin-bottom:20px;"></div>
 
             <div id="formError" class="form-error" style="display:none;">
                 Something went wrong. Please try again or email us directly.
@@ -269,6 +252,7 @@
     <script src="gallery_data.js"></script>
     <script src="gallery_script.js"></script>
     <script src="bee_script.js"></script>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
 
 </body>

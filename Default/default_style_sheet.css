@@ -240,13 +240,39 @@ section {
     transition: background 0.6s;
 }
 
+
 /* ── GALLERY ── */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 280px);
     gap: 16px;
     max-width: 1100px;
     margin: 50px auto 0;
+}
+
+/* Occasion Cakes: left column, full height */
+.gallery-item--left {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+/* Other Cakes: middle column, top */
+.gallery-item--mid-top {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Small Bakes: middle column, bottom */
+.gallery-item--mid-bottom {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Honey Cakes: right column, full height */
+.gallery-item--right {
+    grid-column: 3;
+    grid-row: 1 / span 2;
 }
 
 .gallery-item {
@@ -256,44 +282,37 @@ section {
     border-radius: 2px;
 }
 
-    .gallery-item:nth-child(1) {
-        grid-row: span 2;
-    }
-
 .gallery-placeholder {
     width: 100%;
-    aspect-ratio: 1;
-    background: var(--primary-light);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    transition: transform 0.5s, background 0.6s;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.gallery-item:nth-child(1) .gallery-placeholder {
-    aspect-ratio: unset;
     height: 100%;
-}
-
-.gallery-label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 8px;
+    background-color: var(--primary-light);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s;
 }
 
 .gallery-item:hover .gallery-placeholder {
     transform: scale(1.04);
 }
 
+/* Static label sitting above the overlay */
+.gallery-label-static {
+    position: absolute;
+    bottom: 16px;
+    left: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    z-index: 2;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent 60%);
     opacity: 0;
     transition: opacity 0.4s;
     display: flex;
@@ -716,6 +735,7 @@ body:not(.catering) .brand-catering {
     display: none;
 }
 
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
     nav {
@@ -733,15 +753,24 @@ body:not(.catering) .brand-catering {
 
     .gallery-grid {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
     }
 
-    .gallery-item:nth-child(1) {
-        grid-row: span 1;
+    .gallery-item--left,
+    .gallery-item--right {
+        grid-column: auto;
+        grid-row: auto;
     }
 
-        .gallery-item:nth-child(1) .gallery-placeholder {
-            aspect-ratio: 1;
-        }
+    .gallery-item--mid-top,
+    .gallery-item--mid-bottom {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .gallery-placeholder {
+        height: 200px;
+    }
 
     .form-row {
         grid-template-columns: 1fr;
