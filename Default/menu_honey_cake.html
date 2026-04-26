@@ -11,14 +11,15 @@
 
     <!-- NAV -->
     <nav>
-        <div class="nav-logo">
-            <img src="logo_img.jpg" alt="Logo" style="width:42px;height:42px;">
-            <span>TY Creations</span>
-        </div>
+        <a href="default_page.html" class="nav-logo" id="navLogo" style="text-decoration:none;">
+            <img src="logo_img.jpg" alt="Logo" style="float:left; width:42px; height:42px;">
+            <span id="navLogoText">TY Creations</span>
+        </a>
         <div class="nav-links">
-            <a href="default_page.html#about">About</a>
-            <a href="default_page.html#gallery">Gallery</a>
-            <a href="default_page.html#menu">Menu</a>
+            <a href="#prices">Prices</a>
+            <a href="#flavours">Flavours</a>
+            <a href="#decoration">Decoration</a>
+            <a href="#gallery">Gallery</a>
             <a href="#enquire">Enquire</a>
         </div>
     </nav>
@@ -33,7 +34,7 @@
     </section>
 
     <!-- SIZES & PRICES -->
-    <section style="padding:90px 60px; background:var(--bg);">
+    <section style="padding:90px 60px; background:var(--bg);" id="prices">
         <div class="menu-block" style="padding:0;">
             <a href="default_page.html#menu" class="back-link">Back to Menu</a>
             <span class="menu-block-number">01</span>
@@ -52,26 +53,26 @@
                 <tbody>
                     <tr>
                         <td><strong>6 inch</strong></td>
-                        <td>12–16</td>
+                        <td>6-8</td>
                         <td class="price-cell">From £65</td>
                         <td class="note-cell">Perfect for intimate celebrations</td>
                     </tr>
                     <tr>
-                        <td><strong>8 inch</strong></td>
-                        <td>20–28</td>
-                        <td class="price-cell">From £95</td>
+                        <td><strong>7 inch</strong></td>
+                        <td>10-12</td>
+                        <td class="price-cell">From £85</td>
                         <td class="note-cell">Our most popular size</td>
                     </tr>
                     <tr>
-                        <td><strong>10 inch</strong></td>
-                        <td>35–45</td>
-                        <td class="price-cell">From £130</td>
+                        <td><strong>8 inch</strong></td>
+                        <td>14-16</td>
+                        <td class="price-cell">From £110</td>
                         <td class="note-cell">Great for larger gatherings</td>
                     </tr>
                     <tr>
-                        <td><strong>12 inch</strong></td>
-                        <td>50–65</td>
-                        <td class="price-cell">From £175</td>
+                        <td><strong>9 inch</strong></td>
+                        <td>20-24</td>
+                        <td class="price-cell">From £165</td>
                         <td class="note-cell">Statement centrepiece</td>
                     </tr>
                 </tbody>
@@ -81,7 +82,7 @@
     </section>
 
     <!-- FLAVOURS -->
-    <section class="full-alt">
+    <section class="full-alt" id="flavours">
         <div class="menu-block">
             <span class="menu-block-number">02</span>
             <h2 class="menu-block-title">Flavours</h2>
@@ -105,6 +106,10 @@
                 <div class="flavour-tag">
                     <div class="flavour-name">Honey &amp; Almond</div>
                     <div class="flavour-desc">A nutty warmth paired with the sweetness of wildflower honey</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Honey &amp; Orange</div>
+                    <div class="flavour-desc">Citrus-infused honey sponge with a hint of orange zest</div>
                 </div>
             </div>
 
@@ -139,7 +144,7 @@
     </section>
 
     <!-- DECORATION -->
-    <section style="padding:90px 60px;background:var(--bg);">
+    <section style="padding:90px 60px;background:var(--bg);" id="decoration">
         <div class="menu-block" style="padding:0;">
             <span class="menu-block-number">03</span>
             <h2 class="menu-block-title">Decoration</h2>
@@ -193,7 +198,7 @@
     </section>
 
     <!-- GALLERY -->
-    <section class="full-alt">
+    <section class="full-alt" id="gallery">
         <div style="max-width:1100px;margin:0 auto;padding:0 0 40px;">
             <span class="menu-block-number">04</span>
             <h2 class="menu-block-title">Gallery</h2>
@@ -202,71 +207,119 @@
         </div>
         <div class="sub-gallery-grid" style="max-width:1100px;margin:0 auto;">
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🍯</div>
+                <img class="about-img" id="aboutImg" src="images/HoneyCakes/HoneyCake1.jpeg" alt="TY Creations cake" />
                 <div class="sub-gallery-overlay"><span>Golden Drizzle</span></div>
             </div>
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🌸</div>
-                <div class="sub-gallery-overlay"><span>Floral Honey</span></div>
+                <img class="about-img" id="aboutImg" src="images/HoneyCakes/HoneyCake12.jpeg" alt="TY Creations cake" />
+                <div class="sub-gallery-overlay"><span>Chocolate Orange</span></div>
             </div>
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">✨</div>
-                <div class="sub-gallery-overlay"><span>Gold Leaf</span></div>
+                <img class="about-img" id="aboutImg" src="images/HoneyCakes/HoneyCake24.jpeg" alt="TY Creations cake" />
+                <div class="sub-gallery-overlay"><span>Fruit & Honey</span></div>
             </div>
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🐝</div>
+                <img class="about-img" id="aboutImg" src="images/HoneyCakes/HoneyCake7.jpeg" alt="TY Creations cake" />
                 <div class="sub-gallery-overlay"><span>Honeycomb</span></div>
             </div>
         </div>
     </section>
 
     <!-- ENQUIRE -->
-    <section id="enquire" style="padding:90px 60px;background:var(--bg);">
+    <section id="enquire">
         <div style="max-width:640px;margin:0 auto;text-align:center;">
             <p class="section-tag">Get in Touch</p>
-            <h2 class="section-title">Enquire About<br>The Honey Cake</h2>
-            <p class="section-sub" style="margin:0 auto 0;">Tell us about your occasion and we'll be in touch to discuss your perfect Honey Cake.</p>
-        </div>
-        <div class="enquiry-wrap">
-            <div class="form-row">
-                <div class="form-group"><label>First Name</label><input type="text" placeholder="Your first name" /></div>
-                <div class="form-group"><label>Last Name</label><input type="text" placeholder="Your last name" /></div>
+            <div class="brand-baking">
+                <h2 class="section-title">Enquire About Your Cake</h2>
+                <p class="section-sub" style="margin:0 auto;">Tell us about your occasion and we'll be in touch to discuss your perfect cake.</p>
             </div>
-            <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com" /></div>
+        </div>
+
+        <!-- SUCCESS MESSAGE (hidden until form submitted) -->
+        <div id="formSuccess" class="form-success" style="display:none;">
+            <div class="success-icon">✉️</div>
+            <h3>Thank you for your enquiry!</h3>
+            <p>We'll be in touch soon to discuss your perfect cake.</p>
+        </div>
+
+        <form id="enquiryForm" class="enquiry-wrap" action="https://formspree.io/f/mwvablqj" method="POST" novalidate>
+
+            <!-- Hidden fields for Formspree -->
+            <input type="hidden" name="_subject" value="New Cake Enquiry — TY Creations" />
+            <input type="hidden" name="_language" value="en" />
+
             <div class="form-row">
                 <div class="form-group">
-                    <label>Event Date</label>
-                    <input type="date" />
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="first_name" placeholder="Your first name" required />
                 </div>
                 <div class="form-group">
-                    <label>Cake Size</label>
-                    <select>
-                        <option value="">Select a size</option>
-                        <option>6 inch (12–16 servings)</option>
-                        <option>8 inch (20–28 servings)</option>
-                        <option>10 inch (35–45 servings)</option>
-                        <option>12 inch (50–65 servings)</option>
-                        <option>Two-tier (60–80 servings)</option>
-                        <option>Not sure — discuss with me</option>
-                    </select>
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="last_name" placeholder="Your last name" required />
                 </div>
             </div>
             <div class="form-group">
-                <label>Flavour Preference</label>
-                <select>
-                    <option value="">Select a flavour</option>
-                    <option>Golden Honey + Honey Buttercream</option>
-                    <option>Honey &amp; Lemon + Lemon Curd &amp; Cream</option>
-                    <option>Honey &amp; Lavender + Chamomile &amp; Vanilla</option>
-                    <option>Honey &amp; Almond + Mascarpone &amp; Fig</option>
-                    <option>Honey + Salted Caramel</option>
-                    <option>Not sure — discuss with me</option>
-                </select>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
             </div>
-            <div class="form-group"><label>Number of Guests / Servings</label><input type="text" placeholder="e.g. 30 guests" /></div>
-            <div class="form-group"><label>Tell Us More</label><textarea placeholder="Share any details about your vision, dietary requirements, decoration ideas, or questions..."></textarea></div>
-            <div class="form-submit"><button class="btn btn-filled">Send Enquiry</button></div>
-        </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="eventDate">Event Date</label>
+                    <input type="date" id="eventDate" name="event_date" />
+                </div>
+                <div class="form-group brand-baking">
+                    <label for="cakeType">Cake Type</label>
+                    <select id="cakeType" name="cake_type">
+                        <option value="">Select a type</option>
+                        <option>Wedding Cake</option>
+                        <option>Celebration Cake</option>
+                        <option>Floral & Botanical</option>
+                        <option>Luxury & Custom</option>
+                        <option>Cupcakes & Mini Bakes</option>
+                        <option>Gift & Occasion</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group brand-baking">
+                <label for="guests">Number of Guests / Servings</label>
+                <input type="text" id="guests" name="guests_servings" placeholder="e.g. 60 guests" />
+            </div>
+
+            <div class="delivery-section-wrap">
+                <p class="delivery-section-title">🚗 Delivery Cost Estimator</p>
+                <p class="delivery-section-sub">Enter your postcode below to instantly see your delivery charge.</p>
+                <div class="delivery-tiers">
+                    <span class="delivery-tier-badge">0–5 mi · Free</span>
+                    <span class="delivery-tier-badge">5–15 mi · £10</span>
+                    <span class="delivery-tier-badge">15–30 mi · £20</span>
+                    <span class="delivery-tier-badge">30+ mi · POA</span>
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                    <label>Your Postcode</label>
+                    <div class="postcode-check-row">
+                        <input type="text" id="deliveryPostcode" name="delivery_postcode" placeholder="e.g. BN23 6AJ" maxlength="8" oninput="this.value = this.value.toUpperCase()" />
+                        <button type="button" class="btn btn-filled postcode-btn" onclick="checkDelivery()">Check</button>
+                    </div>
+                    <div id="deliveryResult" class="delivery-result"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Tell Us More</label>
+                <textarea id="message" name="message" placeholder="Share any details about your vision, dietary requirements, or questions..."></textarea>
+            </div>
+
+
+            <div class="h-captcha" data-sitekey="1130e7c6-aece-44e4-b444-bba098944dbe" style="margin-bottom:20px;"></div>
+
+            <div id="formError" class="form-error" style="display:none;">
+                Something went wrong. Please try again or email us directly.
+            </div>
+
+            <div class="form-submit">
+                <button type="submit" class="btn btn-filled" id="submitBtn">Send Enquiry</button>
+            </div>
+        </form>
     </section>
 
     <!-- FOOTER -->
@@ -275,12 +328,12 @@
         <p>Handcrafted cakes for life's most beautiful moments.</p>
         <div class="footer-divider"></div>
         <div class="footer-links">
-            <a href="default_page.html#about">About</a>
-            <a href="default_page.html#gallery">Gallery</a>
             <a href="default_page.html#menu">Menu</a>
+            <a href="default_page.html#gallery">Gallery</a>
+            <a href="default_page.html#about">About</a>
             <a href="#enquire">Enquire</a>
         </div>
-        <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2025 TY Creations. All rights reserved.</p>
+        <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2026 TY Creations. All rights reserved.</p>
     </footer>
 
     <script>
@@ -292,5 +345,6 @@
             });
         });
     </script>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </body>
 </html>
