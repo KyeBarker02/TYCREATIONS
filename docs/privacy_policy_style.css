@@ -1,0 +1,214 @@
+﻿.policy-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.policy-section {
+    margin-bottom: 52px;
+}
+
+.policy-section-number {
+    font-size: 0.62rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.policy-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--primary-dark);
+    margin-bottom: 18px;
+}
+
+.policy-divider {
+    width: 36px;
+    height: 1px;
+    background: var(--accent);
+    margin-bottom: 22px;
+}
+
+.policy-body {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.95;
+    font-weight: 300;
+}
+
+    .policy-body p {
+        margin-bottom: 14px;
+    }
+
+    .policy-body ul {
+        padding-left: 20px;
+        margin-bottom: 14px;
+    }
+
+    .policy-body li {
+        margin-bottom: 8px;
+    }
+
+    .policy-body a {
+        color: var(--primary);
+        text-decoration: none;
+        border-bottom: 1px solid var(--primary-light);
+        transition: color 0.3s, border-color 0.3s;
+    }
+
+        .policy-body a:hover {
+            color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+    .policy-body strong {
+        color: var(--text);
+        font-weight: 400;
+    }
+
+.policy-highlight {
+    background: var(--section-alt);
+    border-left: 3px solid var(--primary);
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 2px;
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.policy-last-updated {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.policy-toc {
+    background: var(--section-alt);
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    margin-bottom: 60px;
+    border-radius: 2px;
+}
+
+.policy-toc-title {
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.policy-toc ol {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.policy-toc li {
+    margin-bottom: 8px;
+}
+
+.policy-toc a {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+    .policy-toc a:hover {
+        color: var(--primary-dark);
+    }
+
+.third-party-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    margin-bottom: 10px;
+    border-radius: 2px;
+    transition: border-color 0.3s;
+}
+
+    .third-party-card:hover {
+        border-color: var(--primary-light);
+    }
+
+.third-party-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+    margin-bottom: 3px;
+}
+
+.third-party-purpose {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+.third-party-link {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+    .third-party-link:hover {
+        color: var(--primary-dark);
+    }
+
+.rights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.rights-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 18px 16px;
+    border-radius: 2px;
+    transition: border-color 0.3s;
+}
+
+    .rights-item:hover {
+        border-color: var(--primary-light);
+    }
+
+.rights-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+}
+
+.rights-desc {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .third-party-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .rights-grid {
+        grid-template-columns: 1fr;
+    }
+}

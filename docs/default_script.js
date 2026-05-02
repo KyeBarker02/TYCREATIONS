@@ -1,4 +1,3 @@
-
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -21,11 +20,22 @@ if (form) {
         // Basic validation
         const email = document.getElementById('email').value.trim();
         const firstName = document.getElementById('firstName').value.trim();
+        const agreeTerms = document.getElementById('agreeTerms');
+        const agreeError = document.getElementById('agreeError');
+
         if (!firstName || !email) {
             errorMsg.textContent = 'Please fill in your name and email address.';
             errorMsg.style.display = 'block';
             return;
         }
+
+        if (!agreeTerms.checked) {
+            agreeError.style.display = 'block';
+            agreeTerms.closest('.form-agree').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        agreeError.style.display = 'none';
 
         // Loading state
         submitBtn.textContent = 'Sending…';
