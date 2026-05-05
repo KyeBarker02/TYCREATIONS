@@ -132,3 +132,13 @@ async function checkDelivery() {
 document.getElementById('deliveryPostcode').addEventListener('keydown', e => {
     if (e.key === 'Enter') { e.preventDefault(); checkDelivery(); }
 });
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+        const item = q.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    });
+});

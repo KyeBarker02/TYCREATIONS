@@ -6,15 +6,199 @@
     <title>Terms &amp; Conditions — TY Creations Ltd</title>
     <link rel="stylesheet" href="default_style_sheet.css">
     <link rel="stylesheet" href="menu_page_style.css">
-    <link rel="stylesheet" href="terms_and_conditions_style.css">
-</head>>
-<body>
+    <style>
+        .policy-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+        }
 
-    <!-- NAV -->
+        .policy-section {
+            margin-bottom: 56px;
+        }
+
+        .policy-section-number {
+            font-size: 0.62rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .policy-section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .policy-divider {
+            width: 36px;
+            height: 1px;
+            background: var(--accent);
+            margin: 16px 0 24px;
+        }
+
+        .policy-section p {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.95;
+            font-weight: 300;
+            margin-bottom: 14px;
+        }
+
+            .policy-section p:last-child {
+                margin-bottom: 0;
+            }
+
+        .policy-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 14px;
+        }
+
+            .policy-section ul li {
+                font-size: 0.92rem;
+                color: var(--text-light);
+                line-height: 1.95;
+                font-weight: 300;
+                padding-left: 20px;
+                position: relative;
+                margin-bottom: 6px;
+            }
+
+                .policy-section ul li::before {
+                    content: '—';
+                    position: absolute;
+                    left: 0;
+                    color: var(--accent);
+                    font-weight: 300;
+                }
+
+        .policy-section a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+            .policy-section a:hover {
+                border-bottom-color: var(--primary);
+            }
+
+        .policy-highlight {
+            background: var(--section-alt);
+            border-left: 3px solid var(--primary);
+            padding: 18px 22px;
+            margin: 20px 0;
+            border-radius: 2px;
+        }
+
+            .policy-highlight p {
+                margin-bottom: 0 !important;
+                font-size: 0.88rem !important;
+            }
+
+        .policy-warning {
+            background: #fdf8f0;
+            border-left: 3px solid var(--accent);
+            padding: 18px 22px;
+            margin: 20px 0;
+            border-radius: 2px;
+        }
+
+            .policy-warning p {
+                margin-bottom: 0 !important;
+                font-size: 0.88rem !important;
+            }
+
+        .policy-last-updated {
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            opacity: 0.7;
+            margin-bottom: 60px;
+            display: block;
+        }
+
+        .policy-toc {
+            background: var(--section-alt);
+            border: 1px solid var(--border);
+            padding: 28px 32px;
+            margin-bottom: 60px;
+            border-radius: 2px;
+        }
+
+        .policy-toc-title {
+            font-size: 0.68rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .policy-toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            columns: 2;
+            gap: 20px;
+        }
+
+            .policy-toc ol li {
+                margin-bottom: 10px;
+                break-inside: avoid;
+            }
+
+                .policy-toc ol li a {
+                    font-size: 0.82rem;
+                    color: var(--text-light);
+                    text-decoration: none;
+                    font-weight: 300;
+                    transition: color 0.3s;
+                }
+
+                    .policy-toc ol li a:hover {
+                        color: var(--primary-dark);
+                    }
+
+                .policy-toc ol li span {
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 0.85rem;
+                    color: var(--accent);
+                    margin-right: 8px;
+                }
+
+        .policy-intro {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.95;
+            font-weight: 300;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .policy-toc ol {
+                columns: 1;
+            }
+
+            section {
+                padding-left: 24px !important;
+                padding-right: 24px !important;
+            }
+        }
+    </style>
+</head>
+<body>
     <nav>
         <a href="default_page.html" class="nav-logo" style="text-decoration:none;">
             <img src="logo_img.jpg" alt="Logo" style="float:left; width:42px; height:42px;">
-            <span>TY Creations</span>
+            <span>TY Creations Ltd</span>
         </a>
         <div class="nav-links">
             <a href="default_page.html#menu">Menu</a>
@@ -24,211 +208,271 @@
         </div>
     </nav>
 
-    <!-- PAGE HERO -->
     <section class="page-hero">
         <div style="position:relative;">
             <p class="page-hero-eyebrow">Legal &amp; Compliance</p>
             <h1>Terms &amp; <em>Conditions</em></h1>
-            <p class="page-hero-desc">Please read these terms carefully before placing an order with TY Creations Ltd. By placing an order, you confirm that you accept these terms.</p>
+            <p class="page-hero-desc">Please read these terms carefully before placing an order with TY Creations Ltd. By placing an order, you confirm that you have read and accept these terms in full.</p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section style="padding:90px 60px; background:var(--bg);">
+    <section style="padding:90px 120px; background:var(--bg); position:relative; z-index:2;">
         <div class="policy-wrap">
+            <span class="policy-last-updated">Last updated: May 2026</span>
 
-            <span class="policy-last-updated">Last updated: April 2026</span>
+            <p class="policy-intro">These terms and conditions govern all orders placed with TY Creations Ltd, a private limited company registered in England and Wales. References to "we", "us", and "our" refer to TY Creations Ltd. References to "you" and "your" refer to the customer placing the order. By placing an order or submitting an enquiry that results in an order, you agree to be bound by these terms in their entirety. Nothing in these terms affects your statutory rights as a consumer under applicable UK law.</p>
 
-            <p class="policy-intro">These terms and conditions apply to all orders placed with TY Creations, a private limited company registered in England and Wales. References to "we", "us", and "our" refer to TY Creations Ltd. References to "you" and "your" refer to the customer placing the order. By placing an order, you agree to be bound by these terms.</p>
-
-            <!-- TABLE OF CONTENTS -->
             <div class="policy-toc">
                 <p class="policy-toc-title">Contents</p>
                 <ol>
                     <li><span>01</span><a href="#s1">Placing an Order</a></li>
-                    <li><span>02</span><a href="#s2">Order Confirmation & Deposit</a></li>
-                    <li><span>03</span><a href="#s3">Payment</a></li>
-                    <li><span>04</span><a href="#s4">Order Changes</a></li>
-                    <li><span>05</span><a href="#s5">Cancellation Policy</a></li>
-                    <li><span>06</span><a href="#s6">Collection & Delivery</a></li>
-                    <li><span>07</span><a href="#s7">Allergens & Dietary Requirements</a></li>
-                    <li><span>08</span><a href="#s8">Care of Your Cake</a></li>
-                    <li><span>09</span><a href="#s9">Damage & Liability</a></li>
-                    <li><span>10</span><a href="#s10">Complaints</a></li>
-                    <li><span>11</span><a href="#s11">Photography & Intellectual Property</a></li>
-                    <li><span>12</span><a href="#s12">Governing Law</a></li>
+                    <li><span>02</span><a href="#s2">Bespoke Goods &amp; Consumer Rights</a></li>
+                    <li><span>03</span><a href="#s3">Order Confirmation &amp; Deposit</a></li>
+                    <li><span>04</span><a href="#s4">Payment &amp; VAT</a></li>
+                    <li><span>05</span><a href="#s5">Order Changes</a></li>
+                    <li><span>06</span><a href="#s6">Cancellation &amp; Force Majeure</a></li>
+                    <li><span>07</span><a href="#s7">Collection &amp; Delivery</a></li>
+                    <li><span>08</span><a href="#s8">Allergens &amp; Dietary Requirements</a></li>
+                    <li><span>09</span><a href="#s9">Care of Your Cake</a></li>
+                    <li><span>10</span><a href="#s10">Damage &amp; Liability</a></li>
+                    <li><span>11</span><a href="#s11">Complaints</a></li>
+                    <li><span>12</span><a href="#s12">Photography &amp; Intellectual Property</a></li>
+                    <li><span>13</span><a href="#s13">Entire Agreement</a></li>
+                    <li><span>14</span><a href="#s14">Severability</a></li>
+                    <li><span>15</span><a href="#s15">Governing Law</a></li>
                 </ol>
             </div>
 
-            <!-- 01 PLACING AN ORDER -->
+            <!-- 01 -->
             <div class="policy-section" id="s1">
                 <span class="policy-section-number">01</span>
                 <h2 class="policy-section-title">Placing an Order</h2>
                 <div class="policy-divider"></div>
-                <p>To ensure we can serve you to the highest standard, please place your order at least <strong>10 days in advance</strong> of your event date. All orders are prepared individually and scheduled ahead of time, so advance notice is essential.</p>
-                <p>Last-minute orders may be considered at our discretion, subject to availability. We cannot guarantee the ability to fulfil orders placed with less than 10 days' notice.</p>
-                <p>An order is not confirmed until a deposit has been received. Submitting an enquiry or receiving a quote does not constitute a confirmed booking.</p>
+                <p>To ensure we can serve you to the highest standard, please place your order at least <strong>10 days in advance</strong> of your event date. All orders are individually prepared and scheduled ahead of time, and advance notice is essential to guarantee your booking.</p>
+                <p>Last-minute orders may be considered at our sole discretion, subject to availability. We cannot guarantee the ability to fulfil orders placed with fewer than 10 days' notice, and we reserve the right to decline such requests without further obligation.</p>
+                <p>Submitting an enquiry, receiving a quote, or any verbal or written discussion of a potential order does not constitute a confirmed booking. An order is confirmed only upon receipt of a deposit as set out in section 03.</p>
             </div>
 
-            <!-- 02 ORDER CONFIRMATION & DEPOSIT -->
+            <!-- 02 -->
             <div class="policy-section" id="s2">
                 <span class="policy-section-number">02</span>
-                <h2 class="policy-section-title">Order Confirmation &amp; Deposit</h2>
+                <h2 class="policy-section-title">Bespoke Goods &amp; Consumer Rights</h2>
                 <div class="policy-divider"></div>
-                <p>Orders are confirmed only upon receipt of a <strong>50% non-refundable deposit</strong> of the total agreed order value. Your order date will not be held or reserved until this deposit has been received.</p>
-                <p>Once your deposit is received and your order is confirmed, you will receive written confirmation of your order details, including the agreed cake description, event date, collection or delivery arrangement, and outstanding balance.</p>
-                <p>Please review your order confirmation carefully and notify us of any errors within 48 hours of receipt.</p>
+                <p>All cakes and baked goods produced by TY Creations are made to your individual specification and are therefore <strong>bespoke goods</strong> within the meaning of the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013.</p>
+                <div class="policy-highlight">
+                    <p>Under the Consumer Contracts Regulations 2013, consumers ordinarily have the right to cancel distance contracts within 14 days. However, this right does not apply to contracts for the supply of goods that are clearly personalised or made to a consumer's individual specification. All orders placed with TY Creations fall within this exemption. By placing an order and paying a deposit, you acknowledge and accept that you are waiving your right to cancel under the Consumer Contracts Regulations 2013. Your cancellation rights are instead governed by section 06 of these terms.</p>
+                </div>
+                <p>Nothing in these terms removes or restricts your rights under the <strong>Consumer Rights Act 2015</strong>, including your right to receive goods that are of satisfactory quality, fit for purpose, and as described. These statutory rights apply to all orders and cannot be excluded or limited by us.</p>
+                <p>If any cake or baked good we supply does not meet these statutory standards through fault on our part, you are entitled to an appropriate remedy in accordance with the Consumer Rights Act 2015. Please refer to section 11 (Complaints) for how to exercise this right.</p>
             </div>
 
-            <!-- 03 PAYMENT -->
+            <!-- 03 -->
             <div class="policy-section" id="s3">
                 <span class="policy-section-number">03</span>
-                <h2 class="policy-section-title">Payment</h2>
+                <h2 class="policy-section-title">Order Confirmation &amp; Deposit</h2>
+                <div class="policy-divider"></div>
+                <p>Orders are confirmed only upon receipt of a <strong>50% non-refundable deposit</strong> of the total agreed order value. Your event date will not be reserved until this deposit has been received and cleared.</p>
+                <p>Following receipt of your deposit, we will issue a written order confirmation setting out:</p>
+                <ul>
+                    <li>The agreed cake or bake description, including size, flavour, and design specification</li>
+                    <li>Your event date and agreed collection or delivery arrangement</li>
+                    <li>The total order value and the outstanding balance due</li>
+                    <li>Any specific requirements noted, including allergen or dietary information</li>
+                </ul>
+                <p>Please review your order confirmation carefully and notify us of any errors or discrepancies within <strong>48 hours</strong> of receipt. We cannot guarantee the ability to make corrections after this period if preparation has commenced.</p>
+                <p>By ticking the agreement checkbox on our enquiry form, you confirm that you have read and accepted these terms and our Privacy Policy in full. A record of this confirmation, including the date and time of submission, is retained by our form processing service (Formspree) and may be referenced in the event of a dispute.</p>
+            </div>
+
+            <!-- 04 -->
+            <div class="policy-section" id="s4">
+                <span class="policy-section-number">04</span>
+                <h2 class="policy-section-title">Payment &amp; VAT</h2>
                 <div class="policy-divider"></div>
                 <p>We accept payment by <strong>bank transfer</strong> or <strong>cash</strong>. All prices are quoted and payable in pounds sterling (GBP).</p>
                 <ul>
-                    <li><strong>Deposit (50%)</strong> — due at the time of booking to confirm your order</li>
-                    <li><strong>Remaining balance (50%)</strong> — due upon collection or prior to delivery</li>
+                    <li><strong>Deposit (50%)</strong> — due at the time of booking to confirm your order and reserve your date</li>
+                    <li><strong>Remaining balance (50%)</strong> — due in full upon collection or prior to delivery, as agreed at the time of booking</li>
                 </ul>
-                <p>We reserve the right to withhold collection or delivery of your order until the outstanding balance has been received in full.</p>
-                <p>All prices quoted are final for the agreed specification. Any changes to the order after confirmation may result in a revised quote, which must be agreed in writing before the change is applied.</p>
+                <p>We reserve the right to withhold collection or delivery of your order until the outstanding balance has been received and confirmed in full.</p>
+                <p>All prices quoted are final for the agreed specification. Changes to the order after confirmation may result in a revised price, which must be agreed in writing before any change is applied.</p>
+                <div class="policy-warning">
+                    <p><strong>VAT:</strong> TY Creations is not currently VAT registered. All prices quoted are therefore not subject to VAT and represent the total amount payable. In the event that we become VAT registered in future, we will notify you and update our pricing accordingly. Any order confirmed before VAT registration will be honoured at the price agreed at the time of confirmation.</p>
+                </div>
             </div>
 
-            <!-- 04 ORDER CHANGES -->
-            <div class="policy-section" id="s4">
-                <span class="policy-section-number">04</span>
-                <h2 class="policy-section-title">Order Changes</h2>
-                <div class="policy-divider"></div>
-                <p>We understand that plans can change. Where possible, we will accommodate reasonable amendments to your order, subject to the following:</p>
-                <ul>
-                    <li>All changes must be requested in writing (by email) and confirmed by us before they take effect</li>
-                    <li>Requests to change flavour, size, design, or quantity must be made at least <strong>7 days before your event date</strong></li>
-                    <li>Changes requested with less than 7 days' notice cannot be guaranteed and may not be possible</li>
-                    <li>Changes that increase the order value will require payment of the additional amount before the change is confirmed</li>
-                    <li>Changes that reduce the order value will not result in a refund of the deposit</li>
-                </ul>
-            </div>
-
-            <!-- 05 CANCELLATION -->
+            <!-- 05 -->
             <div class="policy-section" id="s5">
                 <span class="policy-section-number">05</span>
-                <h2 class="policy-section-title">Cancellation Policy</h2>
+                <h2 class="policy-section-title">Order Changes</h2>
+                <div class="policy-divider"></div>
+                <p>We will accommodate reasonable amendments to confirmed orders where possible, subject to the following conditions:</p>
+                <ul>
+                    <li>All changes must be requested and confirmed in writing (by email) before they take effect</li>
+                    <li>Requests to change flavour, size, tier configuration, design, or guest numbers must be made at least <strong>7 days before your event date</strong></li>
+                    <li>Changes requested with fewer than 7 days' notice cannot be guaranteed and may not be possible, at our discretion</li>
+                    <li>Changes that increase the total order value require payment of the additional amount before the change is confirmed</li>
+                    <li>Changes that reduce the total order value will not result in a refund of any deposit already paid</li>
+                    <li>We reserve the right to decline any change request where work has already commenced</li>
+                </ul>
+            </div>
+
+            <!-- 06 -->
+            <div class="policy-section" id="s6">
+                <span class="policy-section-number">06</span>
+                <h2 class="policy-section-title">Cancellation &amp; Force Majeure</h2>
                 <div class="policy-divider"></div>
                 <p>If you need to cancel your order for any reason, please notify us in writing as soon as possible.</p>
                 <div class="policy-warning">
-                    <p>The 50% deposit is <strong>non-refundable</strong> in all circumstances. This reflects the time, planning, and ingredients already committed to your order at the point of booking.</p>
+                    <p>The 50% deposit is <strong>non-refundable in all circumstances</strong>. This reflects the time, planning, ingredient sourcing, and scheduling already committed to your order at the point of booking.</p>
                 </div>
                 <ul>
-                    <li><strong>Cancellation more than 7 days before the event</strong> — deposit is forfeited; no further charge applies</li>
-                    <li><strong>Cancellation within 7 days of the event</strong> — deposit is forfeited; the full remaining balance may be invoiced where ingredients have already been purchased or preparation has begun</li>
+                    <li><strong>Cancellation more than 7 days before the event</strong> — the deposit is forfeited; no further charge applies.</li>
+                    <li><strong>Cancellation within 7 days of the event</strong> — the deposit is forfeited and the full remaining balance may become payable where ingredients have been purchased, preparation has commenced, or other third-party costs have been incurred.</li>
                 </ul>
-                <p>In the unlikely event that we need to cancel your order due to circumstances beyond our control (such as illness or a serious emergency), we will notify you as soon as possible and refund your deposit in full. This is the limit of our liability in such circumstances.</p>
+                <p><strong>Force majeure:</strong> In the event that we are unable to fulfil your order due to circumstances entirely beyond our reasonable control — including but not limited to serious illness or injury, bereavement, pandemic or public health emergency, extreme weather, fire, flood, power failure, act of God, supplier failure, civil disturbance, or government restriction — we will notify you as soon as reasonably practicable. In such circumstances, we will refund any deposit paid in full and will have no further liability to you beyond this refund. We will always endeavour to provide as much notice as possible and, where circumstances allow, to suggest an alternative arrangement.</p>
             </div>
 
-            <!-- 06 COLLECTION & DELIVERY -->
-            <div class="policy-section" id="s6">
-                <span class="policy-section-number">06</span>
-                <h2 class="policy-section-title">Collection &amp; Delivery</h2>
-                <div class="policy-divider"></div>
-                <p>A specific collection or delivery time must be agreed upon in advance and confirmed in writing. We cannot guarantee flexibility on the day without prior arrangement.</p>
-                <ul>
-                    <li><strong>Delivery within Eastbourne</strong> — complimentary</li>
-                    <li><strong>Delivery to surrounding areas</strong> — available upon request; charges apply (details provided at time of enquiry)</li>
-                    <li><strong>Collection</strong> — available by prior arrangement; address provided upon confirmation of order</li>
-                </ul>
-                <p>Where delivery is agreed, we will take all reasonable care to transport your cake safely. Once the cake has been handed over — whether collected by you or delivered and accepted — responsibility for its condition passes to you.</p>
-                <p>If no one is available to receive a delivery at the agreed time, a redelivery charge may apply.</p>
-            </div>
-
-            <!-- 07 ALLERGENS -->
+            <!-- 07 -->
             <div class="policy-section" id="s7">
                 <span class="policy-section-number">07</span>
+                <h2 class="policy-section-title">Collection &amp; Delivery</h2>
+                <div class="policy-divider"></div>
+                <p>A specific collection or delivery time must be agreed and confirmed in writing in advance. We cannot guarantee flexibility on the day without prior arrangement.</p>
+                <ul>
+                    <li><strong>Delivery within Eastbourne</strong> — complimentary</li>
+                    <li><strong>Delivery to surrounding areas</strong> — available upon request; charges confirmed at the time of enquiry and forming part of the total order value</li>
+                    <li><strong>Collection</strong> — available by prior arrangement; address and precise time confirmed in your order confirmation</li>
+                </ul>
+                <p>Where delivery is agreed, we will take all reasonable care to transport your cake safely to the agreed address. Once the cake has been handed over and accepted — whether collected by you or delivered to you or a nominated recipient — responsibility for its condition passes entirely to you.</p>
+                <p>If no one is available to receive a delivery at the agreed time and address without prior notice to us, a redelivery charge may apply, at our discretion.</p>
+                <p>For tiered or structured cakes, we strongly recommend that delivery is carried out by us rather than transported independently. We accept no liability for damage to tiered cakes caused during self-transport after handover.</p>
+            </div>
+
+            <!-- 08 -->
+            <div class="policy-section" id="s8">
+                <span class="policy-section-number">08</span>
                 <h2 class="policy-section-title">Allergens &amp; Dietary Requirements</h2>
                 <div class="policy-divider"></div>
                 <div class="policy-warning">
-                    <p><strong>Important:</strong> Our cakes are made in a home kitchen that handles gluten, dairy, eggs, nuts (including tree nuts and peanuts), and soya. We cannot guarantee that any product is completely free from traces of these allergens, even when a specific dietary variation has been requested.</p>
+                    <p><strong>Allergen notice:</strong> Our cakes and baked goods are made in a home kitchen that handles the following allergens: <strong>gluten (wheat), dairy (milk), eggs, tree nuts, peanuts, and soya</strong>. Even where a specific dietary variation has been requested, we cannot guarantee that any product is entirely free from traces of these allergens due to the shared kitchen environment. If you or any guest has a severe allergy, please inform us before placing your order so we can advise you honestly on whether we are able to fulfil your requirements safely.</p>
                 </div>
-                <p>If you or any of your guests have a food allergy, intolerance, or dietary requirement, you must inform us in writing at the time of placing your order. We will do our best to accommodate your needs and will advise you honestly if we are unable to do so safely.</p>
-                <p>By placing an order, you accept responsibility for informing your guests of any relevant allergen information and for ensuring that the cake is suitable for those who will consume it. TY Creations Ltd cannot accept liability for any adverse reaction where allergen information has been provided to you in advance.</p>
+                <p>This notice is provided in accordance with the Food Information to Consumers Regulations 2014 (FIC Regulations) and Regulation (EU) No 1169/2011 as retained in UK law, which require food businesses to provide clear allergen information to consumers.</p>
+                <p>If you or any of your guests have a food allergy, intolerance, or specific dietary requirement, you must inform us in writing at the time of placing your order. We will do our best to accommodate your needs and will advise you honestly if we are unable to do so safely.</p>
+                <p>By placing an order, you accept responsibility for informing your guests of the allergen information provided to you and for ensuring the cake is suitable for those who will consume it. TY Creations Ltd cannot accept liability for any adverse reaction where full and accurate allergen information has been disclosed to you in advance of the order.</p>
             </div>
 
-            <!-- 08 CARE -->
-            <div class="policy-section" id="s8">
-                <span class="policy-section-number">08</span>
-                <h2 class="policy-section-title">Care of Your Cake</h2>
-                <div class="policy-divider"></div>
-                <p>To ensure your cake arrives and is served at its best, please follow the care guidance we provide with your order. In general:</p>
-                <ul>
-                    <li>Most cakes should be stored in a cool, dry place and kept out of direct sunlight and heat</li>
-                    <li>Cakes containing fresh cream, fruit, or perishable fillings must be refrigerated and consumed within the timeframe stated on your order confirmation</li>
-                    <li>Allow refrigerated cakes to come to room temperature for at least one hour before serving for the best flavour and texture</li>
-                    <li>Tiered cakes should be transported flat and on a stable, level surface — never on a car seat</li>
-                </ul>
-                <p>We will always provide specific care instructions with your order. We cannot accept responsibility for deterioration caused by failure to follow these guidelines.</p>
-            </div>
-
-            <!-- 09 DAMAGE & LIABILITY -->
+            <!-- 09 -->
             <div class="policy-section" id="s9">
                 <span class="policy-section-number">09</span>
-                <h2 class="policy-section-title">Damage &amp; Liability</h2>
+                <h2 class="policy-section-title">Care of Your Cake</h2>
                 <div class="policy-divider"></div>
-                <p>Once your cake has been collected or delivered and accepted by you or a nominated recipient, responsibility for its condition passes entirely to you. TY Creations cannot be held liable for any damage that occurs after handover, including damage caused during transport, handling, or storage by the customer or any third party.</p>
-                <p>In the event that a fault is identified that is attributable to TY Creations Ltd (for example, a structural issue caused by our construction of the cake), our liability is limited to the value of the original order. TY Creations Ltd will not be liable for any consequential or indirect losses, including costs associated with an event or celebration, loss of enjoyment, or reputational damage.</p>
-                <p>Nothing in these terms limits or excludes TY Creations Ltd's liability for death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or for any other liability that cannot be limited or excluded under the laws of England and Wales.</p>
+                <p>Specific care and storage instructions will be provided with your order. Please follow them carefully. General guidance applies as follows:</p>
+                <ul>
+                    <li>Most cakes should be kept in a cool, dry place away from direct sunlight and heat sources</li>
+                    <li>Cakes containing fresh cream, fresh fruit, or other perishable fillings must be refrigerated and consumed within the timeframe stated in your care instructions</li>
+                    <li>Allow refrigerated cakes to reach room temperature for at least one hour before serving for best flavour and texture</li>
+                    <li>Tiered or structured cakes must be transported on a flat, stable, level surface — never on an inclined car seat or held unsecured during transit</li>
+                    <li>Cakes should not be consumed beyond the use-by guidance provided</li>
+                </ul>
+                <p>We cannot accept responsibility for deterioration in quality, appearance, or safety caused by failure to follow the care instructions provided with your order.</p>
             </div>
 
-            <!-- 10 COMPLAINTS -->
+            <!-- 10 -->
             <div class="policy-section" id="s10">
                 <span class="policy-section-number">10</span>
-                <h2 class="policy-section-title">Complaints</h2>
+                <h2 class="policy-section-title">Damage &amp; Liability</h2>
                 <div class="policy-divider"></div>
-                <p>We take great pride in every cake we make and genuinely want you to be delighted with your order. If you are unhappy with any aspect of your cake, please contact us as soon as possible.</p>
-                <div class="policy-highlight">
-                    <p>Any complaint regarding the quality, appearance, or condition of your cake must be raised <strong>within 24 hours of collection or delivery</strong>, accompanied by clear photographic evidence sent to <a href="mailto:hello@tycreations.co.uk">hello@tycreations.co.uk</a>.</p>
-                </div>
-                <p>Complaints raised after this period, or without photographic evidence, may not be eligible for a remedy, as we will be unable to assess the condition of the cake at the point of handover.</p>
-                <p>Where a valid complaint is received, we will work with you in good faith to reach a fair resolution, which may include a partial refund, a replacement, or a credit against a future order, at our discretion.</p>
+                <p>Once your cake has been collected or delivered and accepted by you or a nominated recipient, responsibility for its condition passes entirely to you. TY Creations cannot be held liable for any damage that occurs after handover, including damage during transport, handling, or storage by you or any third party.</p>
+                <p>In the event that a fault is identified that is directly attributable to TY Creations — for example, a structural failure caused by our construction, or a material deviation from the confirmed order specification — our liability is limited to the value of the original order. TY Creations Ltd will not be liable for any consequential, indirect, or special losses arising from such a fault, including but not limited to costs associated with your event or celebration, loss of enjoyment, or reputational damage.</p>
+                <p>Nothing in these terms limits or excludes our liability for:</p>
+                <ul>
+                    <li>Death or personal injury caused by our negligence</li>
+                    <li>Fraud or fraudulent misrepresentation</li>
+                    <li>
+                        Any breach of your statutory rights under the Consumer Rights Act 2015
+                    </li>
+                    <li>Fraud or fraudulent misrepresentation by a director, officer, or employee of TY Creations Ltd</li>
+                    <li>Any other liability that cannot be excluded or limited under the laws of England and Wales</li>
+                </ul>
             </div>
 
-            <!-- 11 PHOTOGRAPHY & IP -->
+            <!-- 11 -->
             <div class="policy-section" id="s11">
                 <span class="policy-section-number">11</span>
-                <h2 class="policy-section-title">Photography &amp; Intellectual Property</h2>
+                <h2 class="policy-section-title">Complaints</h2>
                 <div class="policy-divider"></div>
-                <p>TY Creations retains the right to photograph all cakes and baked goods we produce, and to use those photographs for portfolio, social media, and marketing purposes. By placing an order, you consent to this use of images of your cake.</p>
-                <p>If you would prefer that images of your cake are not shared publicly — for example, for a surprise event — please let us know in writing at the time of placing your order and we will respect your request.</p>
-                <p>All designs, artwork, and creative concepts produced by TY Creations remain our intellectual property. You are welcome to share images of your cake on personal social media, but we ask that you credit TY Creations where possible.</p>
+                <p>We take great pride in every cake and baked good we produce and genuinely want you to be delighted with your order. If you are unhappy with any aspect of what you receive, please contact us as soon as possible.</p>
+                <div class="policy-highlight">
+                    <p>To enable us to investigate and resolve your concern effectively, any complaint regarding the quality, appearance, or condition of your cake should be raised <strong>within 24 hours of collection or delivery</strong>, accompanied by clear photographic evidence sent to <a href="mailto:tycreations.eastbourne@gmail.com">tycreations.eastbourne@gmail.com</a>.</p>
+                </div>
+                <p>This 24-hour window is a condition for us being able to offer a remedy on a goodwill basis. It does not affect or limit your statutory rights under the Consumer Rights Act 2015, under which you may have longer to bring a claim where goods are not of satisfactory quality, fit for purpose, or as described.</p>
+                <p>Where a valid complaint is received, we will respond promptly and work with you in good faith to reach a fair resolution. Depending on the circumstances, this may include a partial or full refund, a replacement bake, or a credit against a future order, at our reasonable discretion and in accordance with your statutory entitlements.</p>
             </div>
 
-            <!-- 12 GOVERNING LAW -->
+            <!-- 12 -->
             <div class="policy-section" id="s12">
                 <span class="policy-section-number">12</span>
+                <h2 class="policy-section-title">Photography &amp; Intellectual Property</h2>
+                <div class="policy-divider"></div>
+                <p>TY Creations retains full intellectual property rights in all designs, creative concepts, and decorative elements produced as part of your order. The design of your cake does not transfer any intellectual property rights to you by virtue of the order.</p>
+                <p>We reserve the right to photograph all cakes and baked goods we produce and to use those images for portfolio, social media, and marketing purposes. By placing an order, you consent to this use unless you notify us otherwise in writing at the time of placing your order.</p>
+                <p>If you would prefer that images of your specific cake are not shared publicly — for example, because the event is a surprise — please inform us in writing at the point of booking and we will honour your request.</p>
+                <p>You are welcome to share images of your cake on personal social media. We ask that you credit TY Creations where possible, though this is not a condition of your order.</p>
+            </div>
+
+            <!-- 13 -->
+            <div class="policy-section" id="s13">
+                <span class="policy-section-number">13</span>
+                <h2 class="policy-section-title">Entire Agreement</h2>
+                <div class="policy-divider"></div>
+                <p>These terms and conditions, together with your written order confirmation, constitute the entire agreement between you and TY Creations in relation to your order. They supersede all prior discussions, representations, negotiations, correspondence, or agreements — whether written or oral — relating to the subject matter of the order.</p>
+                <p>You acknowledge that you have not entered into this agreement in reliance on any statement, representation, or warranty not expressly set out in these terms or your order confirmation.</p>
+                <p>No variation to these terms shall be effective unless agreed in writing by both parties. For the avoidance of doubt, changes to order specification confirmed by email constitute a written variation and form part of the agreement.</p>
+            </div>
+
+            <!-- 14 -->
+            <div class="policy-section" id="s14">
+                <span class="policy-section-number">14</span>
+                <h2 class="policy-section-title">Severability</h2>
+                <div class="policy-divider"></div>
+                <p>If any provision of these terms and conditions is found by a court or other competent authority to be invalid, unenforceable, or illegal — in whole or in part — that provision or part shall, to the extent required, be deemed not to form part of these terms. The validity and enforceability of the remaining provisions shall not be affected.</p>
+                <p>If any invalid, unenforceable, or illegal provision would be valid, enforceable, or legal if some part of it were deleted, the provision shall apply with whatever modification is necessary to make it valid, enforceable, and legal.</p>
+            </div>
+
+            <!-- 15 -->
+            <div class="policy-section" id="s15">
+                <span class="policy-section-number">15</span>
                 <h2 class="policy-section-title">Governing Law</h2>
                 <div class="policy-divider"></div>
-                <p>These terms and conditions are governed by and construed in accordance with the laws of England and Wales. Any disputes arising from or in connection with these terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
-                <p>We reserve the right to update these terms from time to time. The version in force at the time of your order confirmation will apply to your order.</p>
+                <p>These terms and conditions are governed by and construed in accordance with the laws of <strong>England and Wales</strong>. Any dispute arising out of or in connection with these terms, including any question regarding the authority of any representative of TY Creations Ltd, — including any question regarding their existence, validity, or termination — shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+                <p>Nothing in this clause affects your rights as a consumer to bring proceedings in the courts of the country in which you are domiciled, where applicable under UK consumer protection law.</p>
+                <p>We reserve the right to update these terms from time to time. The version in force at the date of your order confirmation will apply to your order. The current version of these terms is always available on our website.</p>
                 <div class="policy-highlight">
-                    <p>If you have any questions about these terms, please contact us at <a href="mailto:hello@tycreations.co.uk">hello@tycreations.co.uk</a> before placing your order.</p>
+                    <p>If you have any questions about these terms before placing your order, please contact us at <a href="mailto:tycreations.eastbourne@gmail.com">tycreations.eastbourne@gmail.com</a> and we will be happy to assist.
+                    <p style="margin-top:14px;font-size:0.82rem;color:var(--text-light);font-weight:300;">TY Creations Ltd is a company registered in England and Wales. Companies House Number: <strong>[INSERT COMPANIES HOUSE NUMBER]</strong>. Registered office: <strong>[INSERT REGISTERED OFFICE ADDRESS]</strong>.</p></p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <div class="footer-logo">TY Creations</div>
-        <p>Handcrafted cakes for life's most beautiful moments.</p>
+        <div class="footer-logo" id="footerLogo">TY Creations</div>
+        <p id="footerTagline">Handcrafted cakes for life's most beautiful moments.</p>
         <div class="footer-divider"></div>
         <div class="footer-links">
-            <a href="default_page.html#menu">Menu</a>
-            <a href="default_page.html#gallery">Gallery</a>
-            <a href="default_page.html#about-me">About</a>
-            <a href="default_page.html#enquire">Enquire</a>
+            <a href="#menu">Menu</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#enquire">Enquire</a>
         </div>
-        <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2026 TY Creations Ltd. All rights reserved.</p>
+        <p style="margin-top:12px;">
+            <a href="privacy_policy.html" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;">Privacy Policy</a>
+            <a> / </a>
+            <a href="terms_and_conditions.html" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;">Terms &amp; Conditions</a>
+        </p>
+        <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2026 TY Creations. All rights reserved.</p>
     </footer>
-
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
@@ -238,6 +482,5 @@
             });
         });
     </script>
-
 </body>
 </html>

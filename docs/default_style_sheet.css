@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap');
 
 * {
     margin: 0;
@@ -7,21 +7,21 @@
 }
 
 :root {
-    --bg: #f7f5f0;
-    --primary: #7a9e7e;
-    --primary-light: #a8c5a0;
-    --primary-dark: #5a7a5e;
-    --accent: #c9a96e;
-    --text: #3a3a3a;
-    --text-light: #7a7a7a;
+    --bg: #F8F7F4;
+    --primary: #A8B5A2;
+    --primary-light: #C4CFC0;
+    --primary-dark: #687D6A;
+    --accent: #E8DED2;
+    --text: #2F2F2F;
+    --text-light: #6B6B6B;
     --card-bg: #fff;
-    --hero-bg: #e8ede8;
-    --section-alt: #f0f4f0;
-    --border: #d4e0d4;
+    --hero-bg: #EFF1EE;
+    --section-alt: #F2F4F0;
+    --border: #D8DDD6;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: var(--bg);
     color: var(--text);
     transition: all 0.6s ease;
@@ -46,7 +46,7 @@ nav {
 }
 
 .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.3rem;
     font-weight: 600;
     color: var(--primary-dark);
@@ -109,7 +109,7 @@ nav {
 }
 
 .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 300;
     color: var(--primary-dark);
@@ -147,6 +147,7 @@ nav {
     position: relative;
     background: transparent;
     cursor: pointer;
+    border-radius: 8px;
 }
 
     .btn:hover {
@@ -181,7 +182,7 @@ section {
 }
 
 .section-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 300;
     color: var(--primary-dark);
@@ -224,7 +225,7 @@ section {
     transition: background 0.6s;
 }
 
-.about-text p {
+.about-text p:not(.section-tag):not(.section-sub) {
     font-size: 1rem;
     color: var(--text-light);
     line-height: 1.9;
@@ -358,7 +359,7 @@ section {
 }
 
 .card-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     font-weight: 400;
     color: var(--primary-dark);
@@ -442,7 +443,7 @@ a.card-link {
     .form-group textarea {
         border: 1px solid var(--border);
         padding: 13px 16px;
-        font-family: 'Lato', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 0.9rem;
         color: var(--text);
         background: #fff;
@@ -485,7 +486,7 @@ a.card-link {
     letter-spacing: 0.14em;
     border: none;
     cursor: pointer;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .delivery-result {
@@ -542,7 +543,7 @@ a.card-link {
 }
 
 .delivery-cost {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 300;
     color: var(--primary-dark);
@@ -617,7 +618,7 @@ footer {
 }
 
     footer .footer-logo {
-        font-family: 'Cormorant Garamond', serif;
+        font-family: 'Playfair Display', serif;
         font-size: 2rem;
         font-weight: 300;
         color: #fff;
@@ -775,79 +776,6 @@ body:not(.catering) .brand-catering {
     .form-row {
         grid-template-columns: 1fr;
     }
-}
-
-/* ── T&C AGREEMENT CHECKBOX ── */
-.form-agree {
-    margin-bottom: 24px;
-}
-
-.agree-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    cursor: pointer;
-    text-transform: none;
-    letter-spacing: 0;
-    font-size: 0.85rem;
-    color: var(--text-light);
-    font-weight: 300;
-    line-height: 1.7;
-}
-
-    .agree-label input[type="checkbox"] {
-        appearance: none;
-        -webkit-appearance: none;
-        width: 18px;
-        height: 18px;
-        min-width: 18px;
-        border: 1px solid var(--border);
-        background: #fff;
-        cursor: pointer;
-        margin-top: 2px;
-        transition: border-color 0.3s, background 0.3s;
-        position: relative;
-    }
-
-        .agree-label input[type="checkbox"]:checked {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-
-            .agree-label input[type="checkbox"]:checked::after {
-                content: '';
-                position: absolute;
-                left: 5px;
-                top: 2px;
-                width: 5px;
-                height: 9px;
-                border: 2px solid #fff;
-                border-top: none;
-                border-left: none;
-                transform: rotate(45deg);
-            }
-
-        .agree-label input[type="checkbox"]:focus {
-            outline: 2px solid var(--primary-light);
-            outline-offset: 2px;
-        }
-
-    .agree-label a {
-        color: var(--primary);
-        text-decoration: none;
-        border-bottom: 1px solid transparent;
-        transition: border-color 0.3s;
-    }
-
-        .agree-label a:hover {
-            border-bottom-color: var(--primary);
-        }
-
-.agree-error {
-    margin-top: 8px;
-    font-size: 0.8rem;
-    color: #9a4545;
-    font-weight: 300;
 }
 
 /* ── FORM SUCCESS & ERROR ── */
@@ -1048,5 +976,213 @@ body:not(.catering) .brand-catering {
         font-size: 3rem;
         top: 10px;
         right: 12px;
+    }
+}
+
+/* ── NAV ORDER BUTTON ── */
+.nav-order-btn {
+    padding: 10px 24px;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+/* ── WHY CHOOSE ME ── */
+.why-list {
+    max-width: 640px;
+    margin: 40px auto 0;
+}
+
+.why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+    .why-item:last-child {
+        border-bottom: none;
+    }
+
+.why-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.why-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+    margin-bottom: 4px;
+}
+
+.why-desc {
+    font-size: 0.84rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* ── SIGNATURE HONEY SPOTLIGHT ── */
+.honey-spotlight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.honey-spotlight-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 4px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.honey-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary-dark);
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* ── HOW TO ORDER ── */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    max-width: 1100px;
+    margin: 50px auto 0;
+}
+
+.step-item {
+    text-align: center;
+    padding: 10px 16px;
+}
+
+.step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+
+.step-desc {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* ── FAQ ACCORDION ── */
+.faq-wrap {
+    max-width: 720px;
+    margin: 50px auto 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 0.92rem;
+    color: var(--text);
+    font-weight: 400;
+    gap: 16px;
+    transition: color 0.3s;
+    list-style: none;
+    user-select: none;
+}
+
+    .faq-question:hover {
+        color: var(--primary-dark);
+    }
+
+.faq-icon {
+    font-size: 1.2rem;
+    color: var(--primary);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+    line-height: 1;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 300px;
+    padding-bottom: 20px;
+}
+
+/* ── STICKY MOBILE ORDER BUTTON ── */
+.sticky-order-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(104,125,106,0.35);
+}
+
+@media (max-width: 768px) {
+    .sticky-order-btn {
+        display: inline-block;
+    }
+
+    .nav-order-btn {
+        display: none;
+    }
+
+    .honey-spotlight {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .why-list {
+        max-width: 100%;
     }
 }
