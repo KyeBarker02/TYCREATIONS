@@ -76,6 +76,89 @@ nav {
         .nav-links a:hover {
             color: var(--primary);
         }
+/* ── NAV DROPDOWN ── */
+.nav-dropdown {
+    position: relative;
+}
+ 
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+ 
+.nav-chevron {
+    font-size: 1.1rem;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.25s ease;
+    color: var(--text-light);
+}
+ 
+.nav-dropdown:hover .nav-chevron,
+.nav-dropdown.open .nav-chevron {
+    transform: rotate(180deg);
+    color: var(--primary);
+}
+ 
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+    padding: 8px 0;
+    min-width: 190px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-6px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    z-index: 200;
+}
+ 
+/* Small arrow pip pointing up */
+.nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    rotate: 45deg;
+}
+ 
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+}
+ 
+.nav-dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase;
+    color: var(--text-light) !important;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+ 
+.nav-dropdown-menu a:hover {
+    background: var(--hero-bg);
+    color: var(--primary) !important;
+}
 
 /* ── HERO ── */
 .hero {
