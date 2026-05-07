@@ -114,14 +114,12 @@ function openGallery(folder, startIndex = 0) {
         }
     });
 
-    // Jump straight into zoomed view at the clicked image
+    // Scroll the lightbox so the clicked image is visible
     requestAnimationFrame(() => {
         const items = lightboxContent.children;
         if (items[startIndex]) {
             items[startIndex].scrollIntoView({ block: 'nearest' });
         }
-        currentIndex = startIndex;
-        showZoomedMedia();
     });
 }
 
