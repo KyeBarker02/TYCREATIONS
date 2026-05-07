@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery — TY Creations</title>
+    <link rel="stylesheet" href="default_style_sheet.css">
+    <link rel="stylesheet" href="menu_page_style.css">
+    <link rel="stylesheet" href="gallery_style.css">
+</head>
+<body>
+ 
+    <!-- NAV -->
+    <nav>
+        <a href="default_page.html" class="nav-logo" id="navLogo" style="text-decoration:none;">
+            <img src="logo_img.jpg" alt="Logo" style="float:left; width:42px; height:42px;">
+            <span id="navLogoText">TY Creations</span>
+        </a>
+        <div class="nav-links">
+            <a href="menu_honey_cake.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="default_page.html#about-me">About</a>
+            <a href="default_page.html#enquire">Enquire</a>
+        </div>
+    </nav>
+ 
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div style="position:relative;">
+            <p class="page-hero-eyebrow">Every Cake, A Story</p>
+            <h1>The <em>Gallery</em></h1>
+            <p class="page-hero-desc">A collection of handcrafted cakes made with love. Browse by category and click any image to explore the full set.</p>
+        </div>
+    </section>
+ 
+    <!-- HONEY CAKES -->
+    <section class="gallery-category" id="cat-HoneyCakes">
+        <div class="gallery-category-inner">
+            <a href="default_page.html" class="back-link">Back to Home</a>
+            <div class="category-header">
+                <p class="section-tag">Signature Bake</p>
+                <h2>The <em>Honey Cake</em></h2>
+                <div class="divider"></div>
+                <p>Our most beloved creation — golden honey layers, light fragrant cream, and a finish that turns heads. Click any image to open the full gallery.</p>
+            </div>
+            <div class="preview-grid preview-grid--A" id="grid-HoneyCakes"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('HoneyCakes')">View All Honey Cake Photos</button>
+                <span class="category-count" id="count-HoneyCakes"></span>
+            </div>
+        </div>
+    </section>
+ 
+    <div class="category-divider"></div>
+ 
+    <!-- OCCASION CAKES -->
+    <section class="gallery-category alt-bg" style="max-width:unset; padding-left:0; padding-right:0;" id="cat-OccasionCakes">
+        <div class="gallery-category-inner" style="padding: 0 60px;">
+            <div class="category-header">
+                <p class="section-tag">Celebrations</p>
+                <h2><em>Occasion</em> Cakes</h2>
+                <div class="divider"></div>
+                <p>Birthdays, anniversaries, baby showers, graduations — every milestone deserves a cake as unique as the moment itself.</p>
+            </div>
+            <div class="preview-grid preview-grid--B" id="grid-OccasionCakes"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('OccasionCakes')">View All Occasion Cakes</button>
+                <span class="category-count" id="count-OccasionCakes"></span>
+            </div>
+        </div>
+    </section>
+ 
+    <div class="category-divider"></div>
+ 
+    <!-- OTHER CAKES -->
+    <section class="gallery-category" id="cat-OtherCakes">
+        <div class="gallery-category-inner">
+            <div class="category-header">
+                <p class="section-tag">Bespoke Creations</p>
+                <h2>All Other <em>Cakes</em></h2>
+                <div class="divider"></div>
+                <p>From elegant single tiers to towering multi-tiered showpieces — every cake crafted entirely around your vision.</p>
+            </div>
+            <div class="preview-grid preview-grid--C" id="grid-OtherCakes"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('OtherCakes')">View All Cake Creations</button>
+                <span class="category-count" id="count-OtherCakes"></span>
+            </div>
+        </div>
+    </section>
+ 
+    <div class="category-divider"></div>
+ 
+    <!-- SMALL BAKES -->
+    <section class="gallery-category alt-bg" style="max-width:unset; padding-left:0; padding-right:0;" id="cat-SmallBakes">
+        <div class="gallery-category-inner" style="padding: 0 60px;">
+            <div class="category-header">
+                <p class="section-tag">Bite-Sized &amp; Beautiful</p>
+                <h2><em>Small</em> Bakes</h2>
+                <div class="divider"></div>
+                <p>Perfectly formed and just as lovingly crafted — cupcakes, cake pops, shortbread, brownie boxes, and more.</p>
+            </div>
+            <div class="preview-grid preview-grid--D" id="grid-SmallBakes"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('SmallBakes')">View All Small Bakes</button>
+                <span class="category-count" id="count-SmallBakes"></span>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- ENQUIRE CTA STRIP -->
+    <section style="text-align:center; padding:80px 60px; background:var(--hero-bg);">
+        <p class="section-tag">Love What You See?</p>
+        <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.6rem); font-weight:300; color:var(--primary-dark); margin-bottom:16px;">Let's Create Something<br><em>Just for You</em></h2>
+        <p style="font-size:0.95rem; color:var(--text-light); max-width:460px; margin:0 auto 36px; line-height:1.8; font-weight:300;">Every cake is made to order, designed around your occasion and vision. Get in touch to start planning yours.</p>
+        <a href="default_page.html#enquire" class="btn btn-filled">Enquire Now</a>
+    </section>
+ 
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">TY Creations</div>
+        <p>Handcrafted cakes for life's most beautiful moments.</p>
+        <div class="footer-divider"></div>
+        <div class="footer-links">
+            <a href="menu_honey_cake.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="default_page.html#about-me">About</a>
+            <a href="default_page.html#enquire">Enquire</a>
+        </div>
+        <p style="margin-top:12px;">
+            <a href="privacy_policy.html" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;">Privacy Policy</a>
+            <a style="color:rgba(255,255,255,0.5);"> / </a>
+            <a href="terms_and_conditions.html" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;">Terms &amp; Conditions</a>
+        </p>
+        <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2026 TY Creations. All rights reserved.</p>
+    </footer>
+ 
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content" id="lightboxContent"></div>
+        <div id="imageZoom" class="image-zoom">
+            <span class="zoom-arrow left">&#10094;</span>
+            <img id="zoomedImg" src="" alt="" />
+            <span class="zoom-arrow right">&#10095;</span>
+        </div>
+    </div>
+ 
+    <!-- SCRIPTS: gallery_data first, then page logic, then bee animation -->
+    <script src="gallery_data.js"></script>
+    <script src="gallery_page_script.js"></script>
+    <script src="bee_script.js"></script>
+ 
+</body>
+</html>
