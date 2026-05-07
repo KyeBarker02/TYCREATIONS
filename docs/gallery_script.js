@@ -20,7 +20,20 @@ function isVideo(src) {
 galleryItems.forEach(item => {
     item.addEventListener('click', () => {
         const folder = item.getAttribute('data-folder');
-        openGallery(folder);
+        const files  = window.galleryData[folder] || [];
+
+        // Pull the preview image src from the placeholder's background-image style
+        const placeholder = item.querySelector('.gallery-placeholder');
+        const bgStyle     = placeholder ? placeholder.style.backgroundImage : '';
+        const match       = bgStyle.match(/url\(['"]?([^'"]+)['"]?\)/);
+        const previewSrc  = match ? match[1] : '';
+
+        // Find that image's position in the full folder so arrows navigate the whole set
+        const startIndex = files.indexOf(previewSrc);
+
+        currentImages = files;
+        currentIndex  = startIndex >= 0 ? startIndex : 0;
+        showZoomedMedia();
     });
 });
 
