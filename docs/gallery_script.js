@@ -33,6 +33,10 @@ galleryItems.forEach(item => {
 
         currentImages = files;
         currentIndex  = startIndex >= 0 ? startIndex : 0;
+
+        // imageZoom is nested inside lightbox, so lightbox must be active for it to show.
+        // lightboxContent is left empty so only the zoomed image appears — no grid.
+        lightbox.classList.add('active');
         showZoomedMedia();
     });
 });
