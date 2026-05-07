@@ -1,7 +1,11 @@
 /**
- * TY Creations — Honeybee Header Animation
- * Two elliptical loop-the-loops: left is twice the size of the right.
- * Dramatic wave arcs between loops. Dashed flight-path trail.
+ * TY Creations — Honeybee Animation
+ *
+ * Desktop (≥768px): Bee travels horizontally across the top navbar on scroll.
+ *   Two elliptical loop-the-loops with dramatic wave arcs between them.
+ *
+ * Mobile (<768px): Bee travels vertically down the right edge on scroll.
+ *   Same loop-the-loop + wave structure, rotated 90° — loops extend leftward.
  *
  * HOW TO USE: Add inside your HTML <body> (after other scripts):
  *   <script src="bee_script.js"></script>
@@ -9,24 +13,41 @@
 (function () {
     'use strict';
 
+    const MOBILE_BREAKPOINT = 768;
+
     // ── CONFIGURATION ─────────────────────────────────────────────────────
     const CFG = {
-        navY: 94,
-        beeW: 58,
-        beeH: 36,
+        // Desktop
+        navY:        94,
         startMargin: 80,
-        endMargin: 100,
-        scrollCap: 0.99,
+        endMargin:   100,
+        // Mobile
+        navXOffset:  28,   // px from the right edge
+        startMarginY: 80,
+        endMarginY:   80,
+        // Shared
+        beeW:        58,
+        beeH:        36,
+        scrollCap:   0.99,
         pathSamples: 600,
     };
 
-    // ── SEGMENT LAYOUT ────────────────────────────────────────────────────
-    const SEGS = [
+    // ── DESKTOP SEGMENTS (horizontal path) ───────────────────────────────
+    const SEGS_H = [
         { t0: 0.00, t1: 0.12, type: 'wave', waveH: 20, cycles: 1 },
         { t0: 0.12, t1: 0.46, type: 'loop', rx: 52, ry: 34 },
         { t0: 0.46, t1: 0.60, type: 'wave', waveH: 26, cycles: 2 },
         { t0: 0.60, t1: 0.78, type: 'loop', rx: 26, ry: 17 },
         { t0: 0.78, t1: 1.00, type: 'wave', waveH: 20, cycles: 1 },
+    ];
+
+    // ── MOBILE SEGMENTS (vertical path, loops bulge leftward) ────────────
+    const SEGS_V = [
+        { t0: 0.00, t1: 0.12, type: 'wave', waveH: 18, cycles: 1 },
+        { t0: 0.12, t1: 0.46, type: 'loop', rx: 28, ry: 42 },
+        { t0: 0.46, t1: 0.60, type: 'wave', waveH: 22, cycles: 2 },
+        { t0: 0.60, t1: 0.78, type: 'loop', rx: 14, ry: 22 },
+        { t0: 0.78, t1: 1.00, type: 'wave', waveH: 18, cycles: 1 },
     ];
 
     // ── DASHED TRAIL SVG ──────────────────────────────────────────────────
@@ -35,23 +56,23 @@
     const trailSvg = document.createElementNS(ns, 'svg');
     trailSvg.id = 'ty-bee-trail';
     Object.assign(trailSvg.style, {
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        width: '100%',
-        height: '160px',
-        zIndex: '101',
+        position:      'fixed',
+        top:           '0',
+        left:          '0',
+        width:         '100%',
+        height:        '100%',
+        zIndex:        '101',
         pointerEvents: 'none',
-        overflow: 'visible',
+        overflow:      'visible',
     });
 
     const trailPath = document.createElementNS(ns, 'path');
-    trailPath.setAttribute('fill', 'none');
-    trailPath.setAttribute('stroke', '#5a7a5e');
-    trailPath.setAttribute('stroke-width', '1.4');
+    trailPath.setAttribute('fill',             'none');
+    trailPath.setAttribute('stroke',           '#5a7a5e');
+    trailPath.setAttribute('stroke-width',     '1.4');
     trailPath.setAttribute('stroke-dasharray', '4 8');
-    trailPath.setAttribute('stroke-linecap', 'round');
-    trailPath.setAttribute('opacity', '0.38');
+    trailPath.setAttribute('stroke-linecap',   'round');
+    trailPath.setAttribute('opacity',          '0.38');
     trailSvg.appendChild(trailPath);
     document.body.appendChild(trailSvg);
 
@@ -59,17 +80,17 @@
     const bee = document.createElement('div');
     bee.id = 'ty-bee';
     Object.assign(bee.style, {
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        width: CFG.beeW + 'px',
-        height: CFG.beeH + 'px',
-        zIndex: '102',
-        pointerEvents: 'none',
-        willChange: 'transform',
+        position:        'fixed',
+        top:             '0',
+        left:            '0',
+        width:           CFG.beeW + 'px',
+        height:          CFG.beeH + 'px',
+        zIndex:          '102',
+        pointerEvents:   'none',
+        willChange:      'transform',
         transformOrigin: '50% 50%',
-        filter: 'drop-shadow(0 2px 5px rgba(0,0,0,0.18))',
-        lineHeight: '0',
+        filter:          'drop-shadow(0 2px 5px rgba(0,0,0,0.18))',
+        lineHeight:      '0',
     });
 
     // Wings have IDs so JS can animate their ry attribute directly.
@@ -131,7 +152,6 @@
     document.body.appendChild(bee);
 
     // ── WING FLAP ─────────────────────────────────────────────────────────
-    // Animate ry of each wing ellipse directly so the wings visibly beat.
     // Front wings: ry oscillates 3 → 13  (~20 Hz)
     // Rear wings:  ry oscillates 2 → 10  (same freq, π/4 phase offset)
     const wFL = bee.querySelector('#ty-w-fl');
@@ -139,79 +159,137 @@
     const wRL = bee.querySelector('#ty-w-rl');
     const wRR = bee.querySelector('#ty-w-rr');
 
-    const FRONT_RY_MAX = 13;
-    const FRONT_RY_MIN = 3;
-    const REAR_RY_MAX = 10;
-    const REAR_RY_MIN = 2;
-    const FLAP_SPEED = 0.06; // radians per ms — ~20 Hz
+    const FRONT_RY_MAX = 13,  FRONT_RY_MIN = 3;
+    const REAR_RY_MAX  = 10,  REAR_RY_MIN  = 2;
+    const FLAP_SPEED   = 0.06; // radians per ms — ~20 Hz
 
     function animateWings(ts) {
         const frontRy = FRONT_RY_MIN + (FRONT_RY_MAX - FRONT_RY_MIN) * (0.5 + 0.5 * Math.sin(ts * FLAP_SPEED));
-        const rearRy = REAR_RY_MIN + (REAR_RY_MAX - REAR_RY_MIN) * (0.5 + 0.5 * Math.sin(ts * FLAP_SPEED + Math.PI / 4));
-
+        const rearRy  = REAR_RY_MIN  + (REAR_RY_MAX  - REAR_RY_MIN)  * (0.5 + 0.5 * Math.sin(ts * FLAP_SPEED + Math.PI / 4));
         wFL.setAttribute('ry', frontRy.toFixed(2));
         wFR.setAttribute('ry', frontRy.toFixed(2));
         wRL.setAttribute('ry', rearRy.toFixed(2));
         wRR.setAttribute('ry', rearRy.toFixed(2));
-
         requestAnimationFrame(animateWings);
     }
     requestAnimationFrame(animateWings);
 
-    // ── BUILD PATH SEGMENTS ───────────────────────────────────────────────
-    function buildSegments() {
-        const W = window.innerWidth;
+    // ═══════════════════════════════════════════════════════════════════════
+    // DESKTOP MODE — horizontal path along the top navbar
+    // ═══════════════════════════════════════════════════════════════════════
+
+    function buildDesktopSegments() {
+        const W  = window.innerWidth;
         const x0 = CFG.startMargin;
         const x1 = W - CFG.endMargin;
         const sp = x1 - x0;
-
         const cx1 = x0 + sp * 0.32;
         const cx2 = x0 + sp * 0.70;
 
-        const loopSegs = SEGS.filter(s => s.type === 'loop');
-        loopSegs[0].cx = cx1;
-        loopSegs[0].cy = CFG.navY - loopSegs[0].ry;
-        loopSegs[1].cx = cx2;
-        loopSegs[1].cy = CFG.navY - loopSegs[1].ry;
+        const loopSegs = SEGS_H.filter(s => s.type === 'loop');
+        loopSegs[0].cx = cx1;  loopSegs[0].cy = CFG.navY - loopSegs[0].ry;
+        loopSegs[1].cx = cx2;  loopSegs[1].cy = CFG.navY - loopSegs[1].ry;
 
-        const waveSegs = SEGS.filter(s => s.type === 'wave');
-        waveSegs[0].x0 = x0; waveSegs[0].x1 = cx1;
-        waveSegs[1].x0 = cx1; waveSegs[1].x1 = cx2;
-        waveSegs[2].x0 = cx2; waveSegs[2].x1 = x1;
+        const waveSegs = SEGS_H.filter(s => s.type === 'wave');
+        waveSegs[0].x0 = x0;   waveSegs[0].x1 = cx1;
+        waveSegs[1].x0 = cx1;  waveSegs[1].x1 = cx2;
+        waveSegs[2].x0 = cx2;  waveSegs[2].x1 = x1;
     }
 
-    // ── POSITION FROM PROGRESS [0, 1] ────────────────────────────────────
-    function getPos(progress) {
+    function getDesktopPos(progress) {
         const p = Math.min(1, Math.max(0, progress));
-
-        for (const s of SEGS) {
+        for (const s of SEGS_H) {
             if (p >= s.t0 && p < s.t1) {
                 const lt = (p - s.t0) / (s.t1 - s.t0);
-
                 if (s.type === 'wave') {
                     const wave = s.waveH * Math.sin(lt * s.cycles * Math.PI);
-                    const x = s.x0 + lt * (s.x1 - s.x0);
-                    const y = CFG.navY - wave;
+                    const x    = s.x0 + lt * (s.x1 - s.x0);
+                    const y    = CFG.navY - wave;
                     const dydl = -s.waveH * s.cycles * Math.PI * Math.cos(lt * s.cycles * Math.PI);
                     const dxdl = s.x1 - s.x0;
                     return { x, y, angle: Math.atan2(dydl, dxdl) * 180 / Math.PI };
                 }
-
                 const theta = Math.PI / 2 - lt * 2 * Math.PI;
                 return {
-                    x: s.cx + s.rx * Math.cos(theta),
-                    y: s.cy + s.ry * Math.sin(theta),
+                    x:     s.cx + s.rx * Math.cos(theta),
+                    y:     s.cy + s.ry * Math.sin(theta),
                     angle: Math.atan2(-s.ry * Math.cos(theta), s.rx * Math.sin(theta)) * 180 / Math.PI,
                 };
             }
         }
-
-        const last = SEGS[SEGS.length - 1];
+        const last = SEGS_H[SEGS_H.length - 1];
         return { x: last.x1, y: CFG.navY, angle: 0 };
     }
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // MOBILE MODE — vertical path down the right edge
+    //
+    // Geometry for vertical loops:
+    //   x = cx + rx·sin(θ)   (oscillates left/right from cx)
+    //   y = cy + ry·cos(θ)   (travels up/down)
+    //
+    // Entry (θ = π/2, lt = 0): x = cx + rx,  y = cy
+    //   → cx = navX − rx  so that entry x = navX ✓
+    //
+    // The loop traces: navX → down-left → leftmost → up-left → navX
+    // i.e. a sideways loop-the-loop extending left off the right edge.
+    // ═══════════════════════════════════════════════════════════════════════
+
+    let mobileNavX; // computed in buildMobileSegments
+
+    function buildMobileSegments() {
+        mobileNavX = window.innerWidth - CFG.navXOffset;
+        const H   = window.innerHeight;
+        const y0  = CFG.startMarginY;
+        const y1  = H - CFG.endMarginY;
+        const sp  = y1 - y0;
+        const cy1 = y0 + sp * 0.32;
+        const cy2 = y0 + sp * 0.70;
+
+        // Loop centres: cx = navX − rx so the bee enters at navX
+        const loopSegs = SEGS_V.filter(s => s.type === 'loop');
+        loopSegs[0].cy = cy1;  loopSegs[0].cx = mobileNavX - loopSegs[0].rx;
+        loopSegs[1].cy = cy2;  loopSegs[1].cx = mobileNavX - loopSegs[1].rx;
+
+        // Wave segments span between y0, cy1, cy2, y1
+        const waveSegs = SEGS_V.filter(s => s.type === 'wave');
+        waveSegs[0].y0 = y0;   waveSegs[0].y1 = cy1;
+        waveSegs[1].y0 = cy1;  waveSegs[1].y1 = cy2;
+        waveSegs[2].y0 = cy2;  waveSegs[2].y1 = y1;
+    }
+
+    function getMobilePos(progress) {
+        const p = Math.min(1, Math.max(0, progress));
+        for (const s of SEGS_V) {
+            if (p >= s.t0 && p < s.t1) {
+                const lt = (p - s.t0) / (s.t1 - s.t0);
+
+                if (s.type === 'wave') {
+                    // Main axis = Y (downward), oscillation = X (leftward from navX)
+                    const wave = s.waveH * Math.sin(lt * s.cycles * Math.PI);
+                    const y    = s.y0 + lt * (s.y1 - s.y0);
+                    const x    = mobileNavX - wave;
+                    // Tangent angle — atan2(dy, dx) keeps 0° = facing right, 90° = facing down
+                    const dxdl = -s.waveH * s.cycles * Math.PI * Math.cos(lt * s.cycles * Math.PI);
+                    const dydl = s.y1 - s.y0;
+                    return { x, y, angle: Math.atan2(dydl, dxdl) * 180 / Math.PI };
+                }
+
+                // Vertical ellipse traversal
+                const theta = Math.PI / 2 - lt * 2 * Math.PI;
+                const x     = s.cx + s.rx * Math.sin(theta);
+                const y     = s.cy + s.ry * Math.cos(theta);
+                // Tangent: dx/dl ∝ -rx·cos(θ),  dy/dl ∝ ry·sin(θ)
+                const angle = Math.atan2(s.ry * Math.sin(theta), -s.rx * Math.cos(theta)) * 180 / Math.PI;
+                return { x, y, angle };
+            }
+        }
+        const last = SEGS_V[SEGS_V.length - 1];
+        return { x: mobileNavX, y: last.y1, angle: 90 };
+    }
+
     // ── DRAW DASHED TRAIL ─────────────────────────────────────────────────
-    function drawTrail() {
+    function drawTrail(getPos) {
         const pts = [];
         for (let i = 0; i <= CFG.pathSamples; i++) {
             const { x, y } = getPos(i / CFG.pathSamples);
@@ -221,23 +299,31 @@
     }
 
     // ── SCROLL UPDATE ─────────────────────────────────────────────────────
+    let currentGetPos = getDesktopPos;
+
     function update() {
         const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
-        const progress = Math.min(1, Math.max(0, window.scrollY / (maxScroll * CFG.scrollCap)));
-        const { x, y, angle } = getPos(progress);
+        const progress  = Math.min(1, Math.max(0, window.scrollY / (maxScroll * CFG.scrollCap)));
+        const { x, y, angle } = currentGetPos(progress);
         bee.style.transform =
             `translate(${(x - CFG.beeW / 2).toFixed(1)}px, ${(y - CFG.beeH / 2).toFixed(1)}px) rotate(${angle.toFixed(1)}deg)`;
     }
 
     // ── INIT & RESIZE ─────────────────────────────────────────────────────
     function init() {
-        buildSegments();
-        drawTrail();
+        if (window.innerWidth < MOBILE_BREAKPOINT) {
+            buildMobileSegments();
+            currentGetPos = getMobilePos;
+        } else {
+            buildDesktopSegments();
+            currentGetPos = getDesktopPos;
+        }
+        drawTrail(currentGetPos);
         update();
     }
 
     init();
-    window.addEventListener('resize', init, { passive: true });
+    window.addEventListener('resize', init,   { passive: true });
     window.addEventListener('scroll', update, { passive: true });
 
 })();
