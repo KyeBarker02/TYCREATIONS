@@ -22,3 +22,27 @@ document.querySelectorAll('.faq-question').forEach(q => {
         if (!isOpen) item.classList.add('open');
     });
 });
+
+// Nav dropdown — toggle on click/tap for touch devices
+document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', e => {
+        // Only intercept if it's a touch/pointer device (hover won't fire)
+        const dropdown = toggle.closest('.nav-dropdown');
+        const isOpen   = dropdown.classList.contains('open');
+ 
+        // Close all dropdowns first
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+ 
+        if (!isOpen) {
+            e.preventDefault(); // stay on page, show dropdown
+            dropdown.classList.add('open');
+        }
+    });
+});
+ 
+// Close dropdown when clicking outside
+document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    }
+});
