@@ -46,7 +46,10 @@ nav {
 }
 
 .nav-logo {
-    font-family: 'Westonia', 'Playfair Display', serif;
+    
+    /*font-family: 'Westonia', 'Playfair Display', serif;*/
+    
+    font-family: 'Great Vibes', 'Playfair Display', serif;
     font-size: 2.3rem;
     font-weight: 400;
     color: var(--primary-dark);
