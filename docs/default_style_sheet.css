@@ -88,18 +88,22 @@ nav {
     cursor: pointer;
     white-space: nowrap;
 }
- 
+
 .nav-chevron {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1;
     display: inline-block;
     transition: transform 0.25s ease;
     color: var(--text-light);
+    transform-origin: 30% 77%;
+    position: relative;
+    top: -5px;
+    transform: rotate(90deg);
 }
- 
+
 .nav-dropdown:hover .nav-chevron,
 .nav-dropdown.open .nav-chevron {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
     color: var(--primary);
 }
  
@@ -364,7 +368,6 @@ section {
 .gallery-item {
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     border-radius: 2px;
 }
 
@@ -377,11 +380,23 @@ section {
     transition: transform 0.5s;
 }
 
-.gallery-item:hover .gallery-placeholder {
-    transform: scale(1.04);
+/* Vignette via pseudo-element — fades in on hover */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* Static label sitting above the overlay */
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* Static label sitting above the vignette */
 .gallery-label-static {
     position: absolute;
     bottom: 16px;
