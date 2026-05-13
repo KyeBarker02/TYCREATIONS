@@ -85,17 +85,20 @@ nav {
 .fonts-loaded #navLogoText {
     opacity: 1;
 }
+
 /* ── NAV DROPDOWN ── */
 .nav-dropdown {
     position: relative;
 }
- 
+
 .nav-dropdown-toggle {
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
     white-space: nowrap;
+    padding: 8px 6px;
+    margin: -8px -6px;
 }
 
 .nav-chevron {
@@ -104,10 +107,10 @@ nav {
     display: inline-block;
     transition: transform 0.25s ease;
     color: var(--text-light);
-    transform-origin: 30% 77%;
+    transform-origin: 50% 77%;
     position: relative;
     top: -5px;
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
 }
 
 .nav-dropdown:hover .nav-chevron,
@@ -115,12 +118,11 @@ nav {
     transform: rotate(0deg);
     color: var(--primary);
 }
- 
+
 .nav-dropdown-menu {
     position: absolute;
     top: calc(100% + 14px);
     left: 50%;
-    transform: translateX(-50%);
     background: #fff;
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -133,45 +135,53 @@ nav {
     transition: opacity 0.22s ease, transform 0.22s ease;
     z-index: 200;
 }
- 
-/* Small arrow pip pointing up */
-.nav-dropdown-menu::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    border-left: 1px solid var(--border);
-    border-top: 1px solid var(--border);
-    rotate: 45deg;
-}
- 
+
+    .nav-dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        height: 20px;
+    }
+
+    .nav-dropdown-menu::after {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border-left: 1px solid var(--border);
+        border-top: 1px solid var(--border);
+        rotate: 45deg;
+    }
+
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown.open .nav-dropdown-menu {
     opacity: 1;
     pointer-events: all;
     transform: translateX(-50%) translateY(0);
 }
- 
+
 .nav-dropdown-menu a {
     display: block;
     padding: 10px 20px;
-    font-size: 0.78rem !important;
-    letter-spacing: 0.08em !important;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--text-light) !important;
+    color: var(--text-light);
     text-decoration: none;
     transition: background 0.2s, color 0.2s;
     white-space: nowrap;
 }
- 
-.nav-dropdown-menu a:hover {
-    background: var(--hero-bg);
-    color: var(--primary) !important;
-}
+
+    .nav-dropdown-menu a:hover {
+        background: var(--hero-bg);
+        color: var(--primary);
+    }
 
 /* ── HERO ── */
 .hero {
@@ -377,6 +387,7 @@ section {
 .gallery-item {
     position: relative;
     overflow: hidden;
+    cursor: pointer;
     border-radius: 2px;
 }
 
@@ -389,20 +400,8 @@ section {
     transition: transform 0.5s;
 }
 
-/* Vignette via pseudo-element — fades in on hover */
-.gallery-item::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.4s;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.gallery-item:hover::after {
-    opacity: 1;
+.gallery-item:hover .gallery-placeholder {
+    transform: scale(1.04);
 }
 
 /* Static label sitting above the vignette */
@@ -419,26 +418,13 @@ section {
     text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
-.gallery-overlay {
+.gallery-item::after {
+    content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s;
-    display: flex;
-    align-items: flex-end;
-    padding: 18px;
-}
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.gallery-overlay span {
-    color: #fff;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.08em;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 40%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* ── CARDS ── */
