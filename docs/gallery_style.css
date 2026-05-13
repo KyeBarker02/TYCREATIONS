@@ -134,28 +134,19 @@
     grid-row: 1 / span 2;
 }
 
-/* ── LAYOUT C: Wide top-left, 4 remaining (5 images) ──
-   [WIDE        ][sm]
-   [sm][sm][sm][sm]   */
+/* ── LAYOUT C: 4×2 uniform grid (8 images) ──
+   [sm][sm][sm][sm]
+   [sm][sm][sm][sm] */
 .preview-grid--C {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 240px 200px;
+    grid-template-rows: 200px 200px;
 }
 
-.preview-grid--C .preview-img:first-child {
-    grid-column: 1 / span 2;
-}
-
-/* ── LAYOUT D: Small cols, tall centre (5 images) ──
-   [sm][  TALL  ][sm]
-   [sm][  TALL  ][sm] */
+/* ── LAYOUT D: 3-column single row (3 images) ──
+   [sm][  WIDE  ][sm] */
 .preview-grid--D {
     grid-template-columns: 1fr 1.6fr 1fr;
-    grid-template-rows: 210px 210px;
-}
-
-.preview-grid--D .preview-img:nth-child(2) {
-    grid-row: 1 / span 2;
+    grid-template-rows: 340px;
 }
 
 /* ── SECTION DIVIDER ── */

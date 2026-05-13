@@ -46,3 +46,7 @@ document.addEventListener('click', e => {
         document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
     }
 });
+
+document.fonts.ready.then(() => {
+    document.documentElement.classList.add('fonts-loaded');
+});

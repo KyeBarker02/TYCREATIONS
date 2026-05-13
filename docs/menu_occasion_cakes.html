@@ -11,15 +11,22 @@
 
     <!-- NAV -->
     <nav>
-        <a href="default_page.html" class="nav-logo" id="navLogo" style="text-decoration:none;">
+        <a href="#home" class="nav-logo" id="navLogo" style="text-decoration:none;">
             <img src="logo_img.jpg" alt="Logo" style="float:left; width:42px; height:42px;">
             <span id="navLogoText">TY Creations</span>
         </a>
         <div class="nav-links">
-            <a href="#prices">Prices</a>
-            <a href="#flavours">Flavours</a>
-            <a href="#decoration">Decoration</a>
-            <a href="#gallery">Gallery</a>
+            <div class="nav-dropdown">
+                <a class="nav-dropdown-toggle" href="menu_honey_cake.html">Menu <span class="nav-chevron">&#8964;</span></a>
+                <div class="nav-dropdown-menu">
+                    <a href="menu_honey_cake.html">Honey Cake</a>
+                    <a href="menu_occasion_cakes.html">Occasion Cakes</a>
+                    <a href="menu_all_cakes.html">All Other Cakes</a>
+                    <a href="menu_small_bakes.html">Small Bakes</a>
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="#about-me">About</a>
             <a href="#enquire">Enquire</a>
         </div>
     </nav>
@@ -274,6 +281,10 @@
                 <img class="about-img" id="aboutImg" src="images/OccasionCakes/OccasionCake53.jpeg" alt="TY Creations cake" />
                 <div class="sub-gallery-overlay"><span>Personalised Messages</span></div>
             </div>
+        </div>
+
+        <div style="text-align:center;margin-top:40px;">
+            <a href="gallery.html" class="btn btn-outline">View Full Gallery →</a>
         </div>
     </section>
 

@@ -11,15 +11,22 @@
 
     <!-- NAV -->
     <nav>
-        <a href="default_page.html" class="nav-logo" id="navLogo" style="text-decoration:none;">
+        <a href="#home" class="nav-logo" id="navLogo" style="text-decoration:none;">
             <img src="logo_img.jpg" alt="Logo" style="float:left; width:42px; height:42px;">
             <span id="navLogoText">TY Creations</span>
         </a>
         <div class="nav-links">
-            <a href="#prices">Prices</a>
-            <a href="#flavours">Flavours</a>
-            <a href="#decoration">Decoration</a>
-            <a href="#gallery">Gallery</a>
+            <div class="nav-dropdown">
+                <a class="nav-dropdown-toggle" href="menu_honey_cake.html">Menu <span class="nav-chevron">&#8964;</span></a>
+                <div class="nav-dropdown-menu">
+                    <a href="menu_honey_cake.html">Honey Cake</a>
+                    <a href="menu_occasion_cakes.html">Occasion Cakes</a>
+                    <a href="menu_all_cakes.html">All Other Cakes</a>
+                    <a href="menu_small_bakes.html">Small Bakes</a>
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="#about-me">About</a>
             <a href="#enquire">Enquire</a>
         </div>
     </nav>
@@ -87,57 +94,77 @@
             <span class="menu-block-number">02</span>
             <h2 class="menu-block-title">Flavours</h2>
             <div class="menu-block-divider"></div>
-            <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:32px;font-weight:300;line-height:1.8;">The Honey Cake is built on our signature golden honey sponge. Choose your filling and frosting to make it your own.</p>
+            <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:32px;font-weight:300;line-height:1.8;">The Honey Cake is built on our signature golden honey sponge. Choose from our signature flavour combinations below, or customise with your favourite fruit filling.</p>
 
-            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Sponge</h3>
-            <div class="flavour-grid" style="margin-bottom:40px;">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Signature Flavours</h3>
+            <div class="flavour-grid" style="margin-bottom:40px;grid-template-columns: repeat(3, 1fr);"">
                 <div class="flavour-tag">
-                    <div class="flavour-name">Golden Honey</div>
-                    <div class="flavour-desc">Our signature — a light, fragrant honey sponge with warm floral notes</div>
+                    <div class="flavour-name">Classic Honey Cake</div>
+                    <div class="flavour-desc">Delicate honey sponge layers with silky vanilla cream cheese frosting on whipped cream — soft, balanced, and full of rich honey flavour</div>
                 </div>
                 <div class="flavour-tag">
-                    <div class="flavour-name">Honey &amp; Lavender</div>
-                    <div class="flavour-desc">Honey sponge infused with a delicate Provençal lavender</div>
+                    <div class="flavour-name">Blueberry &amp; Lemon Curd</div>
+                    <div class="flavour-desc">Soft honey sponge layered with vibrant blueberry compote, silky lemon curd and vanilla cream cheese frosting — a fresh and perfectly balanced combination</div>
                 </div>
                 <div class="flavour-tag">
-                    <div class="flavour-name">Honey &amp; Lemon</div>
-                    <div class="flavour-desc">Bright citrus zest woven through the honey sponge</div>
+                    <div class="flavour-name">Caramel Honey Cake</div>
+                    <div class="flavour-desc">Caramelised honey sponge layers with smooth caramel cream and delicate notes of salted caramel — rich, soft, and deeply comforting</div>
                 </div>
                 <div class="flavour-tag">
-                    <div class="flavour-name">Honey &amp; Almond</div>
-                    <div class="flavour-desc">A nutty warmth paired with the sweetness of wildflower honey</div>
+                    <div class="flavour-name">Chocolate Honey Cake</div>
+                    <div class="flavour-desc">Chocolate honey sponge layered with silky chocolate cream — rich yet delicate, combining deep cocoa flavour with soft caramelised honey layers</div>
                 </div>
                 <div class="flavour-tag">
-                    <div class="flavour-name">Honey &amp; Orange</div>
-                    <div class="flavour-desc">Citrus-infused honey sponge with a hint of orange zest</div>
+                    <div class="flavour-name">Orange Curd</div>
+                    <div class="flavour-desc">Light honey sponge paired with vibrant orange curd and vanilla cream cheese frosting — fresh citrus notes perfectly complement the rich honey layers</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Raspberry Curd</div>
+                    <div class="flavour-desc">Traditional honey sponge layered with bright raspberry curd and smooth vanilla cream cheese frosting — a beautiful balance of sweetness and berry freshness</div>
                 </div>
             </div>
 
-            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Filling &amp; Frosting</h3>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Custom Fruit Fillings</h3>
             <div class="flavour-grid">
                 <div class="flavour-tag">
-                    <div class="flavour-name">Honey Buttercream</div>
-                    <div class="flavour-desc">Silky, classic and richly sweet — the perfect complement</div>
+                    <div class="flavour-name">Strawberry</div>
+                    <div class="flavour-desc">Sweet, seasonal strawberry filling layered through the signature honey sponge</div>
                 </div>
                 <div class="flavour-tag">
-                    <div class="flavour-name">Lemon Curd &amp; Cream</div>
-                    <div class="flavour-desc">Tangy lemon curd layered with whipped cream cheese frosting</div>
+                    <div class="flavour-name">Raspberry</div>
+                    <div class="flavour-desc">Bright, vibrant raspberry compote for a beautifully tart contrast</div>
                 </div>
                 <div class="flavour-tag">
-                    <div class="flavour-name">Chamomile &amp; Vanilla</div>
-                    <div class="flavour-desc">Floral chamomile whipped with smooth vanilla bean paste</div>
+                    <div class="flavour-name">Blueberry</div>
+                    <div class="flavour-desc">Deep, jammy blueberry filling with natural berry sweetness</div>
                 </div>
                 <div class="flavour-tag">
-                    <div class="flavour-name">Mascarpone &amp; Fig</div>
-                    <div class="flavour-desc">Seasonal fig preserve with light whipped mascarpone</div>
+                    <div class="flavour-name">Mango</div>
+                    <div class="flavour-desc">Tropical mango filling with a smooth, luscious texture</div>
                 </div>
                 <div class="flavour-tag">
-                    <div class="flavour-name">Salted Caramel</div>
-                    <div class="flavour-desc">House-made salted caramel swirled through Swiss meringue buttercream</div>
+                    <div class="flavour-name">Passionfruit</div>
+                    <div class="flavour-desc">Tangy passionfruit curd for a vibrant, exotic flavour combination</div>
                 </div>
                 <div class="flavour-tag">
-                    <div class="flavour-name">Clotted Cream &amp; Raspberry</div>
-                    <div class="flavour-desc">Fresh raspberries with a Devon clotted cream frosting</div>
+                    <div class="flavour-name">Cherry</div>
+                    <div class="flavour-desc">Sweet cherry compote reminiscent of a classic European dessert</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Lemon</div>
+                    <div class="flavour-desc">Silky lemon curd with a bright, refreshing citrus finish</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Orange</div>
+                    <div class="flavour-desc">Fragrant orange curd with warm citrus notes and natural sweetness</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Mixed Berry</div>
+                    <div class="flavour-desc">A medley of seasonal berries for a rich, fruity and colourful filling</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Custom Combination</div>
+                    <div class="flavour-desc">Something specific in mind? We love a bespoke request — just let us know at enquiry</div>
                 </div>
             </div>
         </div>
@@ -152,42 +179,36 @@
             <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:36px;font-weight:300;line-height:1.8;">Every Honey Cake includes a signature honey drizzle finish. Additional decoration is bespoke and discussed at the enquiry stage.</p>
             <div class="deco-grid">
                 <div class="deco-item">
-                    <div class="deco-icon">🍯</div>
                     <div>
                         <div class="deco-text-title">Signature Honey Drizzle</div>
                         <div class="deco-text-desc">Included with every cake — a glistening golden honey drizzle cascades down the sides for a naturally beautiful finish.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">🌸</div>
                     <div>
                         <div class="deco-text-title">Dried Florals</div>
                         <div class="deco-text-desc">Pressed dried flowers and botanicals — lavender, chamomile, or rose petals — arranged delicately on top.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">✨</div>
                     <div>
                         <div class="deco-text-title">Gold Leaf Accents</div>
                         <div class="deco-text-desc">Edible gold leaf applied by hand for a touch of luxury — beautifully paired with the honey tones.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">🌿</div>
                     <div>
                         <div class="deco-text-title">Fresh Herbs &amp; Fruits</div>
                         <div class="deco-text-desc">Seasonal fresh herbs like rosemary or thyme, or fresh fruits such as figs, raspberries, and lemon slices.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">🐝</div>
                     <div>
                         <div class="deco-text-title">Honeycomb Shards</div>
                         <div class="deco-text-desc">Real honeycomb or sugar-spun honeycomb shards placed on top for texture, drama, and sweetness.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">🖋️</div>
                     <div>
                         <div class="deco-text-title">Hand-Painted Inscriptions</div>
                         <div class="deco-text-desc">A name, date, or short message painted by hand in edible gold or natural food colouring.</div>
@@ -222,6 +243,10 @@
                 <img class="about-img" id="aboutImg" src="images/HoneyCakes/HoneyCake7.jpeg" alt="TY Creations cake" />
                 <div class="sub-gallery-overlay"><span>Honeycomb</span></div>
             </div>
+        </div>
+
+        <div style="text-align:center;margin-top:40px;">
+            <a href="gallery.html" class="btn btn-outline">View Full Gallery →</a>
         </div>
     </section>
 
@@ -349,6 +374,10 @@
                 const t = document.querySelector(a.getAttribute('href'));
                 if (t) t.scrollIntoView({ behavior: 'smooth' });
             });
+        });
+
+        document.fonts.ready.then(() => {
+            document.documentElement.classList.add('fonts-loaded');
         });
     </script>
     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>

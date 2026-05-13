@@ -76,6 +76,15 @@ nav {
         .nav-links a:hover {
             color: var(--primary);
         }
+
+#navLogoText {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fonts-loaded #navLogoText {
+    opacity: 1;
+}
 /* ── NAV DROPDOWN ── */
 .nav-dropdown {
     position: relative;

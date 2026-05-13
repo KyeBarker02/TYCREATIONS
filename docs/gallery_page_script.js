@@ -6,8 +6,8 @@
 // Number of preview images to show per category
 const PREVIEW_COUNTS = {
     HoneyCakes:    5,   // Layout A: 1 tall left + 2×2 right
-    OccasionCakes: 6,   // Layout B: 3×2 grid + 1 tall right
-    OtherCakes:    5,   // Layout C: 1 wide top-left + 4
+    OccasionCakes: 7,   // Layout B: 3×2 grid + 1 tall right
+    OtherCakes:    8,   // Layout C: 1 wide top-left + 4
     SmallBakes:    3,   // Layout D: only 3 images exist
 };
 
@@ -30,9 +30,9 @@ function isVideo(src) {
 // ── PREVIEW GRID BUILDER ──────────────────────────────────────────
 function buildPreviewGrid(folder) {
     const allImages = window.galleryData[folder] || [];
-    const count     = Math.min(PREVIEW_COUNTS[folder] || 5, allImages.length);
-    const preview   = allImages.slice(0, count);
-    const grid      = document.getElementById('grid-' + folder);
+    const preview = window.galleryData[folder + 'Preview']
+        || allImages.slice(0, PREVIEW_COUNTS[folder] || 5);
+    const grid = document.getElementById('grid-' + folder);
     if (!grid) return;
 
     // Update count label
@@ -190,6 +190,10 @@ document.addEventListener('keydown', (e) => {
     } else if (lightbox.classList.contains('active')) {
         if (e.key === 'Escape')     { closeLightbox(); }
     }
+});
+
+document.fonts.ready.then(() => {
+    document.documentElement.classList.add('fonts-loaded');
 });
 
 // ── INIT ──────────────────────────────────────────────────────────
