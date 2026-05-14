@@ -10,7 +10,6 @@
 <body>
 
     <!-- NAV -->
-    <!-- NAV -->
     <nav>
         <a href="default_page.html" class="nav-logo" id="navLogo" style="text-decoration:none;">
             <img src="logo_img.jpg" alt="Logo" style="float:left; width:42px; height:42px;">
@@ -98,13 +97,6 @@
                         <td class="note-cell">Individually wrapped for favours</td>
                     </tr>
                     <tr>
-                        <td><strong>Brownie Box</strong></td>
-                        <td>Individual</td>
-                        <td>Box of 9</td>
-                        <td class="price-cell">From £22</td>
-                        <td class="note-cell">Fudgy, giftable, and glorious</td>
-                    </tr>
-                    <tr>
                         <td><strong>Gift Box — Mixed</strong></td>
                         <td>Bespoke box</td>
                         <td>4–12 items</td>
@@ -126,7 +118,7 @@
             <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:36px;font-weight:300;line-height:1.8;">All of our small bakes are available in a range of flavours. Mix and match across your order — we love creating a variety box.</p>
 
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Cupcake &amp; Mini Bake Flavours</h3>
-            <div class="flavour-grid" style="margin-bottom:40px;">
+            <div class="flavour-grid" style="margin-bottom: 40px; grid-template-columns: repeat(4, 1fr);">
                 <div class="flavour-tag">
                     <div class="flavour-name">Vanilla Dream</div>
                     <div class="flavour-desc">Classic vanilla sponge with swirled vanilla bean buttercream</div>
@@ -162,7 +154,7 @@
             </div>
 
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Shortbread Flavours</h3>
-            <div class="flavour-grid">
+            <div class="flavour-grid" style="grid-template-columns: repeat(4, 1fr);">
                 <div class="flavour-tag">
                     <div class="flavour-name">Classic Butter</div>
                     <div class="flavour-desc">Our traditional shortbread — buttery, crisp, and perfect for icing</div>
@@ -192,42 +184,36 @@
             <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:36px;font-weight:300;line-height:1.8;">Small bakes can be finished to match a theme, colour palette, or wedding stationery. Every detail is considered.</p>
             <div class="deco-grid">
                 <div class="deco-item">
-                    <div class="deco-icon">🌸</div>
                     <div>
                         <div class="deco-text-title">Piped Buttercream Swirls</div>
                         <div class="deco-text-desc">Classic rosettes, ruffles, or flat palettes in any colour — a beautiful and versatile finish for cupcakes.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">🎨</div>
                     <div>
                         <div class="deco-text-title">Royal Iced Shortbread</div>
                         <div class="deco-text-desc">Flood-iced shortbread in any design — from monograms to florals, wedding motifs, or custom illustrations.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">✨</div>
                     <div>
                         <div class="deco-text-title">Edible Glitter &amp; Lustre</div>
                         <div class="deco-text-desc">Dusted edible shimmer — gold, silver, pearl, or coloured — for a magical, sparkling effect.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">🌿</div>
                     <div>
                         <div class="deco-text-title">Dried Flower Toppers</div>
                         <div class="deco-text-desc">Tiny dried rose buds, lavender sprigs, or chamomile pressed into buttercream for a botanical touch.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">🎁</div>
                     <div>
                         <div class="deco-text-title">Gift Packaging</div>
                         <div class="deco-text-desc">Individual clear boxes, ribbon-tied favour bags, or luxury gift boxes with personalised tags.</div>
                     </div>
                 </div>
                 <div class="deco-item">
-                    <div class="deco-icon">🖋️</div>
                     <div>
                         <div class="deco-text-title">Personalised Toppers</div>
                         <div class="deco-text-desc">Names, initials, or dates piped in chocolate or crafted as edible wafer paper toppers.</div>
@@ -247,20 +233,42 @@
         </div>
         <div class="sub-gallery-grid" style="max-width:1100px;margin:0 auto;">
             <div class="sub-gallery-item">
-                <img class="about-img" id="aboutImg" src="images/SmallBakes/SmallBake1.jpeg" alt="TY Creations cake" />
-                <div class="sub-gallery-overlay"><span>Cookies</span></div>
+                <div class="sub-gallery-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; text-align: center; min-height: 220px; background: #C4CFC0;">
+                    <div style="font-size:2.2rem;margin-bottom:14px;">🧁</div>
+                    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text-dark);font-weight:500;margin-bottom:8px;">Oops! No image here yet.</p>
+                    <p style="font-size: 0.9rem; color: #687D6A; font-weight: 500; line-height: 1.7;">Feel free to order some chocolate truffle cupcakes — and you may just see your order displayed here!</p>
+                </div>
+                <div class="sub-gallery-overlay"><span>Chocolate Truffle</span></div>
             </div>
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🍪</div>
-                <div class="sub-gallery-overlay"><span>Iced Shortbread</span></div>
+                <div class="sub-gallery-item">
+                    <div class="sub-gallery-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; text-align: center; min-height: 220px; background: #C4CFC0;">
+                        <div style="font-size:2.2rem;margin-bottom:14px;">🧁</div>
+                        <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text-dark);font-weight:500;margin-bottom:8px;">Oops! No image here yet.</p>
+                        <p style="font-size: 0.9rem; color: #687D6A; font-weight: 500; line-height: 1.7;">Feel free to order some iced shortbread — and you may just see your order displayed here!</p>
+                    </div>
+                    <div class="sub-gallery-overlay"><span>Iced Shortbread</span></div>
+                </div>
             </div>
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🍫</div>
-                <div class="sub-gallery-overlay"><span>Brownie Box</span></div>
+                <div class="sub-gallery-item">
+                    <div class="sub-gallery-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; text-align: center; min-height: 220px; background: #C4CFC0;">
+                        <div style="font-size:2.2rem;margin-bottom:14px;">🧁</div>
+                        <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text-dark);font-weight:500;margin-bottom:8px;">Oops! No image here yet.</p>
+                        <p style="font-size: 0.9rem; color: #687D6A; font-weight: 500; line-height: 1.7;">Feel free to order some lemon and raspberry cupcakes — and you may just see your order displayed here!</p>
+                    </div>
+                    <div class="sub-gallery-overlay"><span>Lemon and Raspberry</span></div>
+                </div>
             </div>
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🎁</div>
-                <div class="sub-gallery-overlay"><span>Gift Boxes</span></div>
+                <div class="sub-gallery-item">
+                    <div class="sub-gallery-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; text-align: center; min-height: 220px; background: #C4CFC0;">
+                        <div style="font-size:2.2rem;margin-bottom:14px;">🧁</div>
+                        <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text-dark);font-weight:500;margin-bottom:8px;">Oops! No image here yet.</p>
+                        <p style="font-size: 0.9rem; color: #687D6A; font-weight: 500; line-height: 1.7;">Feel free to order a gift box of cupcakes — and you may just see your order displayed here!</p>
+                    </div>v>
+                    <div class="sub-gallery-overlay"><span>Gift Boxes</span></div>
+                </div>
             </div>
         </div>
 

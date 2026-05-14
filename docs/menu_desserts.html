@@ -118,7 +118,7 @@
             <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:36px;font-weight:300;line-height:1.8;">Choose from our selection of handcrafted brownies and seasonal baked pies. Mix brownie flavours across your box for the ultimate variety.</p>
 
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Brownies</h3>
-            <div class="flavour-grid" style="margin-bottom:40px;">
+            <div class="flavour-grid" style="margin-bottom: 40px; grid-template-columns: repeat(4, 1fr);">
                 <div class="flavour-tag">
                     <div class="flavour-name">Classic Brownie</div>
                     <div class="flavour-desc">Fudgy dark chocolate brownie with rich cocoa flavour and soft centre</div>
@@ -138,7 +138,7 @@
             </div>
 
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Baked Pies</h3>
-            <div class="flavour-grid">
+            <div class="flavour-grid" style="margin-bottom: 40px; grid-template-columns: repeat(2, 1fr);">
                 <div class="flavour-tag">
                     <div class="flavour-name">Apple Crumble Pie</div>
                     <div class="flavour-desc">Traditional grated pastry pie filled with soft baked apples and warm cinnamon notes</div>
@@ -158,52 +158,47 @@
             <h2 class="menu-block-title">Presentation</h2>
             <div class="menu-block-divider"></div>
             <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:36px;font-weight:300;line-height:1.8;">Every bakery order is presented with the same care and attention as our cakes — whether it's a personal treat or a thoughtful gift.</p>
-            <div class="deco-grid">
-                <div class="deco-item">
-                    <div class="deco-icon">🍫</div>
-                    <div>
-                        <div class="deco-text-title">Chocolate Drizzle</div>
-                        <div class="deco-text-desc">Brownies finished with a glossy Belgian chocolate drizzle — dark, milk, or white — for an indulgent final touch.</div>
+            <div style="border:2px solid #687D6A;border-radius:12px;padding:32px;">
+                <div class="deco-grid">
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Chocolate Drizzle</div>
+                            <div class="deco-text-desc">Brownies finished with a glossy Belgian chocolate drizzle — dark, milk, or white — for an indulgent final touch.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="deco-item">
-                    <div class="deco-icon">🎁</div>
-                    <div>
-                        <div class="deco-text-title">Luxury Gift Boxes</div>
-                        <div class="deco-text-desc">Beautifully presented in luxury boxes with tissue paper and ribbon — ideal for birthdays, occasions, or corporate gifting.</div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Luxury Gift Boxes</div>
+                            <div class="deco-text-desc">Beautifully presented in luxury boxes with tissue paper and ribbon — ideal for birthdays, occasions, or corporate gifting.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="deco-item">
-                    <div class="deco-icon">✨</div>
-                    <div>
-                        <div class="deco-text-title">Edible Toppings</div>
-                        <div class="deco-text-desc">Brownies can be finished with additional toppings — crushed nuts, caramel drizzle, sea salt flakes, or chocolate shavings.</div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Edible Toppings</div>
+                            <div class="deco-text-desc">Brownies can be finished with additional toppings — crushed nuts, caramel drizzle, sea salt flakes, or chocolate shavings.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="deco-item">
-                    <div class="deco-icon">🖋️</div>
-                    <div>
-                        <div class="deco-text-title">Personalised Tags</div>
-                        <div class="deco-text-desc">Custom handwritten or printed gift tags added to your order — perfect for weddings, events, or special occasions.</div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Personalised Tags</div>
+                            <div class="deco-text-desc">Custom handwritten or printed gift tags added to your order — perfect for weddings, events, or special occasions.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="deco-item">
-                    <div class="deco-icon">🎀</div>
-                    <div>
-                        <div class="deco-text-title">Ribbon &amp; Wrapping</div>
-                        <div class="deco-text-desc">Ribbon-tied boxes or individually cellophane-wrapped pieces — a beautiful finish for events and wedding favours.</div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Ribbon &amp; Wrapping</div>
+                            <div class="deco-text-desc">Ribbon-tied boxes or individually cellophane-wrapped pieces — a beautiful finish for events and wedding favours.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="deco-item">
-                    <div class="deco-icon">🥧</div>
-                    <div>
-                        <div class="deco-text-title">Pie Presentation</div>
-                        <div class="deco-text-desc">Pies are presented in their baking dish and boxed ready to serve — rustic, warm, and utterly homemade in feel.</div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Pie Presentation</div>
+                            <div class="deco-text-desc">Pies are presented in their baking dish and boxed ready to serve — rustic, warm, and utterly homemade in feel.</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+</section>
 
     <!-- GALLERY -->
     <section class="full-alt" id="gallery">
@@ -215,19 +210,35 @@
         </div>
         <div class="sub-gallery-grid" style="max-width:1100px;margin:0 auto;">
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🍫</div>
+                <div class="sub-gallery-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; text-align: center; min-height: 220px; background: #C4CFC0;">
+                    <div style="font-size:2.2rem;margin-bottom:14px;">🧁</div>
+                    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text-dark);font-weight:500;margin-bottom:8px;">Oops! No image here yet.</p>
+                    <p style="font-size: 0.9rem; color: #687D6A; font-weight: 500; line-height: 1.7;">Feel free to order the classic brownie — and you may just see your order displayed here!</p>
+                </div>
                 <div class="sub-gallery-overlay"><span>Classic Brownie</span></div>
             </div>
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🥜</div>
+                <div class="sub-gallery-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; text-align: center; min-height: 220px; background: #C4CFC0;">
+                    <div style="font-size:2.2rem;margin-bottom:14px;">🧁</div>
+                    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text-dark);font-weight:500;margin-bottom:8px;">Oops! No image here yet.</p>
+                    <p style="font-size: 0.9rem; color: #687D6A; font-weight: 500; line-height: 1.7;">Feel free to order the caramel &Aacute; pecan brownie — and you may just see your order displayed here!</p>
+                </div>
                 <div class="sub-gallery-overlay"><span>Caramel &amp; Pecan</span></div>
             </div>
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🥧</div>
+                <div class="sub-gallery-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; text-align: center; min-height: 220px; background: #C4CFC0;">
+                    <div style="font-size:2.2rem;margin-bottom:14px;">🧁</div>
+                    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text-dark);font-weight:500;margin-bottom:8px;">Oops! No image here yet.</p>
+                    <p style="font-size: 0.9rem; color: #687D6A; font-weight: 500; line-height: 1.7;">Feel free to order the Apple Crumble Pie — and you may just see your order displayed here!</p>
+                </div>
                 <div class="sub-gallery-overlay"><span>Apple Crumble Pie</span></div>
             </div>
             <div class="sub-gallery-item">
-                <div class="sub-gallery-placeholder">🎁</div>
+                <div class="sub-gallery-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; text-align: center; min-height: 220px; background: #C4CFC0;">
+                    <div style="font-size:2.2rem;margin-bottom:14px;">🧁</div>
+                    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text-dark);font-weight:500;margin-bottom:8px;">Oops! No image here yet.</p>
+                    <p style="font-size: 0.9rem; color: #687D6A; font-weight: 500; line-height: 1.7;">Feel free to order a gift box — and you may just see your order displayed here!</p>
+                </div>
                 <div class="sub-gallery-overlay"><span>Gift Box</span></div>
             </div>
         </div>
