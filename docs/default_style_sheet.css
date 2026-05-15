@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -45,9 +46,8 @@ nav {
 }
 
 .nav-logo {
-    
     /*font-family: 'Westonia', 'Playfair Display', serif;*/
-    
+
     font-family: 'Great Vibes', 'Playfair Display', serif;
     font-size: 2.3rem;
     font-weight: 400;
@@ -1130,7 +1130,7 @@ body:not(.catering) .brand-catering {
     max-width: 1100px;
     margin: 0 auto;
 }
- 
+
 .honey-spotlight-img {
     width: 100%;
     aspect-ratio: 4/5;
@@ -1142,7 +1142,7 @@ body:not(.catering) .brand-catering {
     justify-content: center;
     font-size: 5rem;
 }
- 
+
 .honey-badge {
     display: inline-block;
     background: var(--accent);
@@ -1154,7 +1154,7 @@ body:not(.catering) .brand-catering {
     border-radius: 20px;
     margin-bottom: 20px;
 }
- 
+
 /* ── MENU BUTTON GRID (honey cake section) ── */
 .menu-btn-grid {
     display: grid;
@@ -1162,13 +1162,13 @@ body:not(.catering) .brand-catering {
     gap: 12px;
     max-width: 380px;
 }
- 
-.menu-btn-grid .btn {
-    text-align: center;
-    justify-content: center;
-    font-size: 0.78rem;
-}
- 
+
+    .menu-btn-grid .btn {
+        text-align: center;
+        justify-content: center;
+        font-size: 0.78rem;
+    }
+
 @media (max-width: 520px) {
     .menu-btn-grid {
         grid-template-columns: 1fr;
@@ -1300,5 +1300,462 @@ body:not(.catering) .brand-catering {
 
     .why-list {
         max-width: 100%;
+    }
+}
+/* ══════════════════════════════════════════════════════════════
+   css_additions.css
+   Linked separately in default_page.html after default_style_sheet.css
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── OVERLAY ── */
+.enquiry-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+    .enquiry-modal.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+/* ── PANEL ── */
+.enquiry-modal-inner {
+    background: var(--bg, #F8F7F4);
+    border: 1px solid var(--border, #D8DDD6);
+    border-radius: 2px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 52px 56px 48px;
+    position: relative;
+    transform: translateY(16px);
+    transition: transform 0.3s ease;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border, #D8DDD6) transparent;
+}
+
+    .enquiry-modal-inner::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .enquiry-modal-inner::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .enquiry-modal-inner::-webkit-scrollbar-thumb {
+        background: var(--border, #D8DDD6);
+        border-radius: 2px;
+    }
+
+.enquiry-modal.active .enquiry-modal-inner {
+    transform: translateY(0);
+}
+
+/* ── CLOSE BUTTON ── */
+.enquiry-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--text-light, #6B6B6B);
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    .enquiry-modal-close:hover {
+        color: var(--primary-dark, #687D6A);
+    }
+
+/* ── MODAL HEADER ── */
+.enquiry-modal-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+    .enquiry-modal-header .section-tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--primary, #A8B5A2);
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .enquiry-modal-header h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 300;
+        color: var(--primary-dark, #687D6A);
+        line-height: 1.15;
+        margin-bottom: 14px;
+    }
+
+    .enquiry-modal-header p {
+        font-size: 0.9rem;
+        color: var(--text-light, #6B6B6B);
+        font-weight: 300;
+        line-height: 1.8;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+/* ══════════════════════════════════════════════════════════════
+   FORM LAYOUT — explicit rules scoped to the modal so they work
+   regardless of load order or base-stylesheet specificity
+   ══════════════════════════════════════════════════════════════ */
+
+.enquiry-modal-inner .enquiry-wrap {
+    margin-top: 0;
+    max-width: 100%;
+}
+
+/* Two-column row */
+.enquiry-modal-inner .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Each field: label stacked above input */
+.enquiry-modal-inner .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+    .enquiry-modal-inner .form-group label {
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-light, #6B6B6B);
+        margin-bottom: 8px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .enquiry-modal-inner .form-group input,
+    .enquiry-modal-inner .form-group select,
+    .enquiry-modal-inner .form-group textarea {
+        border: 1px solid var(--border, #D8DDD6);
+        padding: 13px 16px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        color: var(--text, #2F2F2F);
+        background: #fff;
+        outline: none;
+        transition: border-color 0.3s;
+        border-radius: 0;
+        width: 100%;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    /* Keep the native arrow on selects */
+    .enquiry-modal-inner .form-group select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B6B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        padding-right: 36px;
+        cursor: pointer;
+    }
+
+        .enquiry-modal-inner .form-group input:focus,
+        .enquiry-modal-inner .form-group select:focus,
+        .enquiry-modal-inner .form-group textarea:focus {
+            border-color: var(--primary, #A8B5A2);
+            box-shadow: 0 0 0 3px rgba(168, 181, 162, 0.15);
+        }
+
+    .enquiry-modal-inner .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+/* ── DELIVERY SECTION ── */
+.enquiry-modal-inner .delivery-section-wrap {
+    background: var(--section-alt, #F2F4F0);
+    border: 1px solid var(--border, #D8DDD6);
+    border-left: 3px solid var(--primary, #A8B5A2);
+    padding: 20px 22px 16px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+.enquiry-modal-inner .delivery-section-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--primary, #A8B5A2);
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+}
+
+.enquiry-modal-inner .delivery-section-sub {
+    font-size: 0.78rem;
+    color: var(--text-light, #6B6B6B);
+    font-weight: 300;
+    margin-bottom: 14px;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.enquiry-modal-inner .delivery-tiers {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.enquiry-modal-inner .delivery-tier-badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: var(--primary-dark, #687D6A);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border, #D8DDD6);
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+}
+
+.enquiry-modal-inner .postcode-check-row {
+    display: flex;
+    gap: 10px;
+}
+
+    .enquiry-modal-inner .postcode-check-row input {
+        flex: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+.enquiry-modal-inner .postcode-btn {
+    white-space: nowrap;
+    padding: 13px 22px;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ── DELIVERY RESULT CARDS ── */
+.enquiry-modal-inner .delivery-result {
+    display: none;
+    margin-top: 10px;
+}
+
+    .enquiry-modal-inner .delivery-result.active {
+        display: block;
+    }
+
+.enquiry-modal-inner .delivery-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 2px;
+    gap: 12px;
+}
+
+.enquiry-modal-inner .free-delivery {
+    background: #eef4ee;
+    border: 1px solid #c2d8c2;
+}
+
+.enquiry-modal-inner .paid-delivery {
+    background: #fdf8f0;
+    border: 1px solid #e0cfb0;
+}
+
+.enquiry-modal-inner .poa-delivery {
+    background: #f7f5f0;
+    border: 1px solid var(--border, #D8DDD6);
+}
+
+.enquiry-modal-inner .delivery-left {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.enquiry-modal-inner .delivery-distance {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--primary-dark, #687D6A);
+    font-weight: 400;
+}
+
+.enquiry-modal-inner .delivery-note {
+    font-size: 0.75rem;
+    color: var(--text-light, #6B6B6B);
+    letter-spacing: 0.06em;
+    font-weight: 300;
+}
+
+.enquiry-modal-inner .delivery-cost {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--primary-dark, #687D6A);
+    white-space: nowrap;
+}
+
+.enquiry-modal-inner .delivery-checking {
+    font-size: 0.8rem;
+    color: var(--text-light, #6B6B6B);
+    letter-spacing: 0.1em;
+    font-style: italic;
+}
+
+.enquiry-modal-inner .delivery-error {
+    font-size: 0.8rem;
+    color: #c4898a;
+    letter-spacing: 0.05em;
+}
+
+/* ── FORM AGREE ── */
+.form-agree {
+    margin-bottom: 20px;
+}
+
+.agree-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    color: var(--text-light, #6B6B6B);
+    line-height: 1.75;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    .agree-label input[type="checkbox"] {
+        margin-top: 4px;
+        flex-shrink: 0;
+        accent-color: var(--primary, #A8B5A2);
+        width: 14px;
+        height: 14px;
+        cursor: pointer;
+    }
+
+    .agree-label a {
+        color: var(--primary-dark, #687D6A);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: color 0.2s;
+    }
+
+        .agree-label a:hover {
+            color: var(--primary, #A8B5A2);
+        }
+
+.agree-error {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    color: #9a4545;
+    letter-spacing: 0.04em;
+}
+
+/* ── FORM ERROR ── */
+.enquiry-modal-inner .form-error {
+    background: #fdf0f0;
+    border: 1px solid #e0b0b0;
+    color: #9a4545;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ── SUBMIT BUTTON — full width ── */
+.enquiry-modal-inner .form-submit {
+    margin-top: 16px;
+}
+
+    .enquiry-modal-inner .form-submit .btn {
+        width: 100%;
+        padding: 15px;
+        letter-spacing: 0.2em;
+        font-size: 0.8rem;
+    }
+
+/* ── SUCCESS STATE ── */
+.enquiry-modal-inner .form-success {
+    margin: 0;
+    border: none;
+    background: transparent;
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* ── OPEN BUTTON (main page) ── */
+.enquiry-open-btn {
+    padding: 16px 52px;
+    letter-spacing: 0.18em;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — bottom sheet on mobile
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    .enquiry-modal {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .enquiry-modal-inner {
+        padding: 28px 20px 36px;
+        max-height: 94vh;
+        border-radius: 10px 10px 0 0;
+        transform: translateY(32px);
+        box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .enquiry-modal.active .enquiry-modal-inner {
+        transform: translateY(0);
+    }
+
+    /* Drag handle */
+    .enquiry-modal-inner::before {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 3px;
+        background: var(--border, #D8DDD6);
+        border-radius: 2px;
+        margin: 0 auto 20px;
+    }
+
+    .enquiry-modal-header h3 {
+        font-size: 1.8rem;
+    }
+
+    .enquiry-modal-inner .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 }

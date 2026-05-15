@@ -1,4 +1,5 @@
-﻿
+﻿/* Policy Pages Styles — used by privacy_policy.html and terms_and_conditions.html */
+
 .policy-wrap {
     max-width: 760px;
     margin: 0 auto;
@@ -164,6 +165,7 @@
             margin-right: 8px;
         }
 
+/* ── TERMS & CONDITIONS ONLY ── */
 .policy-intro {
     font-size: 0.95rem;
     color: var(--text-light);
