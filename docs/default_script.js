@@ -257,3 +257,32 @@ if (postcodeInput) {
         if (e.key === 'Enter') { e.preventDefault(); checkDelivery(); }
     });
 }
+
+/ ── HAMBURGER MENU ──
+(function () {
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navEl = document.querySelector('nav');
+    if (!hamburger || !navEl) return;
+
+    // Toggle open/close
+    hamburger.addEventListener('click', () => {
+        navEl.classList.toggle('nav-open');
+    });
+
+    // Close menu when any top-level nav link (not the Menu toggle) is clicked
+    document.querySelectorAll('.nav-links > a').forEach(link => {
+        link.addEventListener('click', () => navEl.classList.remove('nav-open'));
+    });
+
+    // Close menu when a dropdown sub-link is clicked
+    document.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
+        link.addEventListener('click', () => navEl.classList.remove('nav-open'));
+    });
+
+    // Close menu when clicking outside the nav
+    document.addEventListener('click', e => {
+        if (!e.target.closest('nav')) {
+            navEl.classList.remove('nav-open');
+        }
+    });
+})();
