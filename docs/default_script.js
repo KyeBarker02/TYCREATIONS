@@ -288,17 +288,48 @@ if (postcodeInput) {
 })();
 
 (function () {
-    if (window.innerWidth > 768) return; // desktop: descriptions always visible, no JS needed
+    if (window.innerWidth > 768) return; // desktop: no behaviour change needed
+ 
+    function openCard(tag) {
+        const grid = tag.closest('.flavour-grid');
+ 
+        // Capture height before moving so placeholder matches exactly
+        const height = tag.offsetHeight;
+ 
+        // Insert placeholder where the card currently sits
+        const placeholder = document.createElement('div');
+        placeholder.className = 'flavour-placeholder';
+        placeholder.style.minHeight = height + 'px';
+        tag.parentNode.insertBefore(placeholder, tag);
+        tag._placeholder = placeholder;
+ 
+        // Move card to front of the grid and mark as open
+        grid.prepend(tag);
+        tag.classList.add('open');
+    }
+ 
+    function closeCard(tag) {
+        tag.classList.remove('open');
+ 
+        // Return card to its original position and remove placeholder
+        const placeholder = tag._placeholder;
+        if (placeholder && placeholder.parentNode) {
+            placeholder.parentNode.insertBefore(tag, placeholder);
+            placeholder.remove();
+        }
+        tag._placeholder = null;
+    }
  
     document.querySelectorAll('.flavour-tag').forEach(tag => {
         tag.addEventListener('click', () => {
             const isOpen = tag.classList.contains('open');
  
-            // Close any currently open card first
-            document.querySelectorAll('.flavour-tag.open').forEach(t => t.classList.remove('open'));
+            // Always close any currently open card first
+            const currentOpen = document.querySelector('.flavour-tag.open');
+            if (currentOpen) closeCard(currentOpen);
  
-            // If this card wasn't already open, open it
-            if (!isOpen) tag.classList.add('open');
+            // Open this card if it wasn't already open
+            if (!isOpen) openCard(tag);
         });
     });
 })();
