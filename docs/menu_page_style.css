@@ -306,13 +306,27 @@ section.full-alt {
 }
 
 @media (max-width: 768px) {
- 
     .sub-gallery-item .sub-gallery-item {
-        position: absolute !important; /* fill parent by position, not height% */
-        inset: 0 !important;           /* stretch to all four edges             */
-        aspect-ratio: unset !important;/* remove inherited square ratio         */
-        min-height: 0 !important;      /* remove the 220px hard minimum         */
-        padding: 16px 12px !important; /* tighter padding for small cells       */
+        position: absolute !important;
+        inset: 0 !important;
+        aspect-ratio: unset !important;
+        min-height: 0 !important;
+        padding: 12px !important;
         box-sizing: border-box;
+    }
+
+    .sub-gallery-item .sub-gallery-item div {
+        font-size: 1.5rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    .sub-gallery-item .sub-gallery-item p:first-of-type {
+        font-size: 0.78rem !important;
+        margin-bottom: 0 !important;
+        line-height: 1.4 !important;
+    }
+    
+    .sub-gallery-item .sub-gallery-item p:last-of-type {
+        display: none !important;
     }
 }
