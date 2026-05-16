@@ -1529,6 +1529,7 @@ body::after {
 
     .nav-dropdown.open .nav-dropdown-menu {
         display: block;
+        transform: none;
     }
 
     .nav-dropdown-menu a {
