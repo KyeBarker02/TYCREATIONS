@@ -304,3 +304,13 @@ section.full-alt {
         font-size: 0.85rem;
     }
 }
+
+@media (max-width: 768px) {
+ 
+    .sub-gallery-item .sub-gallery-item {
+        height: 100%      !important;   /* fill the parent cell exactly  */
+        min-height: unset !important;   /* remove the 220px hard minimum */
+        padding: 16px 12px !important;  /* tighter padding for small cells */
+        box-sizing: border-box;
+    }
+}
