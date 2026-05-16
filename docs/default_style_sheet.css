@@ -1552,3 +1552,43 @@ body::after {
         transform: translateY(-7px) rotate(-45deg);
     }
 }
+
+/* ── PRICE TABLE — centred at all sizes ── */
+.price-table {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+.price-table th,
+.price-table td {
+    text-align: center;
+}
+ 
+/* Keep the note column left-aligned as it reads better as prose */
+.note-cell {
+    text-align: left;
+}
+ 
+/* ── MOBILE — hide flavour & decoration descriptions ── */
+@media (max-width: 768px) {
+ 
+    .flavour-desc {
+        display: none;
+    }
+ 
+    .deco-text-desc {
+        display: none;
+    }
+ 
+    /* Tighten the flavour card padding now there's no description */
+    .flavour-tag {
+        padding: 14px 16px;
+    }
+ 
+    /* Tighten deco items similarly */
+    .deco-item {
+        padding: 4px 0;
+    }
+}
+ 
