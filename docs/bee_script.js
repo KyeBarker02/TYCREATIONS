@@ -24,7 +24,7 @@
         // Mobile
         navXOffset:  28,   // px from the right edge
         startMarginY: 80,
-        endMarginY:   80,
+        endMarginY:   20,  // reduced so path reaches near the bottom of the screen
         // Shared
         beeW:        58,
         beeH:        36,
@@ -41,13 +41,13 @@
         { t0: 0.78, t1: 1.00, type: 'wave', waveH: 20, cycles: 1 },
     ];
 
-    // ── MOBILE SEGMENTS (vertical path, loops bulge leftward) ────────────
+    // ── MOBILE SEGMENTS (vertical path, single loop bulging leftward) ────
+    // Large loop removed — only the smaller loop (rx:14, ry:22) remains.
+    // 3 segments: entry wave → single loop → exit wave to bottom of screen.
     const SEGS_V = [
-        { t0: 0.00, t1: 0.12, type: 'wave', waveH: 18, cycles: 1 },
-        { t0: 0.12, t1: 0.46, type: 'loop', rx: 28, ry: 42 },
-        { t0: 0.46, t1: 0.60, type: 'wave', waveH: 22, cycles: 2 },
-        { t0: 0.60, t1: 0.78, type: 'loop', rx: 14, ry: 22 },
-        { t0: 0.78, t1: 1.00, type: 'wave', waveH: 18, cycles: 1 },
+        { t0: 0.00, t1: 0.18, type: 'wave', waveH: 18, cycles: 1 },
+        { t0: 0.18, t1: 0.52, type: 'loop', rx: 14, ry: 22 },
+        { t0: 0.52, t1: 1.00, type: 'wave', waveH: 18, cycles: 1 },
     ];
 
     // ── DASHED TRAIL SVG ──────────────────────────────────────────────────
@@ -243,19 +243,18 @@
         const y0  = CFG.startMarginY;
         const y1  = H - CFG.endMarginY;
         const sp  = y1 - y0;
-        const cy1 = y0 + sp * 0.32;
-        const cy2 = y0 + sp * 0.70;
 
-        // Loop centres: cx = navX − rx so the bee enters at navX
-        const loopSegs = SEGS_V.filter(s => s.type === 'loop');
-        loopSegs[0].cy = cy1;  loopSegs[0].cx = mobileNavX - loopSegs[0].rx;
-        loopSegs[1].cy = cy2;  loopSegs[1].cx = mobileNavX - loopSegs[1].rx;
+        // Single loop — centre placed at ~35% of the vertical span
+        const cy1 = y0 + sp * 0.35;
 
-        // Wave segments span between y0, cy1, cy2, y1
+        const loopSeg = SEGS_V.find(s => s.type === 'loop');
+        loopSeg.cy = cy1;
+        loopSeg.cx = mobileNavX - loopSeg.rx;
+
+        // Two wave segments: entry (y0 → cy1) and exit (cy1 → y1)
         const waveSegs = SEGS_V.filter(s => s.type === 'wave');
         waveSegs[0].y0 = y0;   waveSegs[0].y1 = cy1;
-        waveSegs[1].y0 = cy1;  waveSegs[1].y1 = cy2;
-        waveSegs[2].y0 = cy2;  waveSegs[2].y1 = y1;
+        waveSegs[1].y0 = cy1;  waveSegs[1].y1 = y1;
     }
 
     function getMobilePos(progress) {
