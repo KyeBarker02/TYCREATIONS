@@ -290,60 +290,16 @@ if (postcodeInput) {
 (function () {
     if (window.innerWidth > 768) return;
  
-    function openCard(tag) {
-        const grid = tag.closest('.flavour-grid');
-        const allCards = [...grid.querySelectorAll('.flavour-tag')];
- 
-        // Find which row the card is in by its offsetTop.
-        // Use a 5px threshold to absorb any sub-pixel differences.
-        const cardTop = tag.offsetTop;
-        const firstInRow = allCards.find(c => Math.abs(c.offsetTop - cardTop) < 5);
- 
-        // Record height before moving so placeholder matches
-        const height = tag.offsetHeight;
- 
-        // Insert placeholder where the card currently sits
-        const placeholder = document.createElement('div');
-        placeholder.className = 'flavour-placeholder';
-        placeholder.style.minHeight = height + 'px';
-        tag.parentNode.insertBefore(placeholder, tag);
-        tag._placeholder = placeholder;
- 
-        // Remove card from its current position
-        tag.remove();
- 
-        if (firstInRow && firstInRow !== tag) {
-            // Card was not first in its row — insert open card before the first in that row
-            grid.insertBefore(tag, firstInRow);
-        } else {
-            // Card was first in its row — placeholder is now where it was;
-            // insert open card before the placeholder so it sits above the row
-            grid.insertBefore(tag, placeholder);
-        }
- 
-        tag.classList.add('open');
-    }
- 
-    function closeCard(tag) {
-        tag.classList.remove('open');
-        const placeholder = tag._placeholder;
-        if (placeholder && placeholder.parentNode) {
-            // Return the card to its original slot and remove the placeholder
-            placeholder.parentNode.insertBefore(tag, placeholder);
-            placeholder.remove();
-        }
-        tag._placeholder = null;
-    }
- 
     document.querySelectorAll('.flavour-tag').forEach(tag => {
         tag.addEventListener('click', () => {
             const isOpen = tag.classList.contains('open');
  
-            // Close any currently open card first
-            const currentOpen = document.querySelector('.flavour-tag.open');
-            if (currentOpen) closeCard(currentOpen);
+            // Close any currently open card
+            document.querySelectorAll('.flavour-tag.open')
+                .forEach(t => t.classList.remove('open'));
  
-            if (!isOpen) openCard(tag);
+            // Open this one unless it was already open (second tap closes)
+            if (!isOpen) tag.classList.add('open');
         });
     });
 })();
