@@ -1553,26 +1553,30 @@ body::after {
     }
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   MENU PAGE ADDITIONS — append to menu_page_style.css
+   ═══════════════════════════════════════════════════════════════ */
+
 /* ── PRICE TABLE — centred at all sizes ── */
 .price-table {
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
 }
- 
+
 .price-table th,
 .price-table td {
     text-align: center;
 }
- 
+
 .note-cell {
     text-align: left;
 }
- 
- 
+
+
 /* ── MOBILE ── */
 @media (max-width: 768px) {
- 
+
     /* ── PADDING FIX ──
        Prices/decoration sections have inline style="padding:90px 60px" — needs !important.
        Flavours section is .full-alt with no inline style — overrides normally.
@@ -1581,24 +1585,27 @@ body::after {
     section[style*="padding: 90px 60px"] {
         padding-left: 16px !important;
         padding-right: 16px !important;
+        overflow-x: hidden; /* hard backstop against any child overflow */
     }
- 
+
     section.full-alt {
         padding-left: 16px;
         padding-right: 16px;
+        overflow-x: hidden;
     }
- 
+
     .menu-block {
         padding-left: 16px;
         padding-right: 16px;
     }
- 
+
     /* ── FLAVOUR GRID ──
-       Inline style has grid-template-columns: repeat(3,1fr) — needs !important. */
+       Pages have varying inline styles: repeat(3,1fr) or repeat(4,1fr).
+       !important overrides all of them. */
     .flavour-grid {
         grid-template-columns: 1fr 1fr !important;
     }
- 
+
     /* ── CLOSED CARD — compact, name top-center, + bottom-center ── */
     .flavour-tag {
         display: flex;
@@ -1613,15 +1620,15 @@ body::after {
         transform: none !important;
         box-shadow: none !important;
     }
- 
+
     .flavour-name {
         text-align: center;
     }
- 
+
     .flavour-desc {
         display: none;
     }
- 
+
     /* + as last flex item — pushed to bottom-center by space-between */
     .flavour-tag::after {
         content: '+';
@@ -1631,7 +1638,7 @@ body::after {
         margin-top: 10px;
         flex-shrink: 0;
     }
- 
+
     /* ── OPEN CARD — full-width, name centered above description ── */
     .flavour-tag.open {
         grid-column: 1 / -1;
@@ -1644,13 +1651,13 @@ body::after {
         border-color: var(--primary);
         position: relative;
     }
- 
+
     .flavour-tag.open .flavour-name {
         text-align: center;
         width: 100%;
         margin-bottom: 10px;
     }
- 
+
     .flavour-tag.open .flavour-desc {
         display: block;
         text-align: center;
@@ -1659,7 +1666,7 @@ body::after {
         line-height: 1.6;
         margin-top: 0;
     }
- 
+
     /* × pinned absolute top-right */
     .flavour-tag.open::after {
         content: '×';
@@ -1670,36 +1677,35 @@ body::after {
         color: var(--primary-dark);
         margin: 0;
     }
- 
+
     /* ── PLACEHOLDER — subtle dashed gap where the card was ── */
     .flavour-placeholder {
         border: 1px dashed var(--border);
         opacity: 0.4;
         min-height: 84px;
     }
- 
+
     /* ── DECORATION GRID ──
-       minmax(280px, 1fr) has a hard 280px minimum. If the container is
-       narrower than 280px the column overflows the screen. Force single
-       column with no minimum width constraint on mobile. */
+       Uses repeat(auto-fill, minmax(280px, 1fr)) — the 280px minimum can
+       exceed the available mobile width and cause overflow or unexpected
+       column counts. Force single column with !important. */
     .deco-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
- 
-    /* Safety net: prevent any long words breaking out of their container */
+
+    /* Prevent any long words breaking out of their cell */
     .deco-text-title,
     .deco-text-desc {
         overflow-wrap: break-word;
         word-break: break-word;
     }
- 
-    /* Descriptions still hidden on mobile */
+
+    /* Descriptions hidden on mobile */
     .deco-text-desc {
         display: none;
     }
- 
+
     .deco-item {
         padding: 4px 0;
     }
 }
- 
