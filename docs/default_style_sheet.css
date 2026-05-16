@@ -1553,30 +1553,26 @@ body::after {
     }
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   MENU PAGE ADDITIONS — append to menu_page_style.css
-   ═══════════════════════════════════════════════════════════════ */
-
 /* ── PRICE TABLE — centred at all sizes ── */
 .price-table {
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
 }
-
+ 
 .price-table th,
 .price-table td {
     text-align: center;
 }
-
+ 
 .note-cell {
     text-align: left;
 }
-
-
+ 
+ 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-
+ 
     /* ── PADDING FIX ──
        Prices/decoration sections have inline style="padding:90px 60px" — needs !important.
        Flavours section is .full-alt with no inline style — overrides normally.
@@ -1585,126 +1581,106 @@ body::after {
     section[style*="padding: 90px 60px"] {
         padding-left: 16px !important;
         padding-right: 16px !important;
-        overflow-x: hidden; /* hard backstop against any child overflow */
+        overflow-x: hidden;
     }
-
+ 
     section.full-alt {
         padding-left: 16px;
         padding-right: 16px;
         overflow-x: hidden;
     }
-
+ 
     .menu-block {
         padding-left: 16px;
         padding-right: 16px;
     }
-
-    /* ── FLAVOUR GRID ──
-       Pages have varying inline styles: repeat(3,1fr) or repeat(4,1fr).
-       !important overrides all of them. */
+ 
+    /* ── FLAVOUR GRID — accordion layout ──
+       One flavour per row, expanding downward on tap.
+       Mirrors the FAQ section behaviour. */
     .flavour-grid {
-        grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        border-top: 1px solid var(--border);
     }
-
-    /* ── CLOSED CARD — compact, name top-center, + bottom-center ── */
+ 
+    /* Card: full-width block, no card border — just a bottom rule like FAQ */
     .flavour-tag {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
-        padding: 16px 14px 12px;
-        min-height: 84px;
+        display: block;
+        padding: 0;
+        border: none;
+        border-bottom: 1px solid var(--border);
+        border-radius: 0;
+        background: transparent;
         cursor: pointer;
         user-select: none;
         transform: none !important;
         box-shadow: none !important;
     }
-
+ 
+    /* Name row — flex row with + on the right, like a FAQ question */
     .flavour-name {
-        text-align: center;
-    }
-
-    .flavour-desc {
-        display: none;
-    }
-
-    /* + as last flex item — pushed to bottom-center by space-between */
-    .flavour-tag::after {
-        content: '+';
-        font-size: 1rem;
-        color: var(--primary);
-        line-height: 1;
-        margin-top: 10px;
-        flex-shrink: 0;
-    }
-
-    /* ── OPEN CARD — full-width, name centered above description ── */
-    .flavour-tag.open {
-        grid-column: 1 / -1;
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content: flex-start;
-        text-align: center;
-        padding: 20px 44px 20px 20px;
-        min-height: auto;
-        border-color: var(--primary);
-        position: relative;
-    }
-
-    .flavour-tag.open .flavour-name {
-        text-align: center;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .flavour-tag.open .flavour-desc {
-        display: block;
-        text-align: center;
-        width: 100%;
-        font-size: 0.78rem;
-        line-height: 1.6;
-        margin-top: 0;
-    }
-
-    /* × pinned absolute top-right */
-    .flavour-tag.open::after {
-        content: '×';
-        position: absolute;
-        top: 10px;
-        right: 14px;
-        font-size: 1.3rem;
+        padding: 14px 2px;
+        font-size: 0.92rem;
         color: var(--primary-dark);
-        margin: 0;
+        margin-bottom: 0;
     }
-
-    /* ── PLACEHOLDER — subtle dashed gap where the card was ── */
-    .flavour-placeholder {
-        border: 1px dashed var(--border);
-        opacity: 0.4;
-        min-height: 84px;
+ 
+    /* + icon sits at the right of the name row */
+    .flavour-name::after {
+        content: '+';
+        font-size: 1.2rem;
+        color: var(--primary);
+        flex-shrink: 0;
+        margin-left: 12px;
+        transition: transform 0.25s ease, color 0.2s;
+        line-height: 1;
     }
-
+ 
+    /* Rotate + to × when open */
+    .flavour-tag.open .flavour-name::after {
+        transform: rotate(45deg);
+        color: var(--primary-dark);
+    }
+ 
+    /* Description: hidden via max-height (allows smooth CSS transition) */
+    .flavour-desc {
+        display: block;       /* override any display:none */
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 2px;
+        font-size: 0.82rem;
+        color: var(--text-light);
+        line-height: 1.75;
+        font-weight: 300;
+        transition: max-height 0.35s ease, padding 0.3s ease;
+    }
+ 
+    /* Expand description downward on open */
+    .flavour-tag.open .flavour-desc {
+        max-height: 200px;
+        padding-bottom: 14px;
+    }
+ 
     /* ── DECORATION GRID ──
-       Uses repeat(auto-fill, minmax(280px, 1fr)) — the 280px minimum can
-       exceed the available mobile width and cause overflow or unexpected
-       column counts. Force single column with !important. */
+       Single column, no hard minimum width that can overflow. */
     .deco-grid {
         grid-template-columns: 1fr !important;
     }
-
-    /* Prevent any long words breaking out of their cell */
+ 
     .deco-text-title,
     .deco-text-desc {
         overflow-wrap: break-word;
         word-break: break-word;
     }
-
-    /* Descriptions hidden on mobile */
+ 
     .deco-text-desc {
         display: none;
     }
-
+ 
     .deco-item {
         padding: 4px 0;
     }
