@@ -132,23 +132,50 @@ if (form) {
                 body: new FormData(form),
                 headers: { 'Accept': 'application/json' }
             });
-
+        
+            // ── Capture the raw response text before attempting JSON parse ──
+            const rawText = await response.text();
+        
+            console.group('📬 Formspree submission response');
+            console.log('Status:', response.status, response.statusText);
+            console.log('Raw response body:', rawText);
+            console.groupEnd();
+        
             if (response.ok) {
                 form.style.display = 'none';
                 successMsg.style.display = 'block';
-                // Scroll success message into view inside the modal
                 const inner = enquiryModal ? enquiryModal.querySelector('.enquiry-modal-inner') : null;
                 if (inner) inner.scrollTop = 0;
             } else {
-                const data = await response.json();
-                const msg = data?.errors?.map(err => err.message).join(', ') || 'Something went wrong.';
-                errorMsg.textContent = msg;
+                // Try to pull a meaningful message out of the JSON
+                let friendlyMsg = `Server returned ${response.status} (${response.statusText}).`;
+        
+                try {
+                    const data = JSON.parse(rawText);
+                    console.log('Parsed JSON:', data);
+        
+                    if (Array.isArray(data?.errors) && data.errors.length) {
+                        const detail = data.errors.map(e => `[${e.code ?? '?'}] ${e.message}`).join(' | ');
+                        friendlyMsg += ` Formspree said: ${detail}`;
+                    } else if (data?.error) {
+                        friendlyMsg += ` Formspree said: ${data.error}`;
+                    } else {
+                        friendlyMsg += ` Response: ${rawText.slice(0, 200)}`;
+                    }
+                } catch {
+                    // Response wasn't JSON at all
+                    friendlyMsg += ` Response was not JSON: ${rawText.slice(0, 200)}`;
+                }
+        
+                errorMsg.textContent = friendlyMsg;
                 errorMsg.style.display = 'block';
                 submitBtn.textContent = 'Send Enquiry';
                 submitBtn.disabled = false;
             }
         } catch (err) {
-            errorMsg.textContent = 'Network error — please check your connection and try again.';
+            // This fires on a true network failure (fetch never completed)
+            console.error('Fetch threw an exception:', err);
+            errorMsg.textContent = `Network error (${err.name}: ${err.message}) — check your connection and try again.`;
             errorMsg.style.display = 'block';
             submitBtn.textContent = 'Send Enquiry';
             submitBtn.disabled = false;
