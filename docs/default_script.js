@@ -288,11 +288,18 @@ if (postcodeInput) {
 })();
 
 (function () {
-    if (window.innerWidth > 768) return; // desktop: do nothing, descriptions always visible
+    if (window.innerWidth > 768) return; // desktop: descriptions always visible, no JS needed
  
     document.querySelectorAll('.flavour-tag').forEach(tag => {
         tag.addEventListener('click', () => {
-            tag.classList.toggle('open');
+            const isOpen = tag.classList.contains('open');
+ 
+            // Close any currently open card first
+            document.querySelectorAll('.flavour-tag.open').forEach(t => t.classList.remove('open'));
+ 
+            // If this card wasn't already open, open it
+            if (!isOpen) tag.classList.add('open');
         });
     });
 })();
+ 
