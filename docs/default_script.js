@@ -258,7 +258,7 @@ if (postcodeInput) {
     });
 }
 
-/ ── HAMBURGER MENU ──
+// ── HAMBURGER MENU ──
 (function () {
     const hamburger = document.querySelector('.nav-hamburger');
     const navEl = document.querySelector('nav');
