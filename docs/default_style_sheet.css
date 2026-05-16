@@ -1565,7 +1565,6 @@ body::after {
     text-align: center;
 }
  
-/* Keep the note column left-aligned as it reads better as prose */
 .note-cell {
     text-align: left;
 }
@@ -1575,10 +1574,9 @@ body::after {
 @media (max-width: 768px) {
  
     /* ── PADDING FIX ──
-       Prices/decoration sections have inline style="padding:90px 60px".
-       Flavours section is .full-alt with no inline style.
-       Both need to match at 16px horizontal padding. */
- 
+       Prices/decoration sections have inline style="padding:90px 60px" — needs !important.
+       Flavours section is .full-alt with no inline style — overrides normally.
+       Both brought to 16px horizontal for consistency. */
     section[style*="padding:90px 60px"],
     section[style*="padding: 90px 60px"] {
         padding-left: 16px !important;
@@ -1596,8 +1594,7 @@ body::after {
     }
  
     /* ── FLAVOUR GRID ──
-       Inline style has grid-template-columns: repeat(3,1fr) — needs !important.
-       No dense flow: gaps stay where open cards were. */
+       Inline style has grid-template-columns: repeat(3,1fr) — needs !important to override. */
     .flavour-grid {
         grid-template-columns: 1fr 1fr !important;
     }
@@ -1613,7 +1610,6 @@ body::after {
         min-height: 84px;
         cursor: pointer;
         user-select: none;
-        /* disable desktop hover lift on touch screens */
         transform: none !important;
         box-shadow: none !important;
     }
@@ -1622,12 +1618,11 @@ body::after {
         text-align: center;
     }
  
-    /* Description hidden by default; shown via .open */
     .flavour-desc {
         display: none;
     }
  
-    /* + lives as last flex item, pushed to bottom by space-between */
+    /* + as last flex item — pushed to bottom-center by space-between */
     .flavour-tag::after {
         content: '+';
         font-size: 1rem;
@@ -1635,30 +1630,27 @@ body::after {
         line-height: 1;
         margin-top: 10px;
         flex-shrink: 0;
-        transition: color 0.2s;
     }
  
-    /* ── OPEN CARD — spans full width, column layout ── */
+    /* ── OPEN CARD — full-width, name centered above description ── */
     .flavour-tag.open {
         grid-column: 1 / -1;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         text-align: center;
-        padding: 20px 40px 20px 20px; /* right pad clears the × button */
+        padding: 20px 44px 20px 20px; /* right pad keeps text clear of the × */
         min-height: auto;
         border-color: var(--primary);
         position: relative;
     }
  
-    /* Name stays centered above description */
     .flavour-tag.open .flavour-name {
         text-align: center;
         width: 100%;
         margin-bottom: 10px;
     }
  
-    /* Description revealed below the name */
     .flavour-tag.open .flavour-desc {
         display: block;
         text-align: center;
@@ -1668,7 +1660,7 @@ body::after {
         margin-top: 0;
     }
  
-    /* × pinned absolute top-right; no longer a flex item */
+    /* × pinned absolute top-right; removed from flex flow */
     .flavour-tag.open::after {
         content: '×';
         position: absolute;
@@ -1677,10 +1669,9 @@ body::after {
         font-size: 1.3rem;
         color: var(--primary-dark);
         margin: 0;
-        flex-shrink: unset;
     }
  
-    /* ── PLACEHOLDER — keeps the gap where the card was ── */
+    /* ── PLACEHOLDER — subtle dashed gap where the card was ── */
     .flavour-placeholder {
         border: 1px dashed var(--border);
         opacity: 0.4;
@@ -1696,3 +1687,4 @@ body::after {
         padding: 4px 0;
     }
 }
+ 
