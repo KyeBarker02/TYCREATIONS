@@ -1591,4 +1591,88 @@ body::after {
         padding: 4px 0;
     }
 }
+
+/* ── PRICE TABLE — centred at all sizes ── */
+.price-table {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+.price-table th,
+.price-table td {
+    text-align: center;
+}
+ 
+/* Keep the note column left-aligned as it reads better as prose */
+.note-cell {
+    text-align: left;
+}
+ 
+ 
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+ 
+    /* ── PADDING FIX ──
+       Sections use inline style="padding:90px 60px" which overrides CSS.
+       !important is required to reduce the horizontal padding on mobile. */
+    section[style*="padding:90px 60px"],
+    section[style*="padding: 90px 60px"] {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+ 
+    /* Also reduce menu-block horizontal padding for consistency */
+    .menu-block {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+ 
+    /* ── HIDE FLAVOUR & DECO DESCRIPTIONS BY DEFAULT ── */
+    .flavour-desc {
+        display: none;
+    }
+ 
+    .deco-text-desc {
+        display: none;
+    }
+ 
+    /* Tighten flavour card padding now there's no visible description */
+    .flavour-tag {
+        padding: 14px 36px 14px 16px; /* right pad leaves room for the + icon */
+        cursor: pointer;
+        position: relative;
+        user-select: none;
+    }
+ 
+    /* + indicator on each flavour card */
+    .flavour-tag::after {
+        content: '+';
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        transform: translateY(-50%);
+        font-size: 1.1rem;
+        color: var(--primary);
+        transition: transform 0.2s ease;
+        line-height: 1;
+    }
+ 
+    /* Rotate + to × when open */
+    .flavour-tag.open::after {
+        transform: translateY(-50%) rotate(45deg);
+        color: var(--primary-dark);
+    }
+ 
+    /* Show description when card is open */
+    .flavour-tag.open .flavour-desc {
+        display: block;
+        margin-top: 8px;
+    }
+ 
+    /* Tighten deco items similarly */
+    .deco-item {
+        padding: 4px 0;
+    }
+}
  
