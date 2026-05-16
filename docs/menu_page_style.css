@@ -308,9 +308,11 @@ section.full-alt {
 @media (max-width: 768px) {
  
     .sub-gallery-item .sub-gallery-item {
-        height: 100%      !important;   /* fill the parent cell exactly  */
-        min-height: unset !important;   /* remove the 220px hard minimum */
-        padding: 16px 12px !important;  /* tighter padding for small cells */
+        position: absolute !important; /* fill parent by position, not height% */
+        inset: 0 !important;           /* stretch to all four edges             */
+        aspect-ratio: unset !important;/* remove inherited square ratio         */
+        min-height: 0 !important;      /* remove the 220px hard minimum         */
+        padding: 16px 12px !important; /* tighter padding for small cells       */
         box-sizing: border-box;
     }
 }
