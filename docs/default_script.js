@@ -286,3 +286,13 @@ if (postcodeInput) {
         }
     });
 })();
+
+(function () {
+    if (window.innerWidth > 768) return; // desktop: do nothing, descriptions always visible
+ 
+    document.querySelectorAll('.flavour-tag').forEach(tag => {
+        tag.addEventListener('click', () => {
+            tag.classList.toggle('open');
+        });
+    });
+})();
