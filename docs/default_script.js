@@ -171,6 +171,7 @@ if (form) {
                 errorMsg.style.display = 'block';
                 submitBtn.textContent = 'Send Enquiry';
                 submitBtn.disabled = false;
+                if (window.hcaptcha) window.hcaptcha.reset();
             }
         } catch (err) {
             // This fires on a true network failure (fetch never completed)
@@ -179,6 +180,7 @@ if (form) {
             errorMsg.style.display = 'block';
             submitBtn.textContent = 'Send Enquiry';
             submitBtn.disabled = false;
+            if (window.hcaptcha) window.hcaptcha.reset();
         }
     });
 }
