@@ -1685,3 +1685,26 @@ body::after {
         padding: 4px 0;
     }
 }
+
+@media (max-width: 768px) {
+ 
+    /* Shrink the box: 80% wide leaves ~10% visible backdrop on each side.
+       65vh tall leaves ~17.5vh clear above and below when centred —
+       the × button at top:10px sits well clear of the content box. */
+    .lightbox-content {
+        max-width: 80%;
+        max-height: 65vh;
+        padding: 12px;
+    }
+ 
+    /* Reduce thumbnail height to fit more rows in the smaller box */
+    .lightbox-content img {
+        height: 110px;
+    }
+ 
+    /* Nudge the close button down slightly so it sits visually
+       centred in the space above the lightbox content box */
+    .lightbox-close {
+        top: 16px;
+    }
+}
