@@ -1113,7 +1113,7 @@ body::after {
         font-family: 'Montserrat', sans-serif;
     }
 
-    .enquiry-modal-inner .form-group input,
+    .enquiry-modal-inner .form-group input:not([type="checkbox"]),
     .enquiry-modal-inner .form-group select,
     .enquiry-modal-inner .form-group textarea {
         border: 1px solid var(--border, #D8DDD6);
