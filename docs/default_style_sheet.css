@@ -1594,7 +1594,7 @@ body::after {
     }
  
     /* ── FLAVOUR GRID ──
-       Inline style has grid-template-columns: repeat(3,1fr) — needs !important to override. */
+       Inline style has grid-template-columns: repeat(3,1fr) — needs !important. */
     .flavour-grid {
         grid-template-columns: 1fr 1fr !important;
     }
@@ -1639,7 +1639,7 @@ body::after {
         align-items: center;
         justify-content: flex-start;
         text-align: center;
-        padding: 20px 44px 20px 20px; /* right pad keeps text clear of the × */
+        padding: 20px 44px 20px 20px;
         min-height: auto;
         border-color: var(--primary);
         position: relative;
@@ -1660,7 +1660,7 @@ body::after {
         margin-top: 0;
     }
  
-    /* × pinned absolute top-right; removed from flex flow */
+    /* × pinned absolute top-right */
     .flavour-tag.open::after {
         content: '×';
         position: absolute;
@@ -1678,7 +1678,22 @@ body::after {
         min-height: 84px;
     }
  
-    /* ── DECO DESCRIPTIONS — hidden on mobile ── */
+    /* ── DECORATION GRID ──
+       minmax(280px, 1fr) has a hard 280px minimum. If the container is
+       narrower than 280px the column overflows the screen. Force single
+       column with no minimum width constraint on mobile. */
+    .deco-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+    /* Safety net: prevent any long words breaking out of their container */
+    .deco-text-title,
+    .deco-text-desc {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+ 
+    /* Descriptions still hidden on mobile */
     .deco-text-desc {
         display: none;
     }
