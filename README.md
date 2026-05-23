@@ -1,6 +1,5 @@
 # TYCREATIONS
 
-# TY Creations — Website
 
 Static marketing website for **TY Creations**, a UK-based home bakery specialising in bespoke cakes, cookies, cupcakes, and desserts. Built with vanilla HTML, CSS, and JavaScript, hosted on GitHub Pages.
 
