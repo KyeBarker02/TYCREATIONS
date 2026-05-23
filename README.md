@@ -10,7 +10,7 @@ Static marketing website for **TY Creations**, a UK-based home bakery specialisi
 
 ```
 /
-├── default_page.html          # Homepage
+├── index.html          # Homepage
 ├── default_style_sheet.css    # Global styles
 ├── default_script.js          # Shared JS (nav, accordion, smooth scroll)
 ├── bee_script.js              # Animated honeybee scroll effect
