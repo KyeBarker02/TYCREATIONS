@@ -330,3 +330,36 @@ section.full-alt {
         display: none !important;
     }
 }
+
+@media (max-width: 768px) {
+ 
+    /* Sections with inline style="padding:90px 60px" */
+    section[style*="padding:90px 60px"],
+    section[style*="padding: 90px 60px"] {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+ 
+    /* .full-alt sections (flavours) */
+    section.full-alt {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+ 
+    /* .menu-block inner padding */
+    .menu-block {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+ 
+    /* Sub-gallery bottom spacing */
+    .sub-gallery {
+        padding-bottom: 40px;
+    }
+ 
+    /* Page hero bottom padding */
+    .page-hero {
+        padding-bottom: 40px;
+    }
+}
+ 
