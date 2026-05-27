@@ -11,7 +11,7 @@ window.galleryData = {
     HoneyCakesPreview: [
         'images/HoneyCakes/HoneyCake16.jpeg',
         'images/HoneyCakes/HoneyCake18.jpeg',
-        'images/HoneyCakes/HoneyCake8.jpeg',
+        'images/HoneyCakes/HoneyCake5.jpeg',
         'images/HoneyCakes/HoneyCake11.jpeg',
     ],
 
