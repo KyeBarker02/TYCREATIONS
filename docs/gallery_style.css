@@ -109,12 +109,10 @@
     pointer-events: none;
 }
 
-/* ── LAYOUT A: Large left, 2×2 right (5 images) ──
-   [LARGE] [sm][sm]
-   [LARGE] [sm][sm]  */
+/* ── LAYOUT A: 4 medium photos showing Honey Cake Stages  */
 .preview-grid--A {
-    grid-template-columns: 1.7fr 1fr 1fr;
-    grid-template-rows: 220px 220px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 340px;
 }
 
 .preview-grid--A .preview-img:first-child {

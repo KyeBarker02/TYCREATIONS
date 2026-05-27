@@ -9,11 +9,10 @@ function generateImages(folder, prefix, count, ext = 'jpeg') {
 window.galleryData = {
     HoneyCakes: generateImages('HoneyCakes', 'HoneyCake', 38),
     HoneyCakesPreview: [
-        'images/HoneyCakes/HoneyCake1.jpeg',
+        'images/HoneyCakes/HoneyCake16.jpeg',
         'images/HoneyCakes/HoneyCake18.jpeg',
         'images/HoneyCakes/HoneyCake8.jpeg',
         'images/HoneyCakes/HoneyCake11.jpeg',
-        'images/HoneyCakes/HoneyCake28.jpeg',
     ],
 
     OccasionCakes: generateImages('OccasionCakes', 'OccasionCake', 83),
