@@ -5,7 +5,7 @@
 // ── CONFIG ────────────────────────────────────────────────────────
 // Number of preview images to show per category
 const PREVIEW_COUNTS = {
-    HoneyCakes:    5,   // Layout A: 1 tall left + 2×2 right
+    HoneyCakes:    4,   // Layout A: 1 tall left + 2×2 right
     OccasionCakes: 7,   // Layout B: 3×2 grid + 1 tall right
     OtherCakes:    8,   // Layout C: 1 wide top-left + 4
     SmallBakes:    3,   // Layout D: only 3 images exist

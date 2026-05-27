@@ -116,7 +116,7 @@
 }
 
 .preview-grid--A .preview-img:first-child {
-    grid-row: span 2;
+    grid-row: span 1;
 }
 
 /* ── LAYOUT B: 3×2 grid, large right (6 images) ──
