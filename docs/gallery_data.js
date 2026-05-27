@@ -15,15 +15,22 @@ window.galleryData = {
         'images/HoneyCakes/HoneyCake11.jpeg',
     ],
 
-    OccasionCakes: generateImages('OccasionCakes', 'OccasionCake', 83),
-    OccasionCakesPreview: [
-        'images/OccasionCakes/OccasionCake1.jpeg',
-        'images/OccasionCakes/OccasionCake61.jpeg',
-        'images/OccasionCakes/OccasionCake33.jpeg',
-        'images/OccasionCakes/OccasionCake6.jpeg',
-        'images/OccasionCakes/OccasionCake79.jpeg',
-        'images/OccasionCakes/OccasionCake30.jpeg',
-        'images/OccasionCakes/OccasionCake16.jpeg',
+    BirthdayCakes: generateImages('BirthdayCakes', 'BirthdayCake', 60),
+    BirthdayCakesPreview: [
+        'images/BirthdayCakes/BirthdayCake1.jpeg',
+        'images/BirthdayCakes/BirthdayCake61.jpeg',
+        'images/BirthdayCakes/BirthdayCake33.jpeg',
+        'images/BirthdayCakes/BirthdayCake6.jpeg',
+        'images/BirthdayCakes/BirthdayCake79.jpeg',
+        'images/BirthdayCakes/BirthdayCake30.jpeg',
+        'images/BirthdayCakes/BirthdayCake16.jpeg',
+    ],
+
+    WeddingCakes: generateImages('WeddingCakes', 'WeddingCake', 3),
+    WeddingCakesPreview: [
+        'images/WeddingCakes/WeddingCake1.jpeg',
+        'images/WeddingCakes/WeddingCake2.jpeg',
+        'images/WeddingCakes/WeddingCake3.jpeg',
     ],
 
     OtherCakes: generateImages('OtherCakes', 'OtherCake', 63),

@@ -5,8 +5,9 @@
 // ── CONFIG ────────────────────────────────────────────────────────
 // Number of preview images to show per category
 const PREVIEW_COUNTS = {
-    HoneyCakes:    4,   // Layout A: 1 tall left + 2×2 right
-    OccasionCakes: 7,   // Layout B: 3×2 grid + 1 tall right
+    HoneyCakes:    4,   // Layout A: 4 along in a row
+    BirthdayCakes: 7,   // Layout B: 3×2 grid + 1 tall right
+    WeddingCakes: 3,   // Layout E: 3 in a row
     OtherCakes:    8,   // Layout C: 1 wide top-left + 4
     SmallBakes:    3,   // Layout D: only 3 images exist
 };
@@ -197,4 +198,4 @@ document.fonts.ready.then(() => {
 });
 
 // ── INIT ──────────────────────────────────────────────────────────
-['HoneyCakes', 'OccasionCakes', 'OtherCakes', 'SmallBakes'].forEach(buildPreviewGrid);
+['HoneyCakes', 'BirthdayCakes','WeddingCakes', 'OtherCakes', 'SmallBakes'].forEach(buildPreviewGrid);
