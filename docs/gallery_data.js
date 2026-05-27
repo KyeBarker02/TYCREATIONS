@@ -18,10 +18,10 @@ window.galleryData = {
     BirthdayCakes: generateImages('BirthdayCakes', 'BirthdayCake', 60),
     BirthdayCakesPreview: [
         'images/BirthdayCakes/BirthdayCake1.jpeg',
-        'images/BirthdayCakes/BirthdayCake61.jpeg',
+        'images/BirthdayCakes/BirthdayCake60.jpeg',
         'images/BirthdayCakes/BirthdayCake33.jpeg',
         'images/BirthdayCakes/BirthdayCake6.jpeg',
-        'images/BirthdayCakes/BirthdayCake79.jpeg',
+        'images/BirthdayCakes/BirthdayCake21.jpeg',
         'images/BirthdayCakes/BirthdayCake30.jpeg',
         'images/BirthdayCakes/BirthdayCake16.jpeg',
     ],
