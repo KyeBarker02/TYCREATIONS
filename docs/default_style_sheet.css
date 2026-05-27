@@ -488,6 +488,11 @@ section {
     z-index: 1;
 }
 
+.gallery-link {
+    display: contents;
+    text-decoration: none;
+}
+
 
 /* ── ENQUIRY ── */
 .enquiry-wrap {
