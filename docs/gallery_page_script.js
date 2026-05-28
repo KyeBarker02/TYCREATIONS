@@ -200,4 +200,4 @@ document.fonts.ready.then(() => {
 });
 
 // ── INIT ──────────────────────────────────────────────────────────
-['HoneyCakes', 'BirthdayCakes','WeddingCakes', 'OtherCakes', 'SmallBakes'].forEach(buildPreviewGrid);
+['HoneyCakes', 'BirthdayCakes','WeddingCakes', 'OtherCakes', 'Cookies', 'Desserts'].forEach(buildPreviewGrid);
