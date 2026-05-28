@@ -45,7 +45,7 @@ window.galleryData = {
         
     ],
 
-    Cookies: generateImages('Cookies', 'Cookie', 3),
+    Cookies: generateImages('Cookies', 'Cookie', 10),
     CookiesPreview: [
         'images/Cookies/Cookie1.jpeg',
         'images/Cookies/Cookie8.jpeg',

@@ -149,7 +149,7 @@
 
 .preview-grid--E {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px;
+    grid-template-rows: 400px 400px;
 }
 
 .preview-grid--F {
@@ -180,7 +180,9 @@
     .preview-grid--A,
     .preview-grid--B,
     .preview-grid--C,
-    .preview-grid--D {
+    .preview-grid--D,
+    .preview-grid--E,
+    .preview-grid--F{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: unset;
     }
@@ -188,7 +190,9 @@
     .preview-grid--A .preview-img:first-child,
     .preview-grid--B .preview-img:nth-child(4),
     .preview-grid--C .preview-img:first-child,
-    .preview-grid--D .preview-img:nth-child(2) {
+    .preview-grid--D .preview-img:nth-child(2),
+    .preview-grid--E .preview-img:first-child,
+    .preview-grid--F .preview-img:nth-child(2){
         grid-column: auto;
         grid-row: auto;
     }
@@ -202,7 +206,9 @@
     .preview-grid--A,
     .preview-grid--B,
     .preview-grid--C,
-    .preview-grid--D {
+    .preview-grid--D,
+    .preview-grid--E,
+    .preview-grid--F{
         grid-template-columns: 1fr 1fr;
     }
 
