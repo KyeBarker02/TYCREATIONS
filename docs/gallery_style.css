@@ -147,6 +147,22 @@
     grid-template-rows: 340px;
 }
 
+.preview-grid--E {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+}
+
+.preview-grid--F {
+    grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr;
+    grid-template-rows: 180px 180px;
+}
+
+.preview-grid--F .preview-img:nth-child(3) {
+    grid-row: 1 / span 2;
+}
+
+
+
 /* ── SECTION DIVIDER ── */
 .category-divider {
     height: 1px;

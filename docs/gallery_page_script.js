@@ -7,9 +7,11 @@
 const PREVIEW_COUNTS = {
     HoneyCakes:    4,   // Layout A: 4 along in a row
     BirthdayCakes: 7,   // Layout B: 3×2 grid + 1 tall right
-    WeddingCakes: 3,   // Layout E: 3 in a row
-    OtherCakes:    8,   // Layout C: 1 wide top-left + 4
-    SmallBakes:    3,   // Layout D: only 3 images exist
+    WeddingCakes: 2,   // Layout E: 2 Large
+    OtherCakes: 8,   // Layout C: 1 wide top-left + 4
+    //Cupcakes: 5, // Layout D: Unused Yet
+    Cookies: 5,   // Layout F: 1 large in the middle with 2 small either side
+    Desserts: 8, // Layout C: Four small in rows
 };
 
 // ── LIGHTBOX STATE ────────────────────────────────────────────────

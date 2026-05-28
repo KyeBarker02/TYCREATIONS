@@ -26,11 +26,10 @@ window.galleryData = {
         'images/BirthdayCakes/BirthdayCake16.jpeg',
     ],
 
-    WeddingCakes: generateImages('WeddingCakes', 'WeddingCake', 3),
+    WeddingCakes: generateImages('WeddingCakes', 'WeddingCake', 6),
     WeddingCakesPreview: [
         'images/WeddingCakes/WeddingCake1.jpeg',
-        'images/WeddingCakes/WeddingCake2.jpeg',
-        'images/WeddingCakes/WeddingCake3.jpeg',
+        'images/WeddingCakes/WeddingCake4.jpeg',
     ],
 
     OtherCakes: generateImages('OtherCakes', 'OtherCake', 63),
@@ -46,11 +45,26 @@ window.galleryData = {
         
     ],
 
-    SmallBakes: [
-        'images/SmallBakes/SmallBake1.jpeg',
-        'images/SmallBakes/SmallBake2.mp4',
-        'images/SmallBakes/SmallBake3.mp4',
+    Cookies: generateImages('Cookies', 'Cookie', 3),
+    CookiesPreview: [
+        'images/Cookies/Cookie1.jpeg',
+        'images/Cookies/Cookie8.jpeg',
+        'images/Cookies/Cookie10.jpeg',
+        'images/Cookies/Cookie3.jpeg',
+        'images/Cookies/Cookie7.jpeg',
     ],
+
+    Desserts: generateImages('Desserts', 'Desserts', 29),
+    DessertsPreview: [
+        'images/Desserts/Desserts3.jpeg',
+        'images/Desserts/Desserts4.jpeg',
+        'images/Desserts/Desserts7.jpeg',
+        'images/Desserts/Desserts9.jpeg',
+        'images/Desserts/Desserts11.jpeg',
+        'images/Desserts/Desserts22.jpeg',
+        'images/Desserts/Desserts24.jpeg',
+        'images/Desserts/Desserts23.jpeg',
+    ]
 };
 
 
