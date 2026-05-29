@@ -392,8 +392,12 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    max-width: 380px;
+    max-width: 420px; /* was 380px */
 }
+
+    .menu-btn-grid .btn:first-child {
+        grid-column: span 2;
+    }
 
     .menu-btn-grid .btn {
         display: flex;

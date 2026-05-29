@@ -49,7 +49,7 @@ window.galleryData = {
     CookiesPreview: [
         'images/Cookies/Cookie1.jpeg',
         'images/Cookies/Cookie8.jpeg',
-        'images/Cookies/Cookie10.jpeg',
+        'images/Cookies/Cookie9.jpeg',
         'images/Cookies/Cookie3.jpeg',
         'images/Cookies/Cookie7.jpeg',
     ],
