@@ -10,9 +10,9 @@ window.galleryData = {
     HoneyCakes: generateImages('HoneyCakes', 'HoneyCake', 38),
     HoneyCakesPreview: [
         'images/HoneyCakes/HoneyCake16.jpeg',
-        'images/HoneyCakes/HoneyCake18.jpeg',
-        'images/HoneyCakes/HoneyCake5.jpeg',
-        'images/HoneyCakes/HoneyCake11.jpeg',
+        'images/HoneyCakes/HoneyCake61.jpeg',
+        'images/HoneyCakes/HoneyCake66.jpeg',
+        'images/HoneyCakes/HoneyCake23.jpeg',
     ],
 
     BirthdayCakes: generateImages('BirthdayCakes', 'BirthdayCake', 60),

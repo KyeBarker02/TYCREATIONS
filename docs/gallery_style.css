@@ -149,7 +149,7 @@
 
 .preview-grid--E {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 400px 400px;
+    grid-template-rows: 400px;
 }
 
 .preview-grid--F {
@@ -157,9 +157,9 @@
     grid-template-rows: 180px 180px;
 }
 
-.preview-grid--F .preview-img:nth-child(3) {
-    grid-row: 1 / span 2;
-}
+    .preview-grid--F .preview-img:nth-child(3) {
+        grid-row: 1 / span 2;
+    }
 
 
 
