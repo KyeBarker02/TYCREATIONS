@@ -5,10 +5,13 @@
 // ── CONFIG ────────────────────────────────────────────────────────
 // Number of preview images to show per category
 const PREVIEW_COUNTS = {
-    HoneyCakes:    4,   // Layout A: 1 tall left + 2×2 right
-    OccasionCakes: 7,   // Layout B: 3×2 grid + 1 tall right
-    OtherCakes:    8,   // Layout C: 1 wide top-left + 4
-    SmallBakes:    3,   // Layout D: only 3 images exist
+    HoneyCakes:    4,   // Layout A: 4 along in a row
+    BirthdayCakes: 7,   // Layout B: 3×2 grid + 1 tall right
+    WeddingCakes: 2,   // Layout E: 2 Large
+    OtherCakes: 8,   // Layout C: 1 wide top-left + 4
+    //Cupcakes: 5, // Layout D: Unused Yet
+    Cookies: 5,   // Layout F: 1 large in the middle with 2 small either side
+    Desserts: 8, // Layout C: Four small in rows
 };
 
 // ── LIGHTBOX STATE ────────────────────────────────────────────────
@@ -197,4 +200,4 @@ document.fonts.ready.then(() => {
 });
 
 // ── INIT ──────────────────────────────────────────────────────────
-['HoneyCakes', 'OccasionCakes', 'OtherCakes', 'SmallBakes'].forEach(buildPreviewGrid);
+['HoneyCakes', 'BirthdayCakes','WeddingCakes', 'OtherCakes', 'Cookies', 'Desserts'].forEach(buildPreviewGrid);

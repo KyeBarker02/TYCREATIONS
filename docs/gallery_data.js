@@ -10,20 +10,26 @@ window.galleryData = {
     HoneyCakes: generateImages('HoneyCakes', 'HoneyCake', 38),
     HoneyCakesPreview: [
         'images/HoneyCakes/HoneyCake16.jpeg',
-        'images/HoneyCakes/HoneyCake18.jpeg',
-        'images/HoneyCakes/HoneyCake8.jpeg',
-        'images/HoneyCakes/HoneyCake11.jpeg',
+        'images/HoneyCakes/HoneyCake61.jpeg',
+        'images/HoneyCakes/HoneyCake66.jpeg',
+        'images/HoneyCakes/HoneyCake23.jpeg',
     ],
 
-    OccasionCakes: generateImages('OccasionCakes', 'OccasionCake', 83),
-    OccasionCakesPreview: [
-        'images/OccasionCakes/OccasionCake1.jpeg',
-        'images/OccasionCakes/OccasionCake61.jpeg',
-        'images/OccasionCakes/OccasionCake33.jpeg',
-        'images/OccasionCakes/OccasionCake6.jpeg',
-        'images/OccasionCakes/OccasionCake79.jpeg',
-        'images/OccasionCakes/OccasionCake30.jpeg',
-        'images/OccasionCakes/OccasionCake16.jpeg',
+    BirthdayCakes: generateImages('BirthdayCakes', 'BirthdayCake', 60),
+    BirthdayCakesPreview: [
+        'images/BirthdayCakes/BirthdayCake1.jpeg',
+        'images/BirthdayCakes/BirthdayCake60.jpeg',
+        'images/BirthdayCakes/BirthdayCake33.jpeg',
+        'images/BirthdayCakes/BirthdayCake6.jpeg',
+        'images/BirthdayCakes/BirthdayCake21.jpeg',
+        'images/BirthdayCakes/BirthdayCake30.jpeg',
+        'images/BirthdayCakes/BirthdayCake16.jpeg',
+    ],
+
+    WeddingCakes: generateImages('WeddingCakes', 'WeddingCake', 6),
+    WeddingCakesPreview: [
+        'images/WeddingCakes/WeddingCake1.jpeg',
+        'images/WeddingCakes/WeddingCake4.jpeg',
     ],
 
     OtherCakes: generateImages('OtherCakes', 'OtherCake', 63),
@@ -39,11 +45,26 @@ window.galleryData = {
         
     ],
 
-    SmallBakes: [
-        'images/SmallBakes/SmallBake1.jpeg',
-        'images/SmallBakes/SmallBake2.mp4',
-        'images/SmallBakes/SmallBake3.mp4',
+    Cookies: generateImages('Cookies', 'Cookie', 10),
+    CookiesPreview: [
+        'images/Cookies/Cookie1.jpeg',
+        'images/Cookies/Cookie8.jpeg',
+        'images/Cookies/Cookie9.jpeg',
+        'images/Cookies/Cookie3.jpeg',
+        'images/Cookies/Cookie7.jpeg',
     ],
+
+    Desserts: generateImages('Desserts', 'Desserts', 29),
+    DessertsPreview: [
+        'images/Desserts/Desserts3.jpeg',
+        'images/Desserts/Desserts4.jpeg',
+        'images/Desserts/Desserts7.jpeg',
+        'images/Desserts/Desserts9.jpeg',
+        'images/Desserts/Desserts11.jpeg',
+        'images/Desserts/Desserts22.jpeg',
+        'images/Desserts/Desserts24.jpeg',
+        'images/Desserts/Desserts23.jpeg',
+    ]
 };
 
 
