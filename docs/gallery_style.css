@@ -193,4 +193,8 @@
     .preview-img {
         height: 150px;
     }
+
+    .preview-img:nth-child(n+5) {
+        display: none;
+    }
 }
