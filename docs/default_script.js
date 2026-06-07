@@ -55,10 +55,19 @@ function openEnquiryModal() {
     // Scroll modal inner to top on re-open
     const inner = enquiryModal.querySelector('.enquiry-modal-inner');
     if (inner) inner.scrollTop = 0;
-    // Lazy-load hCaptcha the first time the modal opens so it never
-    // injects DOM elements (or stray links) before the form is visible.
+    // Inject the hCaptcha widget and load the script the first time the modal
+    // opens — this way hCaptcha has no div to find until it is actually needed.
     if (!window._hcaptchaLoaded) {
         window._hcaptchaLoaded = true;
+        const submitDiv = enquiryModal.querySelector('.form-submit');
+        if (submitDiv && !enquiryModal.querySelector('.h-captcha')) {
+            const captcha = document.createElement('div');
+            captcha.className = 'h-captcha';
+            captcha.dataset.sitekey = '1130e7c6-aece-44e4-b444-bba098944dbe';
+            captcha.dataset.theme = 'light';
+            captcha.style.marginBottom = '20px';
+            submitDiv.before(captcha);
+        }
         const s = document.createElement('script');
         s.src = 'https://js.hcaptcha.com/1/api.js';
         s.async = true;
