@@ -607,6 +607,29 @@ footer {
     margin: 24px auto;
 }
 
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin: 16px 0;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #fff;
+}
+
 /* ── HONEYCOMB SIDES ── */
 body::before,
 body::after {

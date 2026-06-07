@@ -38,6 +38,10 @@ function buildPreviewGrid(folder) {
     const grid = document.getElementById('grid-' + folder);
     if (!grid) return;
 
+    if (window.innerWidth <= 900) {
+        preview = preview.slice(0, 4);
+    }
+
     // Update count label
     const countEl = document.getElementById('count-' + folder);
     if (countEl) countEl.textContent = allImages.length + ' photos';
