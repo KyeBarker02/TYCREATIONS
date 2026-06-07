@@ -212,7 +212,7 @@
     .preview-grid--B .preview-img:nth-child(4),
     .preview-grid--C .preview-img:first-child,
     .preview-grid--D .preview-img:nth-child(2),
-    .preview-grid--E .preview-img:first-child,{
+    .preview-grid--E .preview-img:first-child{
         grid-column: auto;
         grid-row: auto;
     }

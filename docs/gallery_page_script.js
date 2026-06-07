@@ -33,7 +33,7 @@ function isVideo(src) {
 // ── PREVIEW GRID BUILDER ──────────────────────────────────────────
 function buildPreviewGrid(folder) {
     const allImages = window.galleryData[folder] || [];
-    const preview = window.galleryData[folder + 'Preview']
+    let preview = window.galleryData[folder + 'Preview']
         || allImages.slice(0, PREVIEW_COUNTS[folder] || 5);
     const grid = document.getElementById('grid-' + folder);
     if (!grid) return;
