@@ -1591,9 +1591,12 @@ body::after {
     margin-left: auto;
     margin-right: auto;
 }
- 
-.price-table th,
-.price-table td {
+
+.price-table thead th {
+    text-align: center;
+}
+
+.price-table tbody td {
     text-align: center;
 }
  
