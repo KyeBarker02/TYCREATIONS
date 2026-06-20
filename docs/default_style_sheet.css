@@ -962,8 +962,18 @@ body::after {
 }
 
 .faq-item.open .faq-answer {
-    max-height: 300px;
+    max-height: 1000px;
     padding-bottom: 20px;
+}
+
+.faq-answer ul {
+    list-style: disc;
+    padding-left: 18px;
+    margin-top: 8px;
+}
+
+.faq-answer ul li {
+    margin-bottom: 6px;
 }
 
 /* ── STICKY MOBILE ORDER BUTTON ── */
