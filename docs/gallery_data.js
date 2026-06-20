@@ -7,7 +7,7 @@ function generateImages(folder, prefix, count, ext = 'jpeg') {
 }
 
 window.galleryData = {
-    HoneyCakes: generateImages('HoneyCakes', 'HoneyCake', 38),
+    HoneyCakes: generateImages('HoneyCakes', 'HoneyCake', 68),
     HoneyCakesPreview: [
         'images/HoneyCakes/HoneyCake16.jpeg',
         'images/HoneyCakes/HoneyCake61.jpeg',
@@ -15,7 +15,7 @@ window.galleryData = {
         'images/HoneyCakes/HoneyCake23.jpeg',
     ],
 
-    BirthdayCakes: generateImages('BirthdayCakes', 'BirthdayCake', 60),
+    BirthdayCakes: generateImages('BirthdayCakes', 'BirthdayCake', 68),
     BirthdayCakesPreview: [
         'images/BirthdayCakes/BirthdayCake1.jpeg',
         'images/BirthdayCakes/BirthdayCake60.jpeg',
@@ -32,7 +32,7 @@ window.galleryData = {
         'images/WeddingCakes/WeddingCake4.jpeg',
     ],
 
-    OtherCakes: generateImages('OtherCakes', 'OtherCake', 63),
+    OtherCakes: generateImages('OtherCakes', 'OtherCake', 76),
     OtherCakesPreview: [
         'images/OtherCakes/OtherCake5.jpeg',
         'images/OtherCakes/OtherCake12.jpeg',
@@ -54,7 +54,7 @@ window.galleryData = {
         'images/Cookies/Cookie7.jpeg',
     ],
 
-    Desserts: generateImages('Desserts', 'Desserts', 29),
+    Desserts: generateImages('Desserts', 'Desserts', 31),
     DessertsPreview: [
         'images/Desserts/Desserts3.jpeg',
         'images/Desserts/Desserts4.jpeg',
