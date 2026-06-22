@@ -221,11 +221,8 @@ function haversine(lat1, lng1, lat2, lng2) {
 }
 
 function getDeliveryInfo(miles) {
-    if (miles <= 2.5) {
-        return { cost: 'Free', tier: 'free-delivery', note: 'Complimentary delivery included' };
-    }
     if (miles <= 15) {
-        const cost = (Math.ceil(miles) * 1.5).toFixed(2);
+        const cost = (Math.ceil(miles) * 2).toFixed(2);
         return {
             cost: `£${cost}`,
             tier: 'paid-delivery',
