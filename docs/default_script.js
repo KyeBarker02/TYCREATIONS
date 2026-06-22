@@ -221,10 +221,18 @@ function haversine(lat1, lng1, lat2, lng2) {
 }
 
 function getDeliveryInfo(miles) {
-    if (miles <= 5) return { cost: 'Free', tier: 'free-delivery', note: 'Complimentary delivery included' };
-    if (miles <= 15) return { cost: '£10', tier: 'paid-delivery', note: 'Standard delivery charge' };
-    if (miles <= 30) return { cost: '£20', tier: 'paid-delivery', note: 'Extended delivery charge' };
-    return { cost: 'POA', tier: 'poa-delivery', note: 'Please mention delivery in your message' };
+    if (miles <= 2.5) {
+        return { cost: 'Free', tier: 'free-delivery', note: 'Complimentary delivery included' };
+    }
+    if (miles <= 15) {
+        const cost = (Math.ceil(miles) * 1.5).toFixed(2);
+        return {
+            cost: `£${cost}`,
+            tier: 'paid-delivery',
+            note: ''
+        };
+    }
+    return { cost: 'POA', tier: 'poa-delivery', note: 'Please get in touch to discuss delivery' };
 }
 
 async function checkDelivery() {
