@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery — TY Creations</title>
+    <link rel="stylesheet" href="default_style_sheet.css">
+    <link rel="stylesheet" href="menu_page_style.css">
+    <link rel="stylesheet" href="gallery_style.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo" id="navLogo" style="text-decoration:none;">
+            <img src="logo_img.jpg" alt="Logo" style="float:left; width:42px; height:42px;">
+            <span id="navLogoText">TY Creations</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <div class="nav-dropdown">
+                <a class="nav-dropdown-toggle" href="menu_honey_cake.html">Menu <span class="nav-chevron">&#8964;</span></a>
+                <div class="nav-dropdown-menu">
+                    <a href="menu_honey_cake.html">Honey Cake</a>
+                    <a href="menu_occasion_cakes.html">Birthday Cakes</a>
+                    <a href="menu_wedding_cake.html">Wedding Cakes</a>
+                    <a href="menu_all_cakes.html">All Other Cakes</a>
+                    <a href="menu_cookies.html">Cookies</a>
+                    <a href="menu_cupcakes.html">Cupcakes</a>
+                    <a href="menu_desserts.html">Desserts and Bakes</a>
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="cake_care.html">Cake Care</a>
+            <a href="#enquire">Enquire</a>
+        </div>
+
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div style="position:relative;">
+            <p class="page-hero-eyebrow">Every Cake, A Story</p>
+            <h1>The <em>Gallery</em></h1>
+            <p class="page-hero-desc">A collection of handcrafted cakes made with love. Browse by category and click any image to explore the full set.</p>
+        </div>
+    </section>
+
+    <!-- HONEY CAKES -->
+    <section class="gallery-category" id="cat-HoneyCakes">
+        <div class="gallery-category-inner">
+            <a href="index.html" class="back-link">Back to Home</a>
+            <div class="category-header">
+                <p class="section-tag">Signature Bake</p>
+                <h2>The <em>Honey Cake</em></h2>
+                <div class="divider"></div>
+                <p>Our most beloved creation — golden honey layers, light fragrant cream, and a finish that turns heads. Click any image to open the full gallery.</p>
+            </div>
+            <div class="preview-grid preview-grid--A" id="grid-HoneyCakes"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('HoneyCakes')">View All Honey Cake Photos</button>
+                <span class="category-count" id="count-HoneyCakes"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider"></div>
+
+    <!-- BIRTHDAY CAKES -->
+    <section class="gallery-category alt-bg" style="max-width:unset; padding-left:0; padding-right:0;" id="cat-BirthdayCakes">
+        <div class="gallery-category-inner" style="padding: 0 60px;">
+            <div class="category-header">
+                <p class="section-tag">Celebrations</p>
+                <h2><em>Birthday</em> Cakes</h2>
+                <div class="divider"></div>
+                <p>Birthdays, anniversaries, baby showers, graduations — every milestone deserves a cake as unique as the moment itself.</p>
+            </div>
+            <div class="preview-grid preview-grid--B" id="grid-BirthdayCakes"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('BirthdayCakes')">View All Birthday Cakes</button>
+                <span class="category-count" id="count-BirthdayCakes"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider"></div>
+
+    <!-- WEDDING CAKES -->
+    <section class="gallery-category" id="cat-WeddingCakes">
+        <div class="gallery-category-inner">
+            <a href="index.html" class="back-link">Back to Home</a>
+            <div class="category-header">
+                <p class="section-tag">Signature Bake</p>
+                <h2>Wedding <em> Cakes</em></h2>
+                <div class="divider"></div>
+                <p>Our most beloved creation — golden honey layers, light fragrant cream, and a finish that turns heads. Click any image to open the full gallery.</p>
+            </div>
+            <div class="preview-grid preview-grid--E" id="grid-WeddingCakes"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('WeddingCakes')">View All Wedding Cake Photos</button>
+                <span class="category-count" id="count-WeddingCakes"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider"></div>
+
+    <!-- OTHER CAKES -->
+    <section class="gallery-category alt-bg" id="cat-OtherCakes">
+        <div class="gallery-category-inner">
+            <div class="category-header">
+                <p class="section-tag">Bespoke Creations</p>
+                <h2>All Other <em>Cakes</em></h2>
+                <div class="divider"></div>
+                <p>From elegant single tiers to towering multi-tiered showpieces — every cake crafted entirely around your vision.</p>
+            </div>
+            <div class="preview-grid preview-grid--C" id="grid-OtherCakes"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('OtherCakes')">View All Cake Creations</button>
+                <span class="category-count" id="count-OtherCakes"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider"></div>
+
+    <!-- COOKIES -->
+    <section class="gallery-category" style="max-width:unset; padding-left:0; padding-right:0;" id="cat-Cookies">
+        <div class="gallery-category-inner" style="padding: 0 60px;">
+            <div class="category-header">
+                <p class="section-tag">Comfort &amp; Luxury</p>
+                <h2>Cookies</h2>
+                <div class="divider"></div>
+                <p>Perfectly formed and just as lovingly crafted — New York Style Cookies made the TY Creations way.</p>
+            </div>
+            <div class="preview-grid preview-grid--F" id="grid-Cookies"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('Cookies')">View All Cookies</button>
+                <span class="category-count" id="count-Cookies"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider"></div>
+
+    <!-- CUPCAKES
+    <section class="gallery-category alt-bg" style="max-width:unset; padding-left:0; padding-right:0;" id="cat-Cupcakes">
+        <div class="gallery-category-inner" style="padding: 0 60px;">
+            <div class="category-header">
+                <p class="section-tag">Bite-Sized &amp; Beautiful</p>
+                <h2>Cupcakes</h2>
+                <div class="divider"></div>
+                <p>Everyone deserves a treat — our cupcakes are the perfect way to celebrate the little things</p>
+            </div>
+            <div class="preview-grid preview-grid--D" id="grid-Cupcakes"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('Cupcakes')">View All Cupcakes</button>
+                <span class="category-count" id="count-Cupcakes"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="category-divider"></div>
+    -->
+    <!-- DESSERTS AND BAKES -->
+    <section class="gallery-category alt-bg" style="max-width:unset; padding-left:0; padding-right:0;" id="cat-Desserts">
+        <div class="gallery-category-inner" style="padding: 0 60px;">
+            <div class="category-header">
+                <p class="section-tag">Sweet Indulgences</p>
+                <h2>Desserts and <em>Bakes</em></h2>
+                <div class="divider"></div>
+                <p>>From rich brownies and delicate pastries to indulgent dessert boxes — beautifully made treats for every sweet occasion.</p>
+            </div>
+            <div class="preview-grid preview-grid--C" id="grid-Desserts"></div>
+            <div class="category-footer">
+                <button class="btn" onclick="openGallery('Desserts')">View All Desserts and Bakes</button>
+                <span class="category-count" id="count-Desserts"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENQUIRE -->
+    <section id="enquire">
+        <div style="max-width:640px;margin:0 auto;text-align:center;">
+            <p class="section-tag" style="font-weight:500; color: #3F3F3F;">Get in Touch</p>
+            <div class="brand-baking">
+                <h2 class="section-title">Enquire About Your Cake</h2>
+                <p class="section-sub" style="margin:0 auto;">We'd love to hear about your occasion. Fill in a quick form and we'll be in touch to discuss your perfect cake.</p>
+            </div>
+        </div>
+
+        <div class="enquiry-wrap" style="max-width:560px;text-align:center;margin-top:40px;">
+            <p class="brand-baking" style="font-size:1rem;color:var(--text-light);line-height:1.9;font-weight:400;margin-bottom:32px;">
+                Tell us about your occasion — cake type, guest count, event date, and any design ideas — and we'll get back to you as soon as possible.
+            </p>
+            <button class="btn btn-filled enquiry-open-btn" onclick="openEnquiryModal()">Submit Your Enquiry</button>
+            <p class="brand-baking" style="margin-top: 32px; font-size: 0.85rem; color: var(--text-light); opacity: 0.7; line-height: 1.8; font-weight: 400;">
+                Delivery is available on request - enquire for more details.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">TY Creations</div>
+        <p>Handcrafted cakes for life's most beautiful moments.</p>
+        <div class="footer-divider"></div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#enquire">Enquire</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/tycreations_eastbourne/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                Instagram
+            </a>
+        </div>
+        <p style="margin-top:12px;">
+            <a href="privacy_policy.html" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;">Privacy Policy</a>
+            <a style="color:rgba(255,255,255,0.5);"> / </a>
+            <a href="terms_and_conditions.html" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;">Terms &amp; Conditions</a>
+        </p>
+        <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2026 TY Creations. All rights reserved.</p>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════
+    ENQUIRY MODAL
+    ═══════════════════════════════════════════════ -->
+    <div id="enquiryModal" class="enquiry-modal" role="dialog" aria-modal="true" aria-labelledby="enquiryModalTitle">
+        <div class="enquiry-modal-inner">
+
+            <button class="enquiry-modal-close" onclick="closeEnquiryModal()" aria-label="Close enquiry form">&times;</button>
+
+            <!-- Modal header -->
+            <div class="enquiry-modal-header">
+                <p class="section-tag">Get in Touch</p>
+                <h3 id="enquiryModalTitle">Enquire About Your Cake</h3>
+                <p>Tell us about your occasion and we'll be in touch to discuss your perfect cake.</p>
+                <p style="margin-top:16px;font-size:0.85rem;">In the meantime, our <a href="cake_care.html" style="color:var(--primary-dark);text-decoration:underline;text-underline-offset:3px;transition:color 0.2s;">Cake Care guide</a> has everything you need to know about storing and serving your cake once it arrives.</p>
+            </div>
+
+            <!-- SUCCESS MESSAGE (hidden until form submitted) -->
+            <div id="formSuccess" class="form-success" style="display:none;margin:0;border:none;padding:40px 20px;">
+                <div class="success-icon">✉️</div>
+                <h3>Thank you for your enquiry!</h3>
+                <p>We'll be in touch soon to discuss your perfect cake.</p>
+            </div>
+
+            <!-- ENQUIRY FORM -->
+            <form id="enquiryForm" class="enquiry-wrap" action="https://formspree.io/f/mwvablqj" method="POST" novalidate
+                  style="margin-top:0;">
+
+                <!-- Hidden fields for Formspree -->
+                <input type="hidden" name="_subject" value="New Cake Enquiry — TY Creations" />
+                <input type="hidden" name="_language" value="en" />
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="first_name" placeholder="Your first name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="last_name" placeholder="Your last name" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Event Date</label>
+                        <input type="date" id="eventDate" name="event_date" />
+                    </div>
+                    <div class="form-group brand-baking">
+                        <label for="cakeType">Cake Type</label>
+                        <select id="cakeType" name="cake_type">
+                            <option value="">Select a type</option>
+                            <option>Honey Cake</option>
+                            <option>Celebration Cake</option>
+                            <option>Other Cakes</option>
+                            <option>NY Style Cookies</option>
+                            <option>Cupcakes &amp; Mini Bakes</option>
+                            <option>Brownies &amp; Desserts</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group brand-baking">
+                    <label for="guests">Number of Guests / Servings</label>
+                    <input type="text" id="guests" name="guests_servings" placeholder="e.g. 60 guests" />
+                </div>
+
+                <div class="delivery-section-wrap">
+                    <p class="delivery-section-title">Delivery Cost Estimator</p>
+                    <p class="delivery-section-sub">Enter your postcode below to instantly see your delivery charge.</p>
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label>Your Postcode</label>
+                        <div class="postcode-check-row">
+                            <input type="text" id="deliveryPostcode" name="delivery_postcode" placeholder="e.g. BN23 6AJ" maxlength="8" oninput="this.value = this.value.toUpperCase()" />
+                            <button type="button" class="btn btn-filled postcode-btn" onclick="checkDelivery()">Check</button>
+                        </div>
+                        <div id="deliveryResult" class="delivery-result"></div>
+                    </div>
+                </div>
+
+                <div class="form-group brand-baking">
+                    <label for="referral">How Did You Hear About Us?</label>
+                    <select id="referral" name="referral">
+                        <option value="">Select an Option</option>
+                        <option>Instagram</option>
+                        <option>Friends and Family</option>
+                        <option>Google Search</option>
+                        <option>Nelsons</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell Us More</label>
+                    <textarea id="message" name="message" placeholder="Share any details about your vision, dietary requirements, or questions..."></textarea>
+                </div>
+
+                <div class="form-group form-agree">
+                    <label class="agree-label" for="agreeTerms">
+                        <input type="checkbox" id="agreeTerms" name="agreed_to_terms" value="yes" required />
+                        <span>
+                            I have read and agree to the
+                            <a href="terms_and_conditions.html" target="_blank">Terms &amp; Conditions</a>
+                            and
+                            <a href="privacy_policy.html" target="_blank">Privacy Policy</a>
+                        </span>
+                    </label>
+                    <div id="agreeError" class="agree-error" style="display:none;">
+                        Please confirm you have read and agree to our Terms &amp; Conditions and Privacy Policy.
+                    </div>
+                </div>
+
+                <div id="formError" class="form-error" style="display:none;">
+                    Something went wrong. Please try again or email us directly.
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-filled" id="submitBtn">Send Enquiry</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content" id="lightboxContent"></div>
+        <div id="imageZoom" class="image-zoom">
+            <span class="zoom-arrow left">&#10094;</span>
+            <img id="zoomedImg" src="" alt="" />
+            <span class="zoom-arrow right">&#10095;</span>
+        </div>
+    </div>
+
+    <script src="gallery_data.js"></script>
+    <script src="gallery_page_script.js"></script>
+    <script src="bee_script.js"></script>
+    <script src="default_script.js"></script>
+
+</body>
+</html>

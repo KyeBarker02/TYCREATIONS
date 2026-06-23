@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Occasion Cakes — TY Creations</title>
+    <link rel="stylesheet" href="default_style_sheet.css">
+    <link rel="stylesheet" href="menu_page_style.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo" id="navLogo" style="text-decoration:none;">
+            <img src="logo_img.jpg" alt="Logo" style="float:left; width:42px; height:42px;">
+            <span id="navLogoText">TY Creations</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <div class="nav-dropdown">
+                <a class="nav-dropdown-toggle" href="menu_honey_cake.html">Menu <span class="nav-chevron">&#8964;</span></a>
+                <div class="nav-dropdown-menu">
+                    <a href="menu_honey_cake.html">Honey Cake</a>
+                    <a href="menu_occasion_cakes.html">Birthday Cakes</a>
+                    <a href="menu_wedding_cake.html">Wedding Cakes</a>
+                    <a href="menu_all_cakes.html">All Other Cakes</a>
+                    <a href="menu_cookies.html">Cookies</a>
+                    <a href="menu_cupcakes.html">Cupcakes</a>
+                    <a href="menu_desserts.html">Desserts and Bakes</a>
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="cake_care.html">Cake Care</a>
+            <a href="#enquire">Enquire</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div style="position:relative;">
+            <p class="page-hero-eyebrow">Mark Every Milestone</p>
+            <h1><em>Birthday</em> Cakes</h1>
+            <p class="page-hero-desc">Birthdays aren't the same without a cake. Celebrate in style with our custom birthday cakes.</p>
+        </div>
+    </section>
+
+    <!-- SIZES & PRICES -->
+    <section style="padding:90px 60px;background:var(--bg);" id="prices">
+        <div class="menu-block" style="padding:0;">
+            <a href="index.html#menu" class="back-link">Back to Menu</a>
+            <h2 class="menu-block-title">Sizes &amp; Prices</h2>
+            <div class="menu-block-divider"></div>
+            <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:28px;font-weight:400;line-height:1.8;">Occasion cakes are priced based on size, complexity of design, and decoration. The prices below are guides — your bespoke quote will be sent after your enquiry.</p>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Style</th>
+                        <th>Size Guide</th>
+                        <th>Serves</th>
+                        <th>Price Guide</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Single Tier — Small</strong></td>
+                        <td>6" single tier</td>
+                        <td>10-15</td>
+                        <td class="price-cell">From £70</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Single Tier — Medium</strong></td>
+                        <td>8" single tier</td>
+                        <td>20-30</td>
+                        <td class="price-cell">From £95</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Single Tier — Large</strong></td>
+                        <td>10" single tier</td>
+                        <td>35-45</td>
+                        <td class="price-cell">From £120</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Two-Tier</strong></td>
+                        <td>6" + "8" or 8" + 10"</td>
+                        <td>40-60</td>
+                        <td class="price-cell">From £160</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Three-Tier</strong></td>
+                        <td>6" + 8" + 10"</td>
+                        <td>70-100</td>
+                        <td class="price-cell">From £240</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Four-Tier &amp; Beyond</strong></td>
+                        <td>Fully Bespoke</td>
+                        <td>120+</td>
+                        <td class="price-cell">POA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sculpted / Novelty</strong></td>
+                        <td>Varies</td>
+                        <td>Fully bespoke</td>
+                        <td class="price-cell">POA</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size:0.78rem;color:var(--text-light);margin-top:20px;font-style:italic;">* All prices are a guide and subject to design complexity, decoration choices, and delivery. A tailored quote is provided after enquiry.</p>
+        </div>
+    </section>
+
+    <!-- FLAVOURS -->
+    <section class="full-alt" id="flavours">
+        <div class="menu-block">
+            <h2 class="menu-block-title">Flavours</h2>
+            <div class="menu-block-divider"></div>
+            <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:36px;">Choose your favourite combination — or let us suggest something perfect for your occasion. Dietary adaptations including gluten-free and dairy-free are available on request.</p>
+
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Sponge Options</h3>
+            <div class="flavour-grid" style="margin-bottom:40px;grid-template-columns: repeat(4, 1fr);" ">
+                <div class="flavour-tag">
+                    <div class="flavour-name">Classic Vanilla</div>
+                    <div class="flavour-desc">A perfectly light, moist vanilla bean sponge — suits any occasion</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Rich Chocolate</div>
+                    <div class="flavour-desc">Deep, dark Belgian chocolate — always a crowd favourite</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Lemon &amp; Elderflower</div>
+                    <div class="flavour-desc">Floral and bright — a spring and summer classic</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Funfetti</div>
+                    <div class="flavour-desc">Vanilla sponge packed with rainbow sprinkles — perfect for birthdays</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Red Velvet</div>
+                    <div class="flavour-desc">Dramatic, velvety and subtly cocoa with a glorious red crumb</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Carrot &amp; Spice</div>
+                    <div class="flavour-desc">Warmly spiced carrot cake with walnuts and ginger</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Signature Honey</div>
+                    <div class="flavour-desc">Our beloved honey sponge — popular for baby showers and anniversaries</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Marble</div>
+                    <div class="flavour-desc">Swirled vanilla and chocolate — the best of both worlds</div>
+                </div>
+            </div>
+
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);font-weight:400;margin-bottom:20px;">Fillings</h3>
+            <div class="flavour-grid" style="margin-bottom:40px;grid-template-columns: repeat(3, 1fr);" ">
+                <div class="flavour-tag">
+                    <div class="flavour-name">Whipped Vanilla Buttercream</div>
+                    <div class="flavour-desc">Light, smooth, and classic</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Chocolate Ganache</div>
+                    <div class="flavour-desc">Dark, milk, or white — silky and indulgent</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Lemon Curd</div>
+                    <div class="flavour-desc">Tangy and sunshine-bright</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Salted Caramel</div>
+                    <div class="flavour-desc">A golden, rich caramel ribbon through each layer</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Raspberry Compote</div>
+                    <div class="flavour-desc">Fresh, fruity, and naturally vibrant</div>
+                </div>
+                <div class="flavour-tag">
+                    <div class="flavour-name">Cream Cheese Frosting</div>
+                    <div class="flavour-desc">Lightly tangy, perfectly smooth</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DECORATION -->
+    <section style="padding:90px 60px;background:var(--bg);" id="decoration">
+        <div class="menu-block" style="padding:0;">
+            <h2 class="menu-block-title">Decoration</h2>
+            <div class="menu-block-divider"></div>
+            <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:36px;font-weight:400;line-height:1.8;">Birthday cakes are designed around your theme, colour palette, and the personality of the person being celebrated. No two are ever the same.</p>
+            <div style="border: 1px solid #687D6A; border-radius: 4px; padding: 32px; background-color: #ffff">
+                <div class="deco-grid" style="background-color: #ffff; grid-template-columns: repeat(4, 1fr);">
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Number &amp; Letter Cakes</div>
+                            <div class="deco-text-desc">Sculpted number or letter-shaped cakes — filled with cream and fruit, and topped with beautiful fresh florals.</div>
+                        </div>
+                    </div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Themed &amp; Character Designs</div>
+                            <div class="deco-text-desc">From favourite colours to hobbies, passions, and themes — designed around the person, not a template.</div>
+                        </div>
+                    </div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Sprinkles &amp; Confetti</div>
+                            <div class="deco-text-desc">Edible confetti, star sprinkles, and rainbow jimmies — celebratory, fun, and full of joy.</div>
+                        </div>
+                    </div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Fresh &amp; Sugar Flowers</div>
+                            <div class="deco-text-desc">From simple posies to elaborate floral crowns — in any colour to match your theme or season.</div>
+                        </div>
+                    </div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Drip &amp; Ganache Finishes</div>
+                            <div class="deco-text-desc">A luxurious drip of white, dark, or coloured chocolate ganache down the sides of the cake.</div>
+                        </div>
+                    </div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Ombre &amp; Gradient</div>
+                            <div class="deco-text-desc">Smooth colour gradients blended by hand — from soft pastels to bold saturated tones.</div>
+                        </div>
+                    </div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Age &amp; Name Toppers</div>
+                            <div class="deco-text-desc">Elegant hand-piped names or ages, or bespoke acrylic and sugar toppers to commemorate the occasion.</div>
+                        </div>
+                    </div>
+                    <div class="deco-item">
+                        <div>
+                            <div class="deco-text-title">Smash Cake</div>
+                            <div class="deco-text-desc">A small matching smash cake for baby's first birthday — a sweet, messy tradition we love.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size:0.78rem;color:var(--text-light);margin-top:16px;font-style:italic;">* More complex or bespoke decoration choices may affect the final price. Full details will be discussed and confirmed at the enquiry stage.</p>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="full-alt" id="gallery">
+        <div style="max-width:1100px;margin:0 auto;padding:0 0 40px;">
+            <h2 class="menu-block-title">Gallery</h2>
+            <div class="menu-block-divider"></div>
+            <p style="font-size:0.9rem;color:var(--text-light);font-weight:400;line-height:1.8;">A selection of birthday cakes we've been honoured to create.</p>
+        </div>
+        <div class="sub-gallery-grid" style="max-width:1100px;margin:0 auto;">
+            <div class="sub-gallery-item">
+                <img class="about-img" id="aboutImg" src="images/BirthdayCakes/BirthdayCake1.jpeg" alt="TY Creations cake" />
+                <div class="sub-gallery-overlay"><span>Golden Drizzle</span></div>
+            </div>
+            <div class="sub-gallery-item">
+                <img class="about-img" id="aboutImg" src="images/BirthdayCakes/BirthdayCake5.jpeg" alt="TY Creations cake" />
+                <div class="sub-gallery-overlay"><span>Chocolate Orange</span></div>
+            </div>
+            <div class="sub-gallery-item">
+                <img class="about-img" id="aboutImg" src="images/BirthdayCakes/BirthdayCake13.jpeg" alt="TY Creations cake" />
+                <div class="sub-gallery-overlay"><span>Fruit & Honey</span></div>
+            </div>
+            <div class="sub-gallery-item">
+                <img class="about-img" id="aboutImg" src="images/BirthdayCakes/BirthdayCake10.jpeg" alt="TY Creations cake" />
+                <div class="sub-gallery-overlay"><span>Honeycomb</span></div>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:40px;">
+            <a href="gallery.html" class="btn btn-outline">View Full Gallery →</a>
+        </div>
+    </section>
+
+    <!-- ENQUIRE -->
+    <section id="enquire">
+        <div style="max-width:640px;margin:0 auto;text-align:center;">
+            <p class="section-tag" style="font-weight:500; color: #3F3F3F;">Get in Touch</p>
+            <div class="brand-baking">
+                <h2 class="section-title">Enquire About Your Cake</h2>
+                <p class="section-sub" style="margin:0 auto;">We'd love to hear about your occasion. Fill in a quick form and we'll be in touch to discuss your perfect cake.</p>
+            </div>
+        </div>
+
+        <div class="enquiry-wrap" style="max-width:560px;text-align:center;margin-top:40px;">
+            <p class="brand-baking" style="font-size:1rem;color:var(--text-light);line-height:1.9;font-weight:400;margin-bottom:32px;">
+                Tell us about your occasion — cake type, guest count, event date, and any design ideas — and we'll get back to you as soon as possible.
+            </p>
+            <button class="btn btn-filled enquiry-open-btn" onclick="openEnquiryModal()">Submit Your Enquiry</button>
+            <p class="brand-baking" style="margin-top: 32px; font-size: 0.85rem; color: var(--text-light); opacity: 0.7; line-height: 1.8; font-weight: 400;">
+                Delivery is available on request - enquire for more details.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo" id="footerLogo">TY Creations</div>
+        <p id="footerTagline">Handcrafted cakes for life's most beautiful moments.</p>
+        <div class="footer-divider"></div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#enquire">Enquire</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/tycreations_eastbourne/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                Instagram
+            </a>
+        </div>
+        <p style="margin-top:12px;">
+            <a href="privacy_policy.html" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;">Privacy Policy</a>
+            <a> / </a>
+            <a href="terms_and_conditions.html" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;">Terms &amp; Conditions</a>
+        </p>
+        <p style="margin-top:24px;font-size:0.75rem;opacity:0.5;">© 2026 TY Creations. All rights reserved.</p>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════
+    ENQUIRY MODAL
+    ═══════════════════════════════════════════════ -->
+    <div id="enquiryModal" class="enquiry-modal" role="dialog" aria-modal="true" aria-labelledby="enquiryModalTitle">
+        <div class="enquiry-modal-inner">
+
+            <button class="enquiry-modal-close" onclick="closeEnquiryModal()" aria-label="Close enquiry form">&times;</button>
+
+            <!-- Modal header -->
+            <div class="enquiry-modal-header">
+                <p class="section-tag">Get in Touch</p>
+                <h3 id="enquiryModalTitle">Enquire About Your Cake</h3>
+                <p>Tell us about your occasion and we'll be in touch to discuss your perfect cake.</p>
+            </div>
+
+            <!-- SUCCESS MESSAGE (hidden until form submitted) -->
+            <div id="formSuccess" class="form-success" style="display:none;margin:0;border:none;padding:40px 20px;">
+                <div class="success-icon">✉️</div>
+                <h3>Thank you for your enquiry!</h3>
+                <p>We'll be in touch soon to discuss your perfect cake.</p>
+                <p style="margin-top:16px;font-size:0.85rem;">In the meantime, our <a href="cake_care.html" style="color:var(--primary-dark);text-decoration:underline;text-underline-offset:3px;transition:color 0.2s;">Cake Care guide</a> has everything you need to know about storing and serving your cake once it arrives.</p>
+            </div>
+
+            <!-- ENQUIRY FORM -->
+            <form id="enquiryForm" class="enquiry-wrap" action="https://formspree.io/f/mwvablqj" method="POST" novalidate
+                  style="margin-top:0;">
+
+                <!-- Hidden fields for Formspree -->
+                <input type="hidden" name="_subject" value="New Cake Enquiry — TY Creations" />
+                <input type="hidden" name="_language" value="en" />
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="first_name" placeholder="Your first name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="last_name" placeholder="Your last name" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Event Date</label>
+                        <input type="date" id="eventDate" name="event_date" />
+                    </div>
+                    <div class="form-group brand-baking">
+                        <label for="cakeType">Cake Type</label>
+                        <select id="cakeType" name="cake_type">
+                            <option value="">Select a type</option>
+                            <option>Honey Cake</option>
+                            <option>Celebration Cake</option>
+                            <option>Other Cakes</option>
+                            <option>NY Style Cookies</option>
+                            <option>Cupcakes &amp; Mini Bakes</option>
+                            <option>Brownies &amp; Desserts</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group brand-baking">
+                    <label for="guests">Number of Guests / Servings</label>
+                    <input type="text" id="guests" name="guests_servings" placeholder="e.g. 60 guests" />
+                </div>
+
+                <div class="delivery-section-wrap">
+                    <p class="delivery-section-title">Delivery Cost Estimator</p>
+                    <p class="delivery-section-sub">Enter your postcode below to instantly see your delivery charge.</p>
+                    <div class="delivery-tiers">
+                        <span class="delivery-tier-badge">0–5 mi · Free</span>
+                        <span class="delivery-tier-badge">5–15 mi · £10</span>
+                        <span class="delivery-tier-badge">15–30 mi · £20</span>
+                        <span class="delivery-tier-badge">30+ mi · POA</span>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label>Your Postcode</label>
+                        <div class="postcode-check-row">
+                            <input type="text" id="deliveryPostcode" name="delivery_postcode" placeholder="e.g. BN23 6AJ" maxlength="8" oninput="this.value = this.value.toUpperCase()" />
+                            <button type="button" class="btn btn-filled postcode-btn" onclick="checkDelivery()">Check</button>
+                        </div>
+                        <div id="deliveryResult" class="delivery-result"></div>
+                    </div>
+                </div>
+
+                <div class="form-group brand-baking">
+                    <label for="referral">How Did You Hear About Us?</label>
+                    <select id="referral" name="referral">
+                        <option value="">Select an Option</option>
+                        <option>Instagram</option>
+                        <option>Friends and Family</option>
+                        <option>Google Search</option>
+                        <option>Nelsons</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell Us More</label>
+                    <textarea id="message" name="message" placeholder="Share any details about your vision, dietary requirements, or questions..."></textarea>
+                </div>
+
+                <div class="form-group form-agree">
+                    <label class="agree-label" for="agreeTerms">
+                        <input type="checkbox" id="agreeTerms" name="agreed_to_terms" value="yes" required />
+                        <span>
+                            I have read and agree to the
+                            <a href="terms_and_conditions.html" target="_blank">Terms &amp; Conditions</a>
+                            and
+                            <a href="privacy_policy.html" target="_blank">Privacy Policy</a>
+                        </span>
+                    </label>
+                    <div id="agreeError" class="agree-error" style="display:none;">
+                        Please confirm you have read and agree to our Terms &amp; Conditions and Privacy Policy.
+                    </div>
+                </div>
+
+                <div id="formError" class="form-error" style="display:none;">
+                    Something went wrong. Please try again or email us directly.
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-filled" id="submitBtn">Send Enquiry</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.fonts.ready.then(() => {
+            document.documentElement.classList.add('fonts-loaded');
+        });
+    </script>
+    <script src="default_script.js"></script>
+    <script src="bee_script.js"></script>
+</body>
+</html>
