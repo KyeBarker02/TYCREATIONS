@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Occasion Cakes — TY Creations</title>
-    <link rel="stylesheet" href="default_style_sheet.css">
-    <link rel="stylesheet" href="menu_page_style.css">
+    <link rel="stylesheet" href="../../default_style_sheet.css">
+    <link rel="stylesheet" href="../../menu_page_style.css">
 </head>
 <body>
 
@@ -18,9 +18,9 @@
         <div class="nav-links">
             <a href="../../">Home</a>
             <div class="nav-dropdown">
-                <a class="nav-dropdown-toggle" href="../../menu/honey-cake/">Menu <span class="nav-chevron">&#8964;</span></a>
+                <a class="nav-dropdown-toggle" href="../../menu/honey-cakes/">Menu <span class="nav-chevron">&#8964;</span></a>
                 <div class="nav-dropdown-menu">
-                    <a href="../../menu/honey-cake/">Honey Cake</a>
+                    <a href="../../menu/honey-cakes/">Honey Cake</a>
                     <a href="../../menu/birthday-cakes/">Birthday Cakes</a>
                     <a href="../../menu/wedding-cakes/">Wedding Cakes</a>
                     <a href="../../menu/all-other-cakes/">All Other Cakes</a>
@@ -471,7 +471,8 @@
         </div>
     </div>
 
-    <script>document.querySelectorAll('a[href^="#"]').forEach(a => {
+    <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
                 e.preventDefault();
                 const t = document.querySelector(a.getAttribute('href'));
@@ -481,8 +482,10 @@
 
         document.fonts.ready.then(() => {
             document.documentElement.classList.add('fonts-loaded');
-        });</script>
-    <script src="default_script.js"></script>
-    <script src="bee_script.js"></script>
+        });
+
+    </script>
+    <script src="../../default_script.js"></script>
+    <script src="../../bee_script.js"></script>
 </body>
 </html>
