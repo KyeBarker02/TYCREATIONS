@@ -15,7 +15,7 @@ window.galleryData = {
         '/images/HoneyCakes/HoneyCake15.jpeg',
     ],
 
-    BirthdayCakes: generateImages('BirthdayCakes', 'BirthdayCake', 30),
+    BirthdayCakes: generateImages('BirthdayCakes', 'BirthdayCake', 31),
     BirthdayCakesPreview: [
         '/images/BirthdayCakes/BirthdayCake2.jpeg',
         '/images/BirthdayCakes/BirthdayCake10.jpeg',
@@ -32,7 +32,7 @@ window.galleryData = {
         '/images/WeddingCakes/WeddingCake4.jpeg',
     ],
 
-    OtherCakes: generateImages('OtherCakes', 'OtherCake', 34),
+    OtherCakes: generateImages('OtherCakes', 'OtherCake', 35),
     OtherCakesPreview: [
         '/images/OtherCakes/OtherCake5.jpeg',
         '/images/OtherCakes/OtherCake12.jpeg',
